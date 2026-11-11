@@ -1,0 +1,1198 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#173D2B">
+    <meta name="format-detection" content="telephone=no">
+    <title>AN Farms Hyderabad | Kadaknath Eggs, Nattukodi Eggs &amp; Country Chicken</title>
+    <meta name="description" content="Discover Kadaknath eggs, Nattukodi eggs and authentic country chicken at AN Farms, Hyderabad. Explore our products and order directly through WhatsApp.">
+
+    <!-- Open Graph (add og:image and canonical once you have a domain and a real photo) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AN Farms Hyderabad | Kadaknath Eggs, Nattukodi Eggs & Country Chicken">
+    <meta property="og:description" content="Native country poultry from AN Farms, Hyderabad. Order directly through WhatsApp.">
+    <meta property="og:locale" content="en_IN">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AN Farms",
+      "description": "Native country poultry in Hyderabad: Kadaknath eggs, Nattukodi eggs and Nattukodi chicken.",
+      "founder": { "@type": "Person", "name": "Venkat Yanamala" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+      "areaServed": "Hyderabad",
+      "sameAs": [
+        "https://www.instagram.com/anfarms_7675/",
+        "https://www.facebook.com/an.farms.193708/"
+      ]
+    }
+    </script>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23173D2B'/%3E%3Ctext x='32' y='42' font-size='28' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23C6A15B'%3EAN%3C/text%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS (CDN build is fine for prototypes; compile it for production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: { DEFAULT: '#173D2B', deep: '#0F2A1D', light: '#22523A' },
+                        olive: '#667C43',
+                        cream: '#F8F5EC',
+                        earth: '#79563C',
+                        gold: '#C6A15B'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #F8F5EC;
+            color: #2b2b26;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body.lock { overflow: hidden; }
+        img, svg, canvas { max-width: 100%; }
+
+        .glass-header {
+            background: rgba(15, 42, 29, 0.94);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+        }
+        .safe-x { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+        .vh-full { height: 100vh; height: 100dvh; }
+        .no-scrollbar { scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+            min-height: 44px; padding: .75rem 1.25rem; border-radius: .75rem;
+            font-weight: 600; font-size: .875rem; line-height: 1.2; text-align: center;
+            transition: transform .2s, background-color .2s, color .2s; cursor: pointer;
+        }
+        .btn:active { transform: scale(.98); }
+        .btn-gold { background: #C6A15B; color: #173D2B; }
+        .btn-forest { background: #173D2B; color: #F8F5EC; }
+        .btn-ghost { background: rgba(255,255,255,.08); color: #F8F5EC; border: 1px solid rgba(255,255,255,.28); }
+        .btn-outline { background: #fff; color: #173D2B; border: 1px solid rgba(23,61,43,.25); }
+        @media (hover: hover) {
+            .btn-gold:hover { background: #d4b26d; }
+            .btn-forest:hover { background: #22523A; }
+            .btn-ghost:hover { background: rgba(255,255,255,.16); }
+            .btn-outline:hover { border-color: #173D2B; }
+        }
+
+        /* Filter chips + sector buttons */
+        .chip, .sec-btn {
+            flex-shrink: 0; min-height: 44px; padding: .55rem 1rem; border-radius: .75rem;
+            font-size: .8rem; font-weight: 600; transition: background-color .2s, color .2s;
+            display: inline-flex; align-items: center; justify-content: center; gap: .4rem; text-align: center;
+        }
+        .chip { background: #e9e3d2; color: #4a4a40; }
+        .chip.is-active { background: #173D2B; color: #fff; }
+        .sec-btn { background: rgba(255,255,255,.1); color: #F8F5EC; }
+        .sec-btn.is-active { background: #C6A15B; color: #173D2B; }
+
+        /* Forms */
+        .field {
+            width: 100%; min-height: 50px; background: #fff; border: 1px solid #d9d2bf; border-radius: .75rem;
+            padding: .75rem 1rem; color: #173D2B; font-size: 16px; font-family: inherit;
+            -webkit-appearance: none; appearance: none;
+        }
+        textarea.field { min-height: 100px; resize: vertical; }
+        select.field {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23173D2B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem;
+        }
+        .field:focus { outline: 2px solid #C6A15B; outline-offset: 1px; }
+        .field[aria-invalid="true"] { border-color: #b3261e; }
+
+        /* 3D views */
+        .three-wrap { position: relative; touch-action: pan-y; background: #0F2A1D; }
+        .three-wrap canvas { display: block; width: 100%; height: 100%; }
+        .three-fallback { display: flex; align-items: center; justify-content: center; height: 100%; padding: 1.5rem; text-align: center; color: #F8F5EC; font-size: .875rem; }
+
+        /* Cart drawer */
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 50; opacity: 0; visibility: hidden; transition: opacity .3s, visibility 0s .3s; }
+        .overlay.open { opacity: 1; visibility: visible; transition: opacity .3s; }
+        .drawer { position: fixed; top: 0; right: 0; z-index: 51; display: flex; flex-direction: column; background: #fff; transform: translateX(100%); visibility: hidden; transition: transform .3s ease, visibility 0s .3s; }
+        .drawer.open { transform: none; visibility: visible; transition: transform .3s ease; }
+
+        .reveal-ok { animation: none; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold/30">
+
+    <!-- Announcement bar -->
+    <div class="bg-forest-deep text-cream/80 text-xs border-b border-white/10">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-3">
+            <p class="flex items-center gap-1.5 min-w-0">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold shrink-0"></i>
+                <span class="truncate">Hyderabad · Order directly on WhatsApp</span>
+            </p>
+            <a href="tel:+91XXXXXXXXXX" data-tel class="font-semibold text-gold shrink-0 inline-flex items-center gap-1 py-1.5">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                <span data-phone-text>+91 XXXXX XXXXX</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sticky header -->
+    <header id="siteHeader" class="sticky top-0 z-40 glass-header text-cream border-b border-white/10">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-3">
+            <a href="#top" class="flex items-center gap-2.5 min-w-0" aria-label="AN Farms home">
+                <span class="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-forest border border-gold/50 flex items-center justify-center font-serif font-semibold text-lg text-gold shrink-0">AN</span>
+                <span class="min-w-0 leading-tight">
+                    <span class="block font-serif font-semibold text-lg sm:text-xl tracking-wide text-white whitespace-nowrap">AN FARMS</span>
+                    <span class="hidden sm:block text-[11px] text-cream/60 truncate">Native poultry · Hyderabad</span>
+                </span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-cream/80" aria-label="Primary">
+                <a href="#top" class="hover:text-gold transition-colors">Home</a>
+                <a href="#products" class="hover:text-gold transition-colors">Our Products</a>
+                <a href="#3d-tour" class="hover:text-gold transition-colors">3D Farm</a>
+                <a href="#story" class="hover:text-gold transition-colors">About Us</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <button type="button" data-action="open-cart" class="relative btn btn-ghost !px-3 !py-2" aria-label="Open enquiry basket">
+                    <i data-lucide="shopping-basket" class="w-5 h-5 text-gold"></i>
+                    <span class="hidden sm:inline">Basket</span>
+                    <span id="cartCounter" aria-live="polite" class="bg-gold text-forest min-w-[1.25rem] h-5 px-1 rounded-full font-bold text-[11px] flex items-center justify-center">0</span>
+                </button>
+                <a href="#" data-wa target="_blank" rel="noopener" class="hidden sm:inline-flex btn btn-gold !py-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i><span>ORDER NOW</span>
+                </a>
+                <button type="button" id="menuToggle" class="lg:hidden btn btn-ghost !px-3 !py-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+                    <i data-lucide="menu" class="w-5 h-5" data-icon-open></i>
+                    <i data-lucide="x" class="w-5 h-5 hidden" data-icon-close></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-forest-deep overflow-y-auto" style="max-height: calc(100vh - 4rem); max-height: calc(100dvh - 4rem);">
+            <nav class="safe-x sm:px-6 py-2 flex flex-col" aria-label="Mobile">
+                <a href="#top" class="py-3.5 text-base text-cream border-b border-white/10">Home</a>
+                <a href="#products" class="py-3.5 text-base text-cream border-b border-white/10">Our Products</a>
+                <a href="#3d-tour" class="py-3.5 text-base text-cream border-b border-white/10">3D Farm</a>
+                <a href="#order" class="py-3.5 text-base text-cream border-b border-white/10">How to Order</a>
+                <a href="#story" class="py-3.5 text-base text-cream border-b border-white/10">About Us</a>
+                <a href="#contact" class="py-3.5 text-base text-cream">Contact</a>
+                <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-gold w-full my-4"><i data-lucide="message-circle" class="w-4 h-4"></i>ORDER NOW ON WHATSAPP</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    <!-- HERO -->
+    <section id="top" class="relative bg-forest text-cream overflow-hidden pt-8 pb-12 sm:pt-12 lg:pt-16 lg:pb-24">
+        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(60% 50% at 80% 10%, rgba(198,161,91,.12), transparent 70%);"></div>
+        <div class="relative max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+                <div class="lg:col-span-6 space-y-5 sm:space-y-6 min-w-0">
+                    <p class="inline-flex items-center gap-2 text-[11px] sm:text-xs font-semibold tracking-[.2em] text-gold uppercase">
+                        <span class="w-6 h-px bg-gold"></span>AN FARMS | HYDERABAD
+                    </p>
+
+                    <h1 class="font-serif font-medium text-white uppercase leading-[1.1] tracking-wide text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl break-words">
+                        The true goodness of native poultry.
+                    </h1>
+
+                    <p class="text-gold font-serif italic text-base sm:text-lg leading-snug">
+                        Authentic Kadaknath Eggs. Traditional Nattukodi Eggs. Native Country Chicken.
+                    </p>
+
+                    <p class="text-sm sm:text-base text-cream/75 leading-relaxed font-light max-w-xl">
+                        Discover the distinctive taste and tradition of native country poultry with AN Farms. Bringing carefully handled farm products closer to homes across Hyderabad.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                        <a href="#products" class="btn btn-gold w-full sm:w-auto">EXPLORE OUR PRODUCTS <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-ghost w-full sm:w-auto"><i data-lucide="message-circle" class="w-4 h-4 text-gold"></i>ORDER ON WHATSAPP</a>
+                    </div>
+
+                    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-5 border-t border-white/10 text-xs">
+                        <li class="p-3 bg-white/5 rounded-xl border border-white/10">
+                            <span class="block text-gold font-semibold text-sm">₹750 · 30 eggs</span>
+                            <span class="text-cream/60">Kadaknath Eggs</span>
+                        </li>
+                        <li class="p-3 bg-white/5 rounded-xl border border-white/10">
+                            <span class="block text-gold font-semibold text-sm">₹540 · 30 eggs</span>
+                            <span class="text-cream/60">Nattukodi Eggs</span>
+                        </li>
+                        <li class="p-3 bg-white/5 rounded-xl border border-white/10">
+                            <span class="block text-gold font-semibold text-sm">₹600–₹799 / kg</span>
+                            <span class="text-cream/60">Nattukodi Chicken · selected days</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-6 min-w-0">
+                    <div class="rounded-3xl overflow-hidden border border-gold/30 shadow-2xl bg-forest-deep p-1.5 sm:p-2">
+                        <div class="relative rounded-2xl overflow-hidden">
+                            <div id="hero-3d" class="three-wrap w-full h-[300px] sm:h-[420px] lg:h-[460px]" role="img" aria-label="Illustrative 3D model of a native poultry yard"></div>
+                            <div class="pointer-events-none absolute top-3 left-3 flex items-center gap-2 bg-forest-deep/85 border border-white/10 px-3 py-1.5 rounded-full text-[11px] text-cream">
+                                <span class="w-2 h-2 rounded-full bg-gold"></span>Illustrative 3D farm model
+                            </div>
+                            <button type="button" data-3d-toggle="hero" aria-pressed="false" class="touch-toggle absolute bottom-3 right-3 btn btn-gold !min-h-[40px] !py-2 !px-3 !text-xs shadow-lg">Tap to explore 3D</button>
+                        </div>
+                        <div class="px-3 py-3 flex flex-wrap gap-x-4 gap-y-1 justify-between items-center text-xs text-cream/70">
+                            <span>🌾 Poultry yard · coop · handling shed</span>
+                            <a href="#3d-tour" class="text-gold font-semibold inline-flex items-center gap-1 py-1">Full tour <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section id="why" class="py-12 sm:py-16 bg-white border-b border-stone-200">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-8 sm:mb-10">
+                <span class="text-xs font-semibold tracking-[.2em] text-earth uppercase">Why choose AN Farms</span>
+                <h2 class="font-serif text-2xl sm:text-3xl text-forest mt-2 leading-tight">A focused range, clearly presented.</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cream text-forest flex items-center justify-center shrink-0 border border-stone-200"><i data-lucide="feather" class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-forest text-sm">Native Poultry Speciality</h3>
+                        <p class="text-sm text-stone-600 mt-1 leading-relaxed">Kadaknath eggs, Nattukodi eggs and Nattukodi chicken: a focused range of native country poultry.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cream text-forest flex items-center justify-center shrink-0 border border-stone-200"><i data-lucide="egg" class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-forest text-sm">Signature Products</h3>
+                        <p class="text-sm text-stone-600 mt-1 leading-relaxed">Three carefully presented products, each with its price shown up front.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cream text-forest flex items-center justify-center shrink-0 border border-stone-200"><i data-lucide="heart-handshake" class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-forest text-sm">Personal Customer Service</h3>
+                        <p class="text-sm text-stone-600 mt-1 leading-relaxed">Ask questions and place your order directly with AN Farms on WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-cream text-forest flex items-center justify-center shrink-0 border border-stone-200"><i data-lucide="tag" class="w-6 h-6"></i></div>
+                    <div>
+                        <h3 class="font-semibold text-forest text-sm">Transparent Pricing</h3>
+                        <p class="text-sm text-stone-600 mt-1 leading-relaxed">Prices are listed on every product. Chicken availability and final price are confirmed before you order.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="py-14 sm:py-20 bg-cream">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 sm:mb-12">
+                <div class="max-w-xl">
+                    <span class="text-xs font-semibold tracking-[.2em] text-earth uppercase">Our products</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-forest mt-2 leading-tight">Three signature products.</h2>
+                    <p class="text-stone-600 text-sm sm:text-base mt-3 leading-relaxed">
+                        Add items to your enquiry basket or message AN Farms directly. Availability, final price and delivery details are confirmed on WhatsApp.
+                    </p>
+                </div>
+                <div class="flex gap-2 overflow-x-auto no-scrollbar -mx-4 px-4 md:mx-0 md:px-0 pb-1" role="group" aria-label="Filter products">
+                    <button type="button" class="chip is-active" data-action="filter" data-cat="all" aria-pressed="true">All</button>
+                    <button type="button" class="chip" data-action="filter" data-cat="eggs" aria-pressed="false">Eggs</button>
+                    <button type="button" class="chip" data-action="filter" data-cat="chicken" aria-pressed="false">Chicken</button>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"></div>
+            <noscript><p class="text-sm text-stone-600">Please enable JavaScript to view products, or message AN Farms on WhatsApp.</p></noscript>
+        </div>
+    </section>
+
+    <!-- HOW TO ORDER -->
+    <section id="order" class="py-14 sm:py-20 bg-white border-y border-stone-200">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-8 sm:mb-12">
+                <span class="text-xs font-semibold tracking-[.2em] text-earth uppercase">How to order</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-forest mt-2 leading-tight">Simple, direct, on WhatsApp.</h2>
+            </div>
+            <ol class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+                <li class="bg-cream rounded-2xl p-6 border border-stone-200">
+                    <span class="w-10 h-10 rounded-full bg-forest text-gold font-serif text-lg flex items-center justify-center">1</span>
+                    <h3 class="font-serif text-xl text-forest mt-4">Choose your products</h3>
+                    <p class="text-sm text-stone-600 mt-2 leading-relaxed">Add Kadaknath eggs, Nattukodi eggs or Nattukodi chicken to your enquiry basket.</p>
+                </li>
+                <li class="bg-cream rounded-2xl p-6 border border-stone-200">
+                    <span class="w-10 h-10 rounded-full bg-forest text-gold font-serif text-lg flex items-center justify-center">2</span>
+                    <h3 class="font-serif text-xl text-forest mt-4">Send it on WhatsApp</h3>
+                    <p class="text-sm text-stone-600 mt-2 leading-relaxed">Your list opens in WhatsApp, already written out. Just press send.</p>
+                </li>
+                <li class="bg-cream rounded-2xl p-6 border border-stone-200">
+                    <span class="w-10 h-10 rounded-full bg-forest text-gold font-serif text-lg flex items-center justify-center">3</span>
+                    <h3 class="font-serif text-xl text-forest mt-4">Get confirmation</h3>
+                    <p class="text-sm text-stone-600 mt-2 leading-relaxed">AN Farms confirms availability, final price and delivery details with you. No payment is taken on this website.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 3D TOUR -->
+    <section id="3d-tour" class="py-14 sm:py-24 bg-forest text-cream">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+                <span class="text-xs font-semibold tracking-[.2em] text-gold uppercase">3D farm model</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white mt-2 leading-tight">Explore a farm-to-home concept.</h2>
+                <p class="text-cream/70 text-sm sm:text-base mt-3 leading-relaxed">
+                    A simplified, illustrative model, not an exact plan of the farm. Pick a view, then rotate and zoom.
+                </p>
+            </div>
+
+            <div class="bg-forest-deep rounded-3xl border border-gold/25 overflow-hidden shadow-2xl relative">
+                <div class="p-3 sm:p-4 border-b border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:justify-center">
+                    <button type="button" class="sec-btn is-active" data-action="sector" data-key="range"><i data-lucide="feather" class="w-4 h-4"></i><span>Poultry Yard</span></button>
+                    <button type="button" class="sec-btn" data-action="sector" data-key="coop"><i data-lucide="home" class="w-4 h-4"></i><span>The Coop</span></button>
+                    <button type="button" class="sec-btn" data-action="sector" data-key="shed"><i data-lucide="package" class="w-4 h-4"></i><span>Handling Shed</span></button>
+                    <button type="button" class="sec-btn" data-action="sector" data-key="overview"><i data-lucide="compass" class="w-4 h-4"></i><span>Overview</span></button>
+                </div>
+
+                <div class="relative">
+                    <div id="inspector-3d" class="three-wrap w-full h-[340px] sm:h-[480px] lg:h-[560px]" role="img" aria-label="Interactive illustrative 3D farm model"></div>
+                    <button type="button" data-3d-toggle="inspector" aria-pressed="false" class="touch-toggle absolute top-3 right-3 btn btn-gold !min-h-[40px] !py-2 !px-3 !text-xs shadow-lg">Tap to explore 3D</button>
+
+                    <div class="relative lg:absolute lg:bottom-6 lg:left-6 lg:max-w-md bg-forest-deep lg:bg-forest-deep/90 lg:backdrop-blur-md p-5 lg:rounded-2xl border-t lg:border border-gold/30 text-sm shadow-2xl">
+                        <span id="inspect-tag" class="inline-block text-[10px] font-semibold uppercase tracking-wider text-gold bg-gold/15 px-2.5 py-1 rounded-full border border-gold/30">View 01 · Poultry yard</span>
+                        <h3 id="inspect-title" class="font-serif text-xl text-white mt-3 mb-1.5">The poultry yard</h3>
+                        <p id="inspect-desc" class="text-cream/75 leading-relaxed mb-4">An illustrative model of a native poultry yard with feeders and a fence. It is a visual concept, not a plan of the actual farm.</p>
+                        <a href="#products" class="btn btn-gold w-full sm:w-auto">View our products <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="story" class="py-14 sm:py-24 bg-cream border-b border-stone-200">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+                <div class="lg:col-span-5">
+                    <div class="aspect-[4/3] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border-4 border-white relative" style="background: linear-gradient(160deg,#173D2B,#22523A);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="font-serif text-7xl sm:text-8xl text-gold/25 select-none">VY</span>
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 text-white" style="background: linear-gradient(to top, rgba(15,42,29,.85), transparent);">
+                            <span class="text-gold font-semibold text-xs uppercase tracking-[.2em]">Founder &amp; operator</span>
+                            <h3 class="font-serif text-2xl mt-1">Venkat Yanamala</h3>
+                            <p class="text-cream/80 text-sm mt-2 leading-relaxed">AN Farms · Hyderabad, Telangana</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+                    <span class="text-xs font-semibold tracking-[.2em] text-earth uppercase">About AN Farms</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-forest leading-tight">A passion for native poultry. A commitment to trust.</h2>
+                    <p class="text-stone-700 text-base leading-relaxed">
+                        AN Farms is operated by Venkat Yanamala in Hyderabad. The focus is native country poultry: Kadaknath eggs, Nattukodi eggs and Nattukodi chicken, carefully handled and offered directly to customers who appreciate traditional farm products.
+                    </p>
+                    <p class="text-stone-700 text-base leading-relaxed">
+                        Orders are placed on WhatsApp, where availability, final price and delivery details are confirmed with you personally.
+                    </p>
+                    <blockquote class="border-l-2 border-gold pl-4 font-serif italic text-lg sm:text-xl text-forest leading-snug">
+                        Bringing the Authentic Goodness of Native Country Poultry to Your Home.
+                    </blockquote>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="border-l-2 border-olive pl-4">
+                            <h4 class="font-semibold text-forest text-sm">Traditional taste</h4>
+                            <p class="text-sm text-stone-600 mt-1">Native breeds for customers who value country poultry.</p>
+                        </div>
+                        <div class="border-l-2 border-olive pl-4">
+                            <h4 class="font-semibold text-forest text-sm">Careful handling</h4>
+                            <p class="text-sm text-stone-600 mt-1">Products are handled and packed with care before delivery.</p>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-forest w-full sm:w-auto"><i data-lucide="message-circle" class="w-4 h-4 text-gold"></i>Chat with AN Farms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-14 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-8 sm:mb-12">
+                <span class="text-xs font-semibold tracking-[.2em] text-earth uppercase">Contact</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-forest mt-2 leading-tight uppercase">Let's connect. Let's bring native goodness home.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="space-y-4 min-w-0">
+                    <a href="tel:+91XXXXXXXXXX" data-tel class="flex items-center gap-4 p-4 rounded-2xl bg-cream border border-stone-200 min-h-[64px]">
+                        <span class="w-11 h-11 rounded-xl bg-forest text-gold flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5"></i></span>
+                        <span class="min-w-0"><span class="block text-xs text-stone-500">Call AN Farms</span><span class="block font-semibold text-forest" data-phone-text>+91 XXXXX XXXXX</span></span>
+                    </a>
+                    <a href="#" data-wa target="_blank" rel="noopener" class="flex items-center gap-4 p-4 rounded-2xl bg-cream border border-stone-200 min-h-[64px]">
+                        <span class="w-11 h-11 rounded-xl bg-forest text-gold flex items-center justify-center shrink-0"><i data-lucide="message-circle" class="w-5 h-5"></i></span>
+                        <span class="min-w-0"><span class="block text-xs text-stone-500">WhatsApp</span><span class="block font-semibold text-forest">Order on WhatsApp</span></span>
+                    </a>
+                    <a href="mailto:hello@example.com" data-mail class="flex items-center gap-4 p-4 rounded-2xl bg-cream border border-stone-200 min-h-[64px]">
+                        <span class="w-11 h-11 rounded-xl bg-forest text-gold flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-5 h-5"></i></span>
+                        <span class="min-w-0"><span class="block text-xs text-stone-500">Email</span><span class="block font-semibold text-forest break-all" data-email-text>hello@example.com</span></span>
+                    </a>
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-cream border border-stone-200 min-h-[64px]">
+                        <span class="w-11 h-11 rounded-xl bg-forest text-gold flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+                        <span class="min-w-0"><span class="block text-xs text-stone-500">AN FARMS · Operated by Venkat Yanamala</span><span class="block font-semibold text-forest">Hyderabad, Telangana, India</span></span>
+                    </div>
+
+                    <div id="mapBox" class="rounded-2xl overflow-hidden border border-stone-200 bg-cream h-48 sm:h-56 flex items-center justify-center text-center text-sm text-stone-500 p-4">
+                        Google Maps placeholder: add your embed URL in CONFIG.mapEmbed
+                    </div>
+                </div>
+
+                <form id="enquiryForm" class="bg-cream rounded-3xl border border-stone-200 p-5 sm:p-8 space-y-4 min-w-0" novalidate>
+                    <h3 class="font-serif text-2xl text-forest">Send an enquiry</h3>
+                    <div>
+                        <label for="f-name" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Customer name</label>
+                        <input id="f-name" name="name" type="text" class="field" autocomplete="name" required>
+                        <p data-error="name" class="hidden text-xs text-red-700 mt-1">Please enter your name.</p>
+                    </div>
+                    <div>
+                        <label for="f-mobile" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Mobile number</label>
+                        <input id="f-mobile" name="mobile" type="tel" inputmode="numeric" class="field" autocomplete="tel" placeholder="10-digit mobile number" required>
+                        <p data-error="mobile" class="hidden text-xs text-red-700 mt-1">Please enter a valid 10-digit mobile number.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="f-product" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Product</label>
+                            <select id="f-product" name="product" class="field"></select>
+                        </div>
+                        <div>
+                            <label for="f-qty" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Quantity</label>
+                            <input id="f-qty" name="qty" type="text" class="field" placeholder="e.g. 1 tray / 2 kg">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="f-msg" class="block text-xs font-semibold text-stone-700 uppercase tracking-wider mb-1.5">Additional message</label>
+                        <textarea id="f-msg" name="msg" class="field" placeholder="Delivery area, preferred day, questions…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-forest w-full"><i data-lucide="message-circle" class="w-4 h-4 text-gold"></i>Send enquiry on WhatsApp</button>
+                    <p class="text-xs text-stone-500 leading-relaxed">Your enquiry opens in WhatsApp with your details filled in. AN Farms will confirm availability, final price and delivery details. No payment is taken on this website.</p>
+                </form>
+            </div>
+
+            <div class="mt-14 sm:mt-20 text-center">
+                <h3 class="font-serif text-2xl sm:text-3xl text-forest">Stay connected with AN Farms.</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mt-6 text-left">
+                    <a href="https://www.instagram.com/anfarms_7675/" data-social="instagram" target="_blank" rel="noopener" class="flex items-center gap-4 p-5 rounded-2xl bg-cream border border-stone-200 min-h-[72px]">
+                        <span class="w-11 h-11 rounded-xl bg-forest text-gold flex items-center justify-center shrink-0"><i data-lucide="instagram" class="w-5 h-5"></i></span>
+                        <span><span class="block font-semibold text-forest">Instagram</span><span class="block text-sm text-stone-500">@anfarms_7675</span></span>
+                    </a>
+                    <a href="https://www.facebook.com/an.farms.193708/" data-social="facebook" target="_blank" rel="noopener" class="flex items-center gap-4 p-5 rounded-2xl bg-cream border border-stone-200 min-h-[72px]">
+                        <span class="w-11 h-11 rounded-xl bg-forest text-gold flex items-center justify-center shrink-0"><i data-lucide="facebook" class="w-5 h-5"></i></span>
+                        <span><span class="block font-semibold text-forest">Facebook</span><span class="block text-sm text-stone-500">AN Farms</span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-deep text-cream/70 text-sm pt-12 pb-28 sm:pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto safe-x sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9">
+                <div class="space-y-3">
+                    <span class="font-serif font-semibold text-xl text-white tracking-wide">AN FARMS</span>
+                    <p class="font-serif italic text-gold">Naturally Raised. Honestly Delivered.</p>
+                    <p class="leading-relaxed">Native country poultry from Hyderabad, operated by Venkat Yanamala.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold mb-3 uppercase tracking-wider text-xs">Products</h5>
+                    <ul class="space-y-1">
+                        <li><a href="#products" class="inline-block py-1.5 hover:text-gold">Kadaknath Eggs</a></li>
+                        <li><a href="#products" class="inline-block py-1.5 hover:text-gold">Nattukodi Eggs</a></li>
+                        <li><a href="#products" class="inline-block py-1.5 hover:text-gold">Nattukodi Chicken</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold mb-3 uppercase tracking-wider text-xs">Contact</h5>
+                    <ul class="space-y-1">
+                        <li><a href="tel:+91XXXXXXXXXX" data-tel class="inline-block py-1.5 hover:text-gold"><span data-phone-text>+91 XXXXX XXXXX</span></a></li>
+                        <li><a href="#" data-wa target="_blank" rel="noopener" class="inline-block py-1.5 hover:text-gold">Order on WhatsApp</a></li>
+                        <li><a href="mailto:hello@example.com" data-mail class="inline-block py-1.5 hover:text-gold break-all"><span data-email-text>hello@example.com</span></a></li>
+                        <li class="py-1.5">Hyderabad, Telangana, India</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold mb-3 uppercase tracking-wider text-xs">Follow</h5>
+                    <ul class="space-y-1">
+                        <li><a href="https://www.instagram.com/anfarms_7675/" data-social="instagram" target="_blank" rel="noopener" class="inline-block py-1.5 hover:text-gold">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/an.farms.193708/" data-social="facebook" target="_blank" rel="noopener" class="inline-block py-1.5 hover:text-gold">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-cream/50">
+                <span>© <span data-year>2025</span> AN Farms · Hyderabad, Telangana, India</span>
+                <span>Operated by Venkat Yanamala</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="#" data-wa target="_blank" rel="noopener" aria-label="Order on WhatsApp"
+       class="fixed z-30 w-14 h-14 rounded-full bg-gold text-forest flex items-center justify-center shadow-xl border-2 border-forest"
+       style="right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom));">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Enquiry basket drawer -->
+    <div id="cartBackdrop" class="overlay" data-action="close-cart"></div>
+    <aside id="cartDrawer" class="drawer vh-full w-full max-w-md shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+        <div class="px-5 py-4 bg-forest text-white flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-basket" class="w-5 h-5 text-gold"></i>
+                <h3 id="cartTitle" class="font-serif text-lg">Your enquiry basket</h3>
+            </div>
+            <button type="button" id="cartClose" data-action="close-cart" class="w-11 h-11 -mr-2 flex items-center justify-center text-cream/80" aria-label="Close basket">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="cartItems" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3" style="-webkit-overflow-scrolling: touch;"></div>
+
+        <div class="p-4 sm:p-5 bg-cream border-t border-stone-200 space-y-3" style="padding-bottom: max(1.25rem, env(safe-area-inset-bottom));">
+            <div class="flex justify-between items-baseline text-sm">
+                <span id="cartTotalLabel" class="text-stone-600">Estimated total (eggs)</span>
+                <span id="cartTotal" class="font-serif font-semibold text-forest text-xl">₹0</span>
+            </div>
+            <p id="cartChickenNote" class="hidden text-xs text-stone-600 leading-relaxed">Nattukodi Chicken (₹600–₹799/kg) is available on selected days only. Availability and final price are confirmed on WhatsApp.</p>
+            <input type="text" id="cartName" class="field" placeholder="Your name (optional)" autocomplete="name" aria-label="Your name">
+            <input type="text" id="cartAddress" class="field" placeholder="Delivery area in Hyderabad" aria-label="Delivery area">
+            <button type="button" data-action="checkout" class="btn btn-gold w-full"><i data-lucide="message-circle" class="w-4 h-4"></i>Send basket on WhatsApp</button>
+            <p class="text-[11px] text-stone-500 text-center">No payment is taken here. AN Farms confirms everything on WhatsApp.</p>
+        </div>
+    </aside>
+
+    <!-- Libraries (end of body so the page paints first) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        /* =========================================================
+           EDIT HERE: business details, products and prices
+           ========================================================= */
+        var CONFIG = {
+            whatsapp: '91XXXXXXXXXX',          // digits only, with country code
+            phone: '+91XXXXXXXXXX',
+            phoneDisplay: '+91 XXXXX XXXXX',
+            email: 'hello@example.com',
+            mapEmbed: ''                        // Google Maps embed URL (https://www.google.com/maps/embed?...)
+        };
+
+        var GENERIC_MSG = 'Hello AN Farms, I would like to know more about your native country poultry products and place an order.';
+
+        var PRODUCTS = [
+            {
+                id: 'kadaknath', category: 'eggs', name: 'Kadaknath Eggs', badge: 'Signature', num: 'Product 01',
+                unit: '30 eggs', qtyUnit: 'pack of 30', price: 750, priceLabel: '₹750', emoji: '🥚', art: 'kadaknath', img: '',
+                desc: 'Discover the distinctive Kadaknath eggs offered by AN Farms. A signature product for customers looking for native poultry eggs.',
+                note: '', btn: 'Order Kadaknath Eggs',
+                wa: 'Hello AN Farms, I would like to order 30 Kadaknath Eggs for ₹750. Please confirm availability and delivery details.'
+            },
+            {
+                id: 'nattukodi-eggs', category: 'eggs', name: 'Nattukodi Eggs', badge: 'Signature', num: 'Product 02',
+                unit: '30 eggs', qtyUnit: 'pack of 30', price: 540, priceLabel: '₹540', emoji: '🥚', art: 'nattukodi', img: '',
+                desc: 'Traditional Nattukodi eggs from AN Farms, for customers who appreciate the taste of native country poultry.',
+                note: '', btn: 'Order Nattukodi Eggs',
+                wa: 'Hello AN Farms, I would like to order 30 Nattukodi Eggs for ₹540. Please confirm availability and delivery details.'
+            },
+            {
+                id: 'nattukodi-chicken', category: 'chicken', name: 'Nattukodi Chicken', badge: 'Selected days only', gold: true, num: 'Product 03',
+                unit: 'per kg', qtyUnit: 'kg', price: null, priceLabel: '₹600–₹799', emoji: '🐓', art: 'chicken', img: '',
+                desc: 'Native Nattukodi country chicken from AN Farms, offered on selected days for customers who value traditional flavour.',
+                note: 'Currently available on selected days, including Sunday and Wednesday, subject to confirmation.',
+                btn: 'Enquire about Nattukodi Chicken',
+                wa: 'Hello AN Farms, I am interested in ordering Nattukodi Chicken. Please share the current availability, price per kg, and delivery details.'
+            }
+        ];
+
+        /* ========================================================= */
+
+        var REDUCE = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var IS_TOUCH = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+        var $ = function (s, r) { return (r || document).querySelector(s); };
+        var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+        function icons() { if (window.lucide && lucide.createIcons) lucide.createIcons(); }
+        function waLink(msg) {
+            return 'https://wa.me/' + CONFIG.whatsapp.replace(/\D/g, '') + '?text=' + encodeURIComponent(msg || GENERIC_MSG);
+        }
+        function openWA(msg) {
+            var w = window.open(waLink(msg), '_blank');
+            if (!w) window.location.href = waLink(msg);
+        }
+        function money(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+
+        /* ---------- Config -> DOM ---------- */
+        function applyConfig() {
+            $$('[data-wa]').forEach(function (a) { a.href = waLink(a.getAttribute('data-wa') || GENERIC_MSG); });
+            $$('[data-tel]').forEach(function (a) { a.href = 'tel:' + CONFIG.phone; });
+            $$('[data-mail]').forEach(function (a) { a.href = 'mailto:' + CONFIG.email; });
+            $$('[data-phone-text]').forEach(function (e) { e.textContent = CONFIG.phoneDisplay; });
+            $$('[data-email-text]').forEach(function (e) { e.textContent = CONFIG.email; });
+            $$('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); });
+            if (CONFIG.mapEmbed) {
+                var box = $('#mapBox');
+                box.innerHTML = '';
+                box.className = 'rounded-2xl overflow-hidden border border-stone-200 bg-cream h-56';
+                var f = document.createElement('iframe');
+                f.src = CONFIG.mapEmbed; f.loading = 'lazy'; f.title = 'AN Farms location map';
+                f.className = 'w-full h-full border-0'; f.referrerPolicy = 'no-referrer-when-downgrade';
+                box.appendChild(f);
+            }
+            var sel = $('#f-product');
+            sel.innerHTML = PRODUCTS.map(function (p) { return '<option value="' + p.id + '">' + p.name + '</option>'; }).join('') +
+                '<option value="general">Other / not sure</option>';
+        }
+
+        /* ---------- Products ---------- */
+        function eggTray(bg, egg, spot) {
+            var pos = [[95, 88], [160, 88], [225, 88], [95, 156], [160, 156], [225, 156]];
+            var dots = [[-8, 6], [9, -4], [3, 14], [-4, -16], [11, 10]];
+            var eggs = pos.map(function (p) {
+                var x = p[0], y = p[1];
+                return '<ellipse cx="' + x + '" cy="' + y + '" rx="26" ry="32" fill="' + egg + '"/>' +
+                    '<ellipse cx="' + (x - 8) + '" cy="' + (y - 12) + '" rx="6" ry="10" fill="#fff" opacity=".18"/>' +
+                    dots.map(function (d) { return '<circle cx="' + (x + d[0]) + '" cy="' + (y + d[1]) + '" r="1.6" fill="' + spot + '" opacity=".7"/>'; }).join('');
+            }).join('');
+            return '<svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid slice" class="w-full h-full" aria-hidden="true">' +
+                '<rect width="320" height="240" fill="' + bg + '"/><rect x="52" y="40" width="216" height="164" rx="18" fill="#79563C" opacity=".55"/>' + eggs + '</svg>';
+        }
+        function artFor(p) {
+            if (p.art === 'kadaknath') return eggTray('#1d2a22', '#a3805f', '#6b4e38');
+            if (p.art === 'nattukodi') return eggTray('#efe6d2', '#c99b6d', '#8a5a35');
+            return '<div class="w-full h-full flex items-center justify-center text-7xl" style="background:linear-gradient(135deg,#79563C,#4a3426)" aria-hidden="true">🐓</div>';
+        }
+
+        function renderProducts(cat) {
+            var grid = $('#product-grid');
+            var list = PRODUCTS.filter(function (p) { return cat === 'all' || p.category === cat; });
+            grid.innerHTML = list.map(function (p) {
+                var img = p.img ? '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">' : '';
+                var badgeCls = p.gold ? 'bg-gold/20 text-earth border-gold/50' : 'bg-forest/5 text-forest border-forest/15';
+                return '' +
+                '<article class="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden flex flex-col transition-shadow hover:shadow-xl">' +
+                    '<div class="relative aspect-[4/3] overflow-hidden" role="img" aria-label="Illustration of ' + p.name + '">' + artFor(p) + img + '</div>' +
+                    '<div class="p-5 sm:p-6 flex-1 flex flex-col">' +
+                        '<div class="flex items-center justify-between gap-2 mb-2">' +
+                            '<span class="text-[11px] tracking-[.18em] uppercase text-stone-400">' + p.num + '</span>' +
+                            '<span class="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border ' + badgeCls + '">' + p.badge + '</span>' +
+                        '</div>' +
+                        '<h3 class="font-serif text-2xl text-forest">' + p.name + '</h3>' +
+                        '<p class="text-sm text-stone-600 leading-relaxed mt-2">' + p.desc + '</p>' +
+                        (p.note ? '<p class="text-xs text-earth bg-gold/10 border border-gold/30 rounded-lg px-3 py-2 mt-3 leading-relaxed">' + p.note + '</p>' : '') +
+                        '<div class="mt-auto pt-5">' +
+                            '<div class="flex items-baseline gap-2 pb-4 border-b border-stone-100">' +
+                                '<span class="font-serif text-3xl text-forest">' + p.priceLabel + '</span>' +
+                                '<span class="text-sm text-stone-500">/ ' + p.unit + '</span>' +
+                            '</div>' +
+                            '<div class="flex flex-col sm:flex-row gap-2 pt-4">' +
+                                '<button type="button" class="btn btn-forest flex-1" data-action="add" data-id="' + p.id + '"><i data-lucide="plus" class="w-4 h-4 text-gold"></i>Add to basket</button>' +
+                                '<a class="btn btn-outline flex-1" target="_blank" rel="noopener" href="' + waLink(p.wa) + '"><i data-lucide="message-circle" class="w-4 h-4"></i>' + p.btn + '</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</article>';
+            }).join('');
+            icons();
+        }
+
+        /* ---------- Cart ---------- */
+        var cart = []; // {id, qty}
+        var lastFocus = null;
+
+        function findProduct(id) { return PRODUCTS.filter(function (p) { return p.id === id; })[0]; }
+
+        function renderCart() {
+            var total = 0, count = 0, hasChicken = false, hasPriced = false;
+            var box = $('#cartItems');
+            if (!cart.length) {
+                box.innerHTML = '<div class="text-center py-14 text-stone-400"><i data-lucide="shopping-basket" class="w-12 h-12 mx-auto mb-3 text-stone-300"></i>' +
+                    '<p class="text-sm font-medium text-stone-500">Your basket is empty</p><p class="text-xs mt-1">Add eggs or chicken to get started.</p></div>';
+            } else {
+                box.innerHTML = cart.map(function (c) {
+                    var p = findProduct(c.id);
+                    count += c.qty;
+                    var line;
+                    if (p.price) { total += p.price * c.qty; hasPriced = true; line = money(p.price * c.qty); }
+                    else { hasChicken = true; line = 'Price on WhatsApp'; }
+                    return '' +
+                    '<div class="p-3 bg-cream rounded-xl border border-stone-200">' +
+                        '<div class="flex items-start gap-3">' +
+                            '<span class="text-2xl leading-none" aria-hidden="true">' + p.emoji + '</span>' +
+                            '<div class="flex-1 min-w-0"><h4 class="font-semibold text-forest text-sm">' + p.name + '</h4>' +
+                            '<p class="text-xs text-stone-500">' + p.priceLabel + ' · ' + p.unit + '</p></div>' +
+                            '<button type="button" data-action="remove" data-id="' + p.id + '" class="w-9 h-9 -mt-1 -mr-1 flex items-center justify-center text-stone-400" aria-label="Remove ' + p.name + '"><i data-lucide="x" class="w-4 h-4"></i></button>' +
+                        '</div>' +
+                        '<div class="flex items-center justify-between gap-3 mt-3">' +
+                            '<div class="flex items-center bg-white border border-stone-200 rounded-xl">' +
+                                '<button type="button" data-action="qty" data-id="' + p.id + '" data-d="-1" class="w-10 h-10 text-lg text-stone-700 font-semibold" aria-label="Decrease quantity">−</button>' +
+                                '<span class="min-w-[2.5rem] text-center text-sm font-semibold text-forest" aria-live="polite">' + c.qty + '</span>' +
+                                '<button type="button" data-action="qty" data-id="' + p.id + '" data-d="1" class="w-10 h-10 text-lg text-stone-700 font-semibold" aria-label="Increase quantity">+</button>' +
+                            '</div>' +
+                            '<div class="text-right"><span class="block text-[11px] text-stone-400">' + p.qtyUnit + '</span><span class="text-sm font-semibold text-forest">' + line + '</span></div>' +
+                        '</div>' +
+                    '</div>';
+                }).join('');
+            }
+            $('#cartCounter').textContent = count;
+            $('#cartTotal').textContent = hasPriced ? money(total) : '—';
+            $('#cartChickenNote').classList.toggle('hidden', !hasChicken);
+            icons();
+        }
+
+        function addToCart(id) {
+            var c = cart.filter(function (x) { return x.id === id; })[0];
+            if (c) c.qty = Math.min(20, c.qty + 1); else cart.push({ id: id, qty: 1 });
+            renderCart();
+            openCart();
+        }
+        function changeQty(id, d) {
+            var c = cart.filter(function (x) { return x.id === id; })[0];
+            if (!c) return;
+            c.qty = Math.min(20, c.qty + d);
+            if (c.qty <= 0) cart = cart.filter(function (x) { return x.id !== id; });
+            renderCart();
+        }
+        function removeItem(id) { cart = cart.filter(function (x) { return x.id !== id; }); renderCart(); }
+
+        function openCart() {
+            lastFocus = document.activeElement;
+            closeMenu();
+            $('#cartDrawer').classList.add('open');
+            $('#cartDrawer').setAttribute('aria-hidden', 'false');
+            $('#cartBackdrop').classList.add('open');
+            document.body.classList.add('lock');
+            setTimeout(function () { $('#cartClose').focus(); }, 50);
+        }
+        function closeCart() {
+            $('#cartDrawer').classList.remove('open');
+            $('#cartDrawer').setAttribute('aria-hidden', 'true');
+            $('#cartBackdrop').classList.remove('open');
+            document.body.classList.remove('lock');
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+
+        function checkout() {
+            if (!cart.length) { alert('Your basket is empty. Please add a product first.'); return; }
+            var lines = [], total = 0, hasChicken = false;
+            cart.forEach(function (c) {
+                var p = findProduct(c.id);
+                if (p.price) { total += p.price * c.qty; lines.push('• ' + p.name + ' (' + p.unit + ') × ' + c.qty + ' – ' + money(p.price * c.qty)); }
+                else { hasChicken = true; lines.push('• ' + p.name + ' × ' + c.qty + ' kg – price per kg to be confirmed'); }
+            });
+            var name = $('#cartName').value.trim();
+            var area = $('#cartAddress').value.trim();
+            var msg = 'Hello AN Farms, I would like to enquire about the following:\n' + lines.join('\n');
+            if (total) msg += '\nEstimated total (eggs): ' + money(total);
+            if (hasChicken) msg += '\nPlease confirm chicken availability and price per kg.';
+            if (name) msg += '\nName: ' + name;
+            if (area) msg += '\nDelivery area: ' + area;
+            msg += '\nPlease confirm availability, final price and delivery details.';
+            openWA(msg);
+        }
+
+        /* ---------- Nav ---------- */
+        function closeMenu() {
+            var m = $('#mobileMenu'), b = $('#menuToggle');
+            if (!m || m.classList.contains('hidden')) return;
+            m.classList.add('hidden');
+            b.setAttribute('aria-expanded', 'false');
+            b.setAttribute('aria-label', 'Open menu');
+            $('[data-icon-open]', b).classList.remove('hidden');
+            $('[data-icon-close]', b).classList.add('hidden');
+        }
+        function toggleMenu() {
+            var m = $('#mobileMenu'), b = $('#menuToggle');
+            var open = m.classList.contains('hidden');
+            m.classList.toggle('hidden', !open);
+            b.setAttribute('aria-expanded', String(open));
+            b.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            $('[data-icon-open]', b).classList.toggle('hidden', open);
+            $('[data-icon-close]', b).classList.toggle('hidden', !open);
+        }
+
+        /* ---------- Enquiry form ---------- */
+        function setErr(name, show) {
+            var e = $('[data-error="' + name + '"]');
+            var f = $('#f-' + name);
+            if (e) e.classList.toggle('hidden', !show);
+            if (f) f.setAttribute('aria-invalid', show ? 'true' : 'false');
+        }
+        function initForm() {
+            $('#enquiryForm').addEventListener('submit', function (ev) {
+                ev.preventDefault();
+                var name = $('#f-name').value.trim();
+                var mob = $('#f-mobile').value.replace(/\D/g, '');
+                if (mob.length === 12 && mob.indexOf('91') === 0) mob = mob.slice(2);
+                if (mob.length === 11 && mob.charAt(0) === '0') mob = mob.slice(1);
+                var okName = name.length >= 2;
+                var okMob = /^[6-9]\d{9}$/.test(mob);
+                setErr('name', !okName); setErr('mobile', !okMob);
+                if (!okName) { $('#f-name').focus(); return; }
+                if (!okMob) { $('#f-mobile').focus(); return; }
+                var sel = $('#f-product');
+                var pName = sel.options[sel.selectedIndex].text;
+                var qty = $('#f-qty').value.trim();
+                var extra = $('#f-msg').value.trim();
+                var msg = 'Hello AN Farms, I would like to enquire about an order.\nName: ' + name + '\nMobile: ' + mob + '\nProduct: ' + pName +
+                    (qty ? '\nQuantity: ' + qty : '') + (extra ? '\nMessage: ' + extra : '') +
+                    '\nPlease confirm availability, final price and delivery details.';
+                openWA(msg);
+            });
+        }
+
+        /* =========================================================
+           3D (Three.js)
+           ========================================================= */
+        var views = {};
+        var clock = null;
+
+        function fitFov(cam, base) {
+            var a = cam.aspect;
+            cam.fov = a < 1 ? Math.min(78, base / Math.pow(a, 0.7)) : base;
+            cam.updateProjectionMatrix();
+        }
+
+        function makeChickenFactory() {
+            var body = new THREE.SphereGeometry(0.24, 10, 8);
+            var head = new THREE.SphereGeometry(0.1, 8, 6);
+            var comb = new THREE.BoxGeometry(0.04, 0.09, 0.1);
+            var beak = new THREE.ConeGeometry(0.035, 0.1, 6);
+            var tail = new THREE.BoxGeometry(0.06, 0.28, 0.14);
+            var red = new THREE.MeshStandardMaterial({ color: 0xc0392b });
+            var gold = new THREE.MeshStandardMaterial({ color: 0xC6A15B });
+            return function (color) {
+                var m = new THREE.MeshStandardMaterial({ color: color, roughness: 0.8 });
+                var g = new THREE.Group();
+                var b = new THREE.Mesh(body, m); b.scale.set(1, 0.85, 1.25); g.add(b);
+                var h = new THREE.Mesh(head, m); h.position.set(0, 0.26, 0.26); g.add(h);
+                var c = new THREE.Mesh(comb, red); c.position.set(0, 0.36, 0.27); g.add(c);
+                var k = new THREE.Mesh(beak, gold); k.rotation.x = Math.PI / 2; k.position.set(0, 0.25, 0.38); g.add(k);
+                var t = new THREE.Mesh(tail, m); t.position.set(0, 0.2, -0.3); t.rotation.x = -0.6; g.add(t);
+                return g;
+            };
+        }
+
+        function buildFarm(scene) {
+            var chickens = [];
+            var mat = function (c, r) { return new THREE.MeshStandardMaterial({ color: c, roughness: r == null ? 0.9 : r }); };
+            function box(w, h, d, color, x, y, z, parent) {
+                var m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat(color));
+                m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true;
+                (parent || scene).add(m); return m;
+            }
+
+            // Pasture
+            var pasture = new THREE.Mesh(new THREE.CylinderGeometry(26, 28, 1, 48), mat(0x3b6140));
+            pasture.position.y = -0.5; pasture.receiveShadow = true; scene.add(pasture);
+
+            // Range patch
+            var range = new THREE.Mesh(new THREE.CircleGeometry(8.5, 40), mat(0x5a7a45));
+            range.rotation.x = -Math.PI / 2; range.position.set(-8, 0.01, 5); scene.add(range);
+
+            // Lane
+            var lane = new THREE.Mesh(new THREE.PlaneGeometry(5, 48), mat(0x8a5a38));
+            lane.rotation.x = -Math.PI / 2; lane.position.set(0, 0.02, 0); lane.receiveShadow = true; scene.add(lane);
+
+            // Coop
+            var coop = new THREE.Group(); coop.position.set(-9, 0, -5); scene.add(coop);
+            box(6, 2.2, 4, 0x79563C, 0, 1.1, 0, coop);
+            box(6.8, 0.25, 5, 0x4a3426, 0, 2.35, 0, coop);
+            box(1.1, 1.4, 0.12, 0x2a1c12, 0, 0.7, 2.04, coop);
+            box(0.2, 0.2, 3.4, 0x4a3426, 1.6, 0.7, 2.2, coop);
+
+            // Fence
+            for (var fx = -16; fx <= -1; fx += 3) box(0.16, 1.1, 0.16, 0x6b4a32, fx, 0.55, 12);
+            box(15.2, 0.08, 0.08, 0x6b4a32, -8.5, 0.9, 12);
+            box(15.2, 0.08, 0.08, 0x6b4a32, -8.5, 0.5, 12);
+
+            // Feeders
+            [[-7, 3], [-11, 7], [-5, 8]].forEach(function (p) {
+                var f = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.35, 0.3, 14), mat(0xC6A15B));
+                f.position.set(p[0], 0.15, p[1]); f.castShadow = true; scene.add(f);
+            });
+
+            // Handling shed
+            var shed = new THREE.Group(); shed.position.set(8, 0, -3); scene.add(shed);
+            [[-4, -3], [4, -3], [-4, 3], [4, 3]].forEach(function (p) {
+                var c = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 3.4, 10), mat(0xe8dcc0));
+                c.position.set(p[0], 1.7, p[1]); c.castShadow = true; shed.add(c);
+            });
+            box(9.6, 0.3, 7.6, 0x5c4030, 0, 3.55, 0, shed);
+            box(4.2, 0.8, 1.6, 0xe8dcc0, 0, 0.4, 0, shed);
+            box(1.1, 0.7, 0.8, 0x8a6a45, -1.3, 1.15, 0, shed);
+            box(1.12, 0.1, 0.82, 0xC6A15B, -1.3, 1.5, 0, shed);
+            box(1.1, 0.7, 0.8, 0x8a6a45, 0.1, 1.15, 0, shed);
+            box(1.12, 0.1, 0.82, 0xC6A15B, 0.1, 1.5, 0, shed);
+            box(1.1, 0.7, 0.8, 0x8a6a45, 2.8, 0.35, 1.8, shed);
+            box(1.1, 0.7, 0.8, 0x8a6a45, 2.8, 1.05, 1.8, shed);
+
+            // Trees
+            [[-20, -10], [-18, 14], [18, 12], [20, -12], [0, -20], [14, 19], [-6, -21], [-22, 2]].forEach(function (p) {
+                var trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.45, 2, 8), mat(0x5a3d28));
+                trunk.position.set(p[0], 1, p[1]); trunk.castShadow = true; scene.add(trunk);
+                var c1 = new THREE.Mesh(new THREE.ConeGeometry(2.2, 3.2, 10), mat(0x2f5a35));
+                c1.position.set(p[0], 3.4, p[1]); c1.castShadow = true; scene.add(c1);
+                var c2 = new THREE.Mesh(new THREE.ConeGeometry(1.7, 2.6, 10), mat(0x3b6b3f));
+                c2.position.set(p[0], 5, p[1]); c2.castShadow = true; scene.add(c2);
+            });
+
+            // Chickens
+            var make = makeChickenFactory();
+            var colors = [0x7a4a2a, 0x1a1a1a, 0xc79a6b, 0x5a3a22, 0xe8dcc0, 0x1a1a1a];
+            for (var i = 0; i < 14; i++) {
+                var ch = make(colors[i % colors.length]);
+                var ang = Math.random() * Math.PI * 2, r = 1 + Math.random() * 6.5;
+                ch.position.set(-8 + Math.cos(ang) * r, 0.22, 5 + Math.sin(ang) * r);
+                ch.rotation.y = Math.random() * Math.PI * 2;
+                ch.userData.phase = Math.random() * 10;
+                scene.add(ch); chickens.push(ch);
+            }
+            return chickens;
+        }
+
+        function fallback3D(el) {
+            el.innerHTML = '<div class="three-fallback">The 3D preview isn\'t available on this device. Everything else on the page works as normal.</div>';
+            $$('[data-3d-toggle]').forEach(function (b) { if (el.parentNode.contains(b)) b.classList.add('hidden'); });
+        }
+
+        function setInteractive(v, on) {
+            v.controls.enabled = on;
+            v.renderer.domElement.style.touchAction = on ? 'none' : 'pan-y';
+            var btn = $('[data-3d-toggle="' + v.key + '"]');
+            if (btn) {
+                btn.textContent = on ? 'Done · scroll page' : 'Tap to explore 3D';
+                btn.setAttribute('aria-pressed', String(on));
+            }
+        }
+
+        function makeView(key, elId, opts) {
+            var el = document.getElementById(elId);
+            if (!el) return null;
+            if (typeof THREE === 'undefined' || !THREE.OrbitControls) { fallback3D(el); return null; }
+            var renderer;
+            try {
+                renderer = new THREE.WebGLRenderer({ antialias: !IS_TOUCH, powerPreference: 'low-power' });
+            } catch (e) { fallback3D(el); return null; }
+
+            var w = el.clientWidth || 320, h = el.clientHeight || 300;
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, IS_TOUCH ? 1.5 : 2));
+            renderer.setSize(w, h, false);
+            renderer.shadowMap.enabled = !IS_TOUCH;
+            el.appendChild(renderer.domElement);
+
+            var scene = new THREE.Scene();
+            scene.background = new THREE.Color(opts.bg);
+            if (opts.fog) scene.fog = new THREE.FogExp2(opts.bg, 0.016);
+
+            var camera = new THREE.PerspectiveCamera(opts.fov, w / h, 0.1, 500);
+            fitFov(camera, opts.fov);
+            camera.position.set(opts.pos[0], opts.pos[1], opts.pos[2]);
+
+            var controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true; controls.dampingFactor = 0.06;
+            controls.maxPolarAngle = Math.PI / 2 - 0.04;
+            controls.enablePan = false;
+            controls.minDistance = 8; controls.maxDistance = 60;
+            controls.enableZoom = !!opts.zoom;
+            controls.target.set(opts.target[0], opts.target[1], opts.target[2]);
+            if (opts.autoRotate && !REDUCE) { controls.autoRotate = true; controls.autoRotateSpeed = 0.8; }
+
+            scene.add(new THREE.HemisphereLight(0xfff3e0, 0x3b6140, 0.75));
+            scene.add(new THREE.AmbientLight(0xfff3e0, 0.45));
+            var sun = new THREE.DirectionalLight(0xffe8b3, 1.4);
+            sun.position.set(22, 28, 16); sun.castShadow = !IS_TOUCH;
+            sun.shadow.mapSize.set(1024, 1024);
+            var sc = sun.shadow.camera; sc.left = -30; sc.right = 30; sc.top = 30; sc.bottom = -30;
+            scene.add(sun);
+
+            var v = { key: key, el: el, renderer: renderer, scene: scene, camera: camera, controls: controls, baseFov: opts.fov, visible: true };
+            v.chickens = buildFarm(scene);
+
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (es) { es.forEach(function (e) { v.visible = e.isIntersecting; }); }, { rootMargin: '120px' }).observe(el);
+            }
+            var resize = function () {
+                var cw = el.clientWidth, ch = el.clientHeight;
+                if (!cw || !ch) return;
+                camera.aspect = cw / ch;
+                fitFov(camera, v.baseFov);
+                renderer.setSize(cw, ch, false);
+            };
+            if ('ResizeObserver' in window) new ResizeObserver(resize).observe(el);
+            else window.addEventListener('resize', resize);
+            window.addEventListener('orientationchange', function () { setTimeout(resize, 250); });
+
+            renderer.domElement.addEventListener('webglcontextlost', function (e) { e.preventDefault(); });
+
+            if (IS_TOUCH) setInteractive(v, false);
+            else {
+                setInteractive(v, true);
+                var btn = $('[data-3d-toggle="' + key + '"]');
+                if (btn) btn.classList.add('hidden');
+            }
+            return v;
+        }
+
+        var SECTORS = {
+            range: {
+                pos: [-3, 6, 17], target: [-8, 0.5, 5],
+                tag: 'View 01 · Poultry yard', title: 'The poultry yard',
+                desc: 'An illustrative model of a native poultry yard with feeders and a fence. It is a visual concept, not a plan of the actual farm.'
+            },
+            coop: {
+                pos: [-2, 6, 6], target: [-9, 1, -5],
+                tag: 'View 02 · Shelter', title: 'The coop',
+                desc: 'A simple shelter model where the birds rest. Illustrative only.'
+            },
+            shed: {
+                pos: [17, 7, 9], target: [8, 1.5, -3],
+                tag: 'View 03 · Handling shed', title: 'Handling and packing',
+                desc: 'An illustrative covered area where products are carefully handled and packed into crates.'
+            },
+            overview: {
+                pos: [26, 20, 26], target: [0, 1, 0],
+                tag: 'View 04 · Overview', title: 'A farm-to-home concept',
+                desc: 'Poultry yard, shelter and handling area in one simplified scene. Orders are placed on WhatsApp.'
+            }
+        };
+
+        function changeSector(key) {
+            var s = SECTORS[key], v = views.inspector;
+            if (!s || !v) return;
+            $$('.sec-btn').forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-key') === key); });
+            var k = v.camera.aspect < 1 ? 1 + (1 - v.camera.aspect) * 0.5 : 1;
+            var px = s.target[0] + (s.pos[0] - s.target[0]) * k;
+            var py = s.target[1] + (s.pos[1] - s.target[1]) * k;
+            var pz = s.target[2] + (s.pos[2] - s.target[2]) * k;
+            if (window.gsap && !REDUCE) {
+                gsap.killTweensOf(v.camera.position); gsap.killTweensOf(v.controls.target);
+                gsap.to(v.camera.position, { x: px, y: py, z: pz, duration: 1.6, ease: 'power2.inOut' });
+                gsap.to(v.controls.target, { x: s.target[0], y: s.target[1], z: s.target[2], duration: 1.4, ease: 'power2.inOut' });
+            } else {
+                v.camera.position.set(px, py, pz);
+                v.controls.target.set(s.target[0], s.target[1], s.target[2]);
+            }
+            $('#inspect-tag').textContent = s.tag;
+            $('#inspect-title').textContent = s.title;
+            $('#inspect-desc').textContent = s.desc;
+        }
+
+        function loop() {
+            requestAnimationFrame(loop);
+            if (document.hidden) return;
+            var t = clock.getElapsedTime();
+            Object.keys(views).forEach(function (k) {
+                var v = views[k];
+                if (!v || !v.visible) return;
+                v.controls.update();
+                if (!REDUCE) {
+                    v.chickens.forEach(function (c) { c.rotation.x = Math.sin(t * 3 + c.userData.phase) * 0.12; });
+                }
+                v.renderer.render(v.scene, v.camera);
+            });
+        }
+
+        function init3D() {
+            if (typeof THREE === 'undefined') {
+                ['hero-3d', 'inspector-3d'].forEach(function (id) { var e = document.getElementById(id); if (e) fallback3D(e); });
+                return;
+            }
+            clock = new THREE.Clock();
+            views.hero = makeView('hero', 'hero-3d', { bg: 0x0F2A1D, fov: 40, pos: [16, 12, 18], target: [0, 1.5, 0], autoRotate: true, zoom: false });
+            views.inspector = makeView('inspector', 'inspector-3d', { bg: 0x0F2A1D, fov: 42, pos: SECTORS.range.pos, target: SECTORS.range.target, autoRotate: false, zoom: true, fog: true });
+            if (views.hero || views.inspector) loop();
+        }
+
+        /* ---------- Events ---------- */
+        document.addEventListener('click', function (e) {
+            var t = e.target.closest('[data-action]');
+            if (t) {
+                var a = t.getAttribute('data-action'), id = t.getAttribute('data-id');
+                if (a === 'add') addToCart(id);
+                else if (a === 'qty') changeQty(id, parseInt(t.getAttribute('data-d'), 10));
+                else if (a === 'remove') removeItem(id);
+                else if (a === 'open-cart') openCart();
+                else if (a === 'close-cart') closeCart();
+                else if (a === 'checkout') checkout();
+                else if (a === 'sector') changeSector(t.getAttribute('data-key'));
+                else if (a === 'filter') {
+                    $$('[data-action="filter"]').forEach(function (b) {
+                        var on = b === t; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', String(on));
+                    });
+                    renderProducts(t.getAttribute('data-cat'));
+                }
+                return;
+            }
+            var tg = e.target.closest('[data-3d-toggle]');
+            if (tg) {
+                var v = views[tg.getAttribute('data-3d-toggle')];
+                if (v) setInteractive(v, !v.controls.enabled);
+                return;
+            }
+            if (e.target.closest('#menuToggle')) { toggleMenu(); return; }
+            if (e.target.closest('#mobileMenu a')) closeMenu();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { closeCart(); closeMenu(); }
+        });
+        window.addEventListener('resize', function () { if (window.innerWidth >= 1024) closeMenu(); });
+
+        /* ---------- Boot ---------- */
+        function boot() {
+            applyConfig();
+            renderProducts('all');
+            renderCart();
+            initForm();
+            icons();
+            try { init3D(); } catch (err) { console.warn('3D disabled:', err); }
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+        else boot();
+    })();
+    </script>
+</body>
+</html>
