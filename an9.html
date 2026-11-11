@@ -1,0 +1,2423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AN Farms | Hyderabad’s Finest Farm-to-Doorstep Harvest</title>
+  <meta name="description" content="AN Farms Hyderabad – Rooted in Nature, Grown with Care. Experience premium organic produce, heirloom crops, and farm-fresh goodness delivered straight to your doorstep across Hyderabad." />
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP & ScrollTrigger for Cinematic Smooth Scrollytelling -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & DESIGN SYSTEM (Brand Colors & Luxury Aesthetics)
+       ========================================================================== */
+    :root {
+      --color-deep-forest: #173D2B;
+      --color-natural-leaf: #5D8C45;
+      --color-warm-cream: #F8F5EC;
+      --color-earth-brown: #8B6848;
+      --color-soft-white: #FFFFFF;
+      --color-muted-gold: #C6A15B;
+      --color-dark-slate: #0F241A;
+      --color-cream-card: rgba(248, 245, 236, 0.92);
+      
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      --box-shadow-subtle: 0 10px 30px rgba(23, 61, 43, 0.08);
+      --box-shadow-hover: 0 20px 40px rgba(23, 61, 43, 0.15);
+      --box-shadow-gold: 0 10px 30px rgba(198, 161, 91, 0.25);
+    }
+
+    /* Reset & Base Setup */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+      background-color: var(--color-warm-cream);
+      color: var(--color-deep-forest);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-warm-cream);
+      color: var(--color-deep-forest);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+    }
+
+    /* Typography Utilities */
+    .heading-serif {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--color-muted-gold);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--color-muted-gold);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2.2rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 40px;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #C6A15B 0%, #D8B774 100%);
+      color: var(--color-soft-white);
+      box-shadow: var(--box-shadow-gold);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(198, 161, 91, 0.35);
+      background: linear-gradient(135deg, #b8914b 0%, #cba760 100%);
+    }
+
+    .btn-forest {
+      background-color: var(--color-deep-forest);
+      color: var(--color-warm-cream);
+    }
+
+    .btn-forest:hover {
+      background-color: var(--color-natural-leaf);
+      transform: translateY(-3px);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .btn-outline-cream {
+      border: 1.5px solid rgba(248, 245, 236, 0.4);
+      color: var(--color-warm-cream);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline-cream:hover {
+      border-color: var(--color-muted-gold);
+      color: var(--color-muted-gold);
+      background-color: rgba(248, 245, 236, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-forest {
+      border: 1.5px solid var(--color-deep-forest);
+      color: var(--color-deep-forest);
+    }
+
+    .btn-outline-forest:hover {
+      background-color: var(--color-deep-forest);
+      color: var(--color-warm-cream);
+      transform: translateY(-2px);
+    }
+
+    /* Announcement Banner */
+    .top-bar {
+      background-color: var(--color-dark-slate);
+      color: var(--color-warm-cream);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 101;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .top-bar span strong {
+      color: var(--color-muted-gold);
+    }
+
+    /* ==========================================================================
+       2. NAVIGATION HEADER (Sticky & Dynamic)
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 31px; /* Below top-bar initially */
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 0;
+      transition: var(--transition-smooth);
+    }
+
+    .header.scrolled {
+      top: 0;
+      padding: 0.85rem 0;
+      background: rgba(23, 61, 43, 0.94);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--color-warm-cream);
+    }
+
+    .logo-emblem {
+      width: 44px;
+      height: 44px;
+      background: var(--color-muted-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-deep-forest);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+
+    .logo-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-muted-gold);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--color-warm-cream);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-muted-gold);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: var(--color-warm-cream);
+      transition: var(--transition-smooth);
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 360px;
+      height: 100vh;
+      background-color: var(--color-deep-forest);
+      z-index: 105;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-nav-drawer.active {
+      right: 0;
+    }
+
+    .drawer-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: var(--color-warm-cream);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-nav-links a {
+      color: var(--color-warm-cream);
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (Cinematic Entrance)
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 5rem;
+      background: linear-gradient(to bottom, rgba(15, 36, 26, 0.72) 0%, rgba(23, 61, 43, 0.88) 100%),
+                  url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+      color: var(--color-warm-cream);
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(248, 245, 236, 0.1);
+      border: 1px solid rgba(198, 161, 91, 0.4);
+      backdrop-filter: blur(12px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-muted-gold);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      margin-bottom: 1.5rem;
+      color: var(--color-warm-cream);
+      line-height: 1.15;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-muted-gold);
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: rgba(248, 245, 236, 0.85);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats-strip {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      border-top: 1px solid rgba(248, 245, 236, 0.15);
+      padding-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-muted-gold);
+      font-weight: 700;
+    }
+
+    .hero-stat-desc {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 236, 0.75);
+    }
+
+    /* Scroll Prompt */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(248, 245, 236, 0.6);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .mouse-icon {
+      width: 22px;
+      height: 34px;
+      border: 2px solid rgba(248, 245, 236, 0.4);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .mouse-wheel {
+      width: 4px;
+      height: 6px;
+      background: var(--color-muted-gold);
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: wheelMove 2s infinite;
+    }
+
+    @keyframes wheelMove {
+      0% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, 14px); }
+    }
+
+    /* ==========================================================================
+       4. FIVE-PART PINNED SCROLLYTELLING CONTAINER
+       ========================================================================== */
+    .story-pin-wrapper {
+      position: relative;
+      background-color: var(--color-deep-forest);
+      color: var(--color-warm-cream);
+      overflow: hidden;
+    }
+
+    /* The viewport-fixed stage when pinned */
+    .story-viewport {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dynamic Stage Background Overlays */
+    .story-bg-layer {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      z-index: 1;
+    }
+
+    .story-bg-layer.active {
+      opacity: 0.25;
+    }
+
+    .story-bg-1 {
+      background-image: url('https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=1800&q=80');
+    }
+    .story-bg-2 {
+      background-image: url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=1800&q=80');
+    }
+    .story-bg-3 {
+      background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=80');
+    }
+    .story-bg-4 {
+      background-image: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1800&q=80');
+    }
+    .story-bg-5 {
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80');
+    }
+
+    /* Stage Ambient Vignette */
+    .story-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(23, 61, 43, 0.4) 0%, rgba(15, 36, 26, 0.95) 85%);
+      z-index: 2;
+    }
+
+    /* Layout: Left Content, Center Stage (Object), Right Highlights */
+    .story-stage-grid {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 1280px;
+      height: 100%;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .story-stage-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        text-align: center;
+        padding: 1.5rem;
+      }
+    }
+
+    /* Text Cards Stack */
+    .story-text-pane {
+      position: relative;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+    }
+
+    .story-step-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(25px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .story-step-card.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--color-muted-gold);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .step-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: var(--color-warm-cream);
+    }
+
+    .step-desc {
+      font-size: 1rem;
+      color: rgba(248, 245, 236, 0.85);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(198, 161, 91, 0.15);
+      border: 1px solid rgba(198, 161, 91, 0.35);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: var(--color-muted-gold);
+      width: fit-content;
+    }
+
+    /* Center Stage: The Continuous Traveling Object */
+    .story-central-arena {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 480px;
+    }
+
+    .central-traveling-object {
+      width: 320px;
+      height: 320px;
+      position: relative;
+      filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.45));
+      transition: transform 0.1s ease-out;
+      transform-style: preserve-3d;
+    }
+
+    @media (max-width: 576px) {
+      .central-traveling-object {
+        width: 240px;
+        height: 240px;
+      }
+    }
+
+    /* Object Glow Aura */
+    .object-aura {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 360px;
+      height: 360px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(198, 161, 91, 0.28) 0%, rgba(93, 140, 69, 0.1) 45%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulseAura 4s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseAura {
+      0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+      100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+    }
+
+    /* Custom SVG Traveling Produce Basket Component */
+    .svg-harvest-basket {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* Object Dynamic Sub-Components toggled by Stage */
+    .obj-state {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .obj-split-branches {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+
+    .obj-package-box {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .obj-gold-seal {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .obj-kitchen-table {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    /* Right Metadata & Progress Bar */
+    .story-info-pane {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .story-info-pane {
+        align-items: center;
+      }
+    }
+
+    .story-progress-indicator {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .progress-step-dot {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+    }
+
+    .dot-marker {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(248, 245, 236, 0.25);
+      border: 2px solid transparent;
+      transition: var(--transition-smooth);
+    }
+
+    .dot-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(248, 245, 236, 0.4);
+      transition: var(--transition-smooth);
+    }
+
+    .progress-step-dot.active .dot-marker {
+      background: var(--color-muted-gold);
+      transform: scale(1.3);
+      box-shadow: 0 0 12px var(--color-muted-gold);
+    }
+
+    .progress-step-dot.active .dot-label {
+      color: var(--color-warm-cream);
+      font-weight: 600;
+    }
+
+    /* Floating Micro Cards in Stage 2/3/4 */
+    .interactive-stage-card {
+      background: rgba(248, 245, 236, 0.08);
+      border: 1px solid rgba(248, 245, 236, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 1.2rem;
+      border-radius: 12px;
+      max-width: 260px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-muted-gold);
+    }
+
+    .card-value {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--color-warm-cream);
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       5. ABOUT AN FARMS (Legacy, Philosophy & Hyderabad Vicinity)
+       ========================================================================== */
+    .section-padding {
+      padding: 7rem 0;
+    }
+
+    .about-section {
+      background-color: var(--color-warm-cream);
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .about-image-stack {
+      position: relative;
+    }
+
+    .main-about-img {
+      border-radius: 16px;
+      box-shadow: var(--box-shadow-hover);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .floating-about-card {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--color-deep-forest);
+      color: var(--color-warm-cream);
+      padding: 1.8rem;
+      border-radius: 16px;
+      max-width: 260px;
+      box-shadow: 0 15px 35px rgba(23, 61, 43, 0.25);
+      border: 1px solid rgba(198, 161, 91, 0.3);
+    }
+
+    .floating-about-card .heritage-year {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--color-muted-gold);
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .floating-about-card p {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: rgba(248, 245, 236, 0.85);
+    }
+
+    .about-text-content .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 1.5rem;
+      color: var(--color-deep-forest);
+    }
+
+    .about-text-content p {
+      font-size: 1.05rem;
+      color: #385244;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .pillar-box {
+      border-left: 3px solid var(--color-natural-leaf);
+      padding-left: 1rem;
+    }
+
+    .pillar-box h4 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--color-deep-forest);
+    }
+
+    .pillar-box p {
+      font-size: 0.88rem;
+      color: #4b6656;
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================================
+       6. PRODUCTS & CATEGORIES SECTION
+       ========================================================================== */
+    .products-section {
+      background-color: #F1ECE0;
+      position: relative;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--color-deep-forest);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: #4a6858;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--color-soft-white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow-subtle);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .product-media {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.08);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(23, 61, 43, 0.85);
+      backdrop-filter: blur(8px);
+      color: var(--color-warm-cream);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    .product-body {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-deep-forest);
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: #557262;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(23, 61, 43, 0.08);
+      padding-top: 1rem;
+    }
+
+    .product-origin {
+      font-size: 0.75rem;
+      color: var(--color-earth-brown);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-quick-inquire {
+      font-size: 0.8rem;
+      color: var(--color-natural-leaf);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-quick-inquire:hover {
+      color: var(--color-deep-forest);
+    }
+
+    /* ==========================================================================
+       7. WHY CHOOSE AN FARMS (The Quality Pillars)
+       ========================================================================== */
+    .pillars-section {
+      background-color: var(--color-deep-forest);
+      color: var(--color-warm-cream);
+      position: relative;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .pillar-card {
+      background: rgba(248, 245, 236, 0.04);
+      border: 1px solid rgba(248, 245, 236, 0.1);
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pillar-card:hover {
+      background: rgba(248, 245, 236, 0.08);
+      border-color: rgba(198, 161, 91, 0.4);
+      transform: translateY(-5px);
+    }
+
+    .pillar-icon-box {
+      width: 58px;
+      height: 58px;
+      background: rgba(198, 161, 91, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted-gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+      color: var(--color-warm-cream);
+    }
+
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: rgba(248, 245, 236, 0.75);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       8. HYDERABAD DELIVERY ZONES & CONTACT MATRIX
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--color-warm-cream);
+      position: relative;
+    }
+
+    .contact-wrapper {
+      background: var(--color-soft-white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow-subtle);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 992px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info-pane {
+      background-color: var(--color-deep-forest);
+      color: var(--color-warm-cream);
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 576px) {
+      .contact-info-pane {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    .contact-info-pane h3 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info-pane p {
+      color: rgba(248, 245, 236, 0.8);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(198, 161, 91, 0.15);
+      border: 1px solid rgba(198, 161, 91, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-muted-gold);
+      flex-shrink: 0;
+    }
+
+    .contact-details span {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-muted-gold);
+    }
+
+    .contact-details strong {
+      font-size: 1rem;
+      color: var(--color-warm-cream);
+    }
+
+    .contact-form-pane {
+      padding: 4rem 3.5rem;
+    }
+
+    @media (max-width: 576px) {
+      .contact-form-pane {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    .contact-form-pane h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-deep-forest);
+    }
+
+    .contact-form-pane p {
+      font-size: 0.9rem;
+      color: #4c6858;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-deep-forest);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1.5px solid #ded6c5;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      background: #faf8f2;
+      color: var(--color-deep-forest);
+      transition: var(--transition-smooth);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-muted-gold);
+      background: var(--color-soft-white);
+      box-shadow: 0 0 0 4px rgba(198, 161, 91, 0.15);
+    }
+
+    /* Hyderabad Delivery Zones Badge Grid */
+    .delivery-zones-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .zone-pill {
+      font-size: 0.75rem;
+      background: #ede6d8;
+      color: var(--color-deep-forest);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       9. MASTER FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--color-dark-slate);
+      color: var(--color-warm-cream);
+      padding: 5rem 0 2rem;
+      border-top: 1px solid rgba(248, 245, 236, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 3.5rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: rgba(248, 245, 236, 0.7);
+      margin: 1.2rem 0 1.8rem;
+      max-width: 320px;
+    }
+
+    .footer-heading {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--color-muted-gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-nav a {
+      color: rgba(248, 245, 236, 0.75);
+      font-size: 0.88rem;
+    }
+
+    .footer-nav a:hover {
+      color: var(--color-muted-gold);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(248, 245, 236, 0.1);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: rgba(248, 245, 236, 0.6);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ==========================================================================
+       10. QUICK ORDER MODAL (WHATSAPP PRE-FILL)
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 36, 26, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .order-modal {
+      background: var(--color-warm-cream);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(198, 161, 91, 0.4);
+      transform: translateY(20px);
+      transition: var(--transition-smooth);
+    }
+
+    .modal-overlay.active .order-modal {
+      transform: translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      font-size: 1.5rem;
+      color: var(--color-deep-forest);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Live Top Bar: Hyderabad Freshness Protocol -->
+  <div class="top-bar">
+    <span>🌿 <strong>Hyderabad Fresh Harvest Dispatch:</strong> Daily morning harvests delivered fresh across twin cities.</span>
+    <span style="display: none; @media(min-width:768px){display:inline;}">Call/WhatsApp: <strong>+91 [ADD PHONE NUMBER]</strong></span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="AN Farms Homepage">
+        <div class="logo-emblem">AN</div>
+        <div class="logo-text">
+          <span class="logo-title">AN FARMS</span>
+          <span class="logo-tag">HYDERABAD</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#storyTrack">Our Journey</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Our Products</a></li>
+          <li><a href="#whyUs">Why AN Farms</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-gold" onclick="openOrderModal('General Inquiries & Orders')">Order Now</button>
+        <div class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <div class="drawer-close" id="drawerClose">&times;</div>
+    <div class="brand-logo">
+      <div class="logo-emblem">AN</div>
+      <div class="logo-text">
+        <span class="logo-title">AN FARMS</span>
+        <span class="logo-tag">HYDERABAD</span>
+      </div>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" onclick="closeDrawer()">Home</a></li>
+      <li><a href="#storyTrack" onclick="closeDrawer()">The Harvest Journey</a></li>
+      <li><a href="#about" onclick="closeDrawer()">Our Heritage</a></li>
+      <li><a href="#products" onclick="closeDrawer()">Our Products</a></li>
+      <li><a href="#whyUs" onclick="closeDrawer()">Why Choose Us</a></li>
+      <li><a href="#contact" onclick="closeDrawer()">Hyderabad Delivery</a></li>
+    </ul>
+    <button class="btn btn-gold" style="width: 100%;" onclick="closeDrawer(); openOrderModal('Mobile Menu Order')">Order Fresh Harvest</button>
+  </div>
+
+  <!-- Main Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>Grown in Telangana’s Pristine Soils</span>
+      </div>
+      <h1 class="hero-title heading-serif">
+        Rooted in Nature. <br /><em>Hand-Harvested for Hyderabad.</em>
+      </h1>
+      <p class="hero-subtitle">
+        Experience authentic farm-to-table purity. We cultivate wholesome, naturally grown farm produce on our peaceful agricultural acreage, delivering freshly plucked goodness directly to discerning homes across Hyderabad.
+      </p>
+      <div class="hero-cta-group">
+        <button class="btn btn-gold" onclick="openOrderModal('Hero Order CTA')">Order Today’s Harvest</button>
+        <a href="#storyTrack" class="btn btn-outline-cream">Explore The 5-Stage Story ↓</a>
+      </div>
+
+      <div class="hero-stats-strip">
+        <div class="hero-stat-item">
+          <span class="hero-stat-num">100%</span>
+          <span class="hero-stat-desc">Pure & Naturally Grown</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-num">&lt; 12 Hrs</span>
+          <span class="hero-stat-desc">Farm to Hyderabad Doorstep</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-num">Zero</span>
+          <span class="hero-stat-desc">Synthetic Preservatives</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse-icon">
+        <div class="mouse-wheel"></div>
+      </div>
+      <span>Scroll to travel with our harvest</span>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FIVE-PART BRAND STORY (PINNED SCROLLYTELLING WITH CONTINUOUS BASKET)
+       ========================================================================== -->
+  <div class="story-pin-wrapper" id="storyTrack">
+    <!-- Pinned Viewport Container -->
+    <div class="story-viewport" id="storyViewport">
+
+      <!-- Dynamic Atmospheric Background Layers -->
+      <div class="story-bg-layer story-bg-1 active" id="bgStage1"></div>
+      <div class="story-bg-layer story-bg-2" id="bgStage2"></div>
+      <div class="story-bg-layer story-bg-3" id="bgStage3"></div>
+      <div class="story-bg-layer story-bg-4" id="bgStage4"></div>
+      <div class="story-bg-layer story-bg-5" id="bgStage5"></div>
+      <div class="story-vignette"></div>
+
+      <div class="story-stage-grid">
+        
+        <!-- Left Side: Dynamic Storytelling Copy (5 Steps) -->
+        <div class="story-text-pane">
+          
+          <!-- PART 1 -->
+          <div class="story-step-card active" id="stepText1">
+            <span class="step-number">Stage 01 • The Beginning</span>
+            <h2 class="step-title heading-serif">Rooted in Nature.<br />Grown with Care.</h2>
+            <p class="step-desc">
+              Every great harvest begins with healthy soil, dedicated hands, and an unyielding commitment to quality. Under the gentle morning sun of Telangana, our crops are nourished naturally, free from artificial haste.
+            </p>
+            <div class="step-badge">🌱 Hand-Tended at Dawn • Chevella Belt</div>
+          </div>
+
+          <!-- PART 2 -->
+          <div class="story-step-card" id="stepText2">
+            <span class="step-number">Stage 02 • The Selection</span>
+            <h2 class="step-title heading-serif">Only the Best<br />Makes It to You.</h2>
+            <p class="step-desc">
+              Carefully selected with attention to freshness, vibrant colour, and the strict standards our customers deserve. Each piece of produce is gently inspected and sorted into prime heirloom grades.
+            </p>
+            <div class="step-badge">✨ Dual-Grading Protocol • Top 10% Yield</div>
+          </div>
+
+          <!-- PART 3 -->
+          <div class="story-step-card" id="stepText3">
+            <span class="step-number">Stage 03 • The Packing</span>
+            <h2 class="step-title heading-serif">Packed with Care.<br />Delivered with Trust.</h2>
+            <p class="step-desc">
+              From our farm to your doorstep, every order receives gentle personal attention. Sealed in breathable, eco-conscious AN Farms packaging that safeguards moisture, aroma, and crisp natural freshness.
+            </p>
+            <div class="step-badge">📦 Eco-Conscious Packaging • Zero Plastic Stagnation</div>
+          </div>
+
+          <!-- PART 4 -->
+          <div class="story-step-card" id="stepText4">
+            <span class="step-number">Stage 04 • The Experience</span>
+            <h2 class="step-title heading-serif">Nature's Goodness,<br />Closer to Home.</h2>
+            <p class="step-desc">
+              Bringing the goodness of the farm closer to families across Hyderabad. Traveling from morning dewy soils directly to elegant kitchens in Jubilee Hills, Banjara Hills, Gachibowli, and across the city.
+            </p>
+            <div class="step-badge">🚚 Express Hyderabad Transit • Temperature Monitored</div>
+          </div>
+
+          <!-- PART 5 -->
+          <div class="story-step-card" id="stepText5">
+            <span class="step-number">Stage 05 • The Conversion</span>
+            <h2 class="step-title heading-serif">Bring Home the<br />Goodness of Nature.</h2>
+            <p class="step-desc">
+              AN Farms – Growing Goodness, Delivering Trust. Welcome healthy, honest nourishment into your family’s daily meals with our seamless direct-from-farm ordering.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button class="btn btn-gold" onclick="openOrderModal('Story Stage 5 Conversion')">ORDER NOW</button>
+              <a href="#contact" class="btn btn-outline-cream">CONTACT AN FARMS</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Center Stage: The Uninterrupted, Morphing / Traveling Harvest Object -->
+        <div class="story-central-arena">
+          <div class="object-aura" id="objectAura"></div>
+
+          <!-- The Continuous Central Object: Illustrated Premium Farm Produce Basket & Crate -->
+          <div class="central-traveling-object" id="travelingHarvestObject">
+            <svg class="svg-harvest-basket" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              
+              <!-- Filter for gold glow -->
+              <defs>
+                <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <linearGradient id="basketWoodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8B6848" />
+                  <stop offset="50%" stop-color="#A47D56" />
+                  <stop offset="100%" stop-color="#6F4F32" />
+                </linearGradient>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C6A15B" />
+                  <stop offset="50%" stop-color="#E5C788" />
+                  <stop offset="100%" stop-color="#AA843D" />
+                </linearGradient>
+                <linearGradient id="boxLidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1F4C36" />
+                  <stop offset="100%" stop-color="#123323" />
+                </linearGradient>
+              </defs>
+
+              <!-- BASE SHADOW -->
+              <ellipse cx="200" cy="350" rx="140" ry="25" fill="#0A1811" opacity="0.6" id="objShadow" />
+
+              <!-- STAGE 1 & 2: WOVEN HARVEST BASKET -->
+              <g id="basketContainer">
+                <!-- Basket Body -->
+                <path d="M70,180 Q60,300 120,330 Q200,345 280,330 Q340,300 330,180 Z" fill="url(#basketWoodGrad)" stroke="#5B3E26" stroke-width="4" />
+                <!-- Woven Texture Lines -->
+                <path d="M85,210 Q200,240 315,210" stroke="#5B3E26" stroke-width="3" fill="none" opacity="0.6" />
+                <path d="M95,250 Q200,280 305,250" stroke="#5B3E26" stroke-width="3" fill="none" opacity="0.6" />
+                <path d="M110,290 Q200,315 290,290" stroke="#5B3E26" stroke-width="3" fill="none" opacity="0.6" />
+                <path d="M140,185 L140,330" stroke="#5B3E26" stroke-width="3" opacity="0.4" />
+                <path d="M200,188 L200,338" stroke="#5B3E26" stroke-width="3" opacity="0.4" />
+                <path d="M260,185 L260,330" stroke="#5B3E26" stroke-width="3" opacity="0.4" />
+
+                <!-- Basket Rim -->
+                <ellipse cx="200" cy="180" rx="130" ry="25" fill="#8B6848" stroke="#5B3E26" stroke-width="5" />
+                <!-- Woven Handle Arc -->
+                <path d="M80,180 C80,50 320,50 320,180" stroke="#715237" stroke-width="12" fill="none" stroke-linecap="round" />
+                <path d="M80,180 C80,50 320,50 320,180" stroke="#A47D56" stroke-width="4" stroke-dasharray="8,8" fill="none" />
+              </g>
+
+              <!-- FRESH ORGANIC PRODUCE (Inside Basket) -->
+              <g id="freshProduceLayer">
+                <!-- Rich Hydroponic / Fresh Leaves -->
+                <path d="M150,165 C120,100 170,80 190,140 C210,70 260,100 240,160 Z" fill="#5D8C45" />
+                <path d="M170,140 Q185,100 190,85" stroke="#3F632C" stroke-width="2" />
+                <path d="M210,135 Q230,100 245,95" stroke="#3F632C" stroke-width="2" />
+
+                <!-- Golden Sun Carrots -->
+                <path d="M130,170 L95,110 Q110,105 145,160 Z" fill="#E87428" />
+                <path d="M95,110 L85,85 M95,110 L100,82 M95,110 L78,92" stroke="#5D8C45" stroke-width="3" stroke-linecap="round" />
+
+                <!-- Heirloom Tomatoes -->
+                <circle cx="215" cy="165" r="30" fill="#D33F29" />
+                <path d="M215,135 L215,128 M208,135 L215,131 L222,135" stroke="#3F632C" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="205" cy="155" rx="6" ry="12" fill="#FFA596" opacity="0.4" transform="rotate(-30 205 155)" />
+
+                <circle cx="265" cy="175" r="26" fill="#C42E18" />
+                <ellipse cx="258" cy="168" rx="4" ry="8" fill="#FFA596" opacity="0.4" transform="rotate(-30 258 168)" />
+
+                <!-- Fresh Bell Pepper / Farm Gold -->
+                <path d="M165,180 C155,140 195,140 185,185 Z" fill="#ECAE2C" />
+              </g>
+
+              <!-- STAGE 2: SELECTION BRANCHES / INSPECTION HALOS -->
+              <g id="selectionBranches" class="obj-state obj-split-branches">
+                <!-- Dual Golden Quality Rings -->
+                <circle cx="120" cy="140" r="45" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="6,4" fill="none" opacity="0.8" />
+                <text x="120" y="144" fill="#C6A15B" font-size="11" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" text-anchor="middle" letter-spacing="1">GRADE A</text>
+                
+                <circle cx="280" cy="140" r="45" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="6,4" fill="none" opacity="0.8" />
+                <text x="280" y="144" fill="#C6A15B" font-size="11" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" text-anchor="middle" letter-spacing="1">HAND-PICKED</text>
+              </g>
+
+              <!-- STAGE 3 & 4: PREMIUM EMBOSSED AN FARMS PACKAGING (Sliding Box Conversion) -->
+              <g id="packagingCrate" class="obj-state obj-package-box">
+                <!-- Solid Kraft / Forest Box Covering Basket -->
+                <rect x="70" y="160" width="260" height="170" rx="16" fill="url(#boxLidGrad)" stroke="#C6A15B" stroke-width="3" />
+                
+                <!-- Embossed Gold Ribbon Accent -->
+                <rect x="188" y="160" width="24" height="170" fill="url(#goldGrad)" opacity="0.9" />
+                <rect x="70" y="235" width="260" height="20" fill="url(#goldGrad)" opacity="0.9" />
+
+                <!-- AN FARMS Monogram Seal -->
+                <circle cx="200" cy="245" r="38" fill="#173D2B" stroke="url(#goldGrad)" stroke-width="3" filter="url(#goldGlow)" />
+                <text x="200" y="242" fill="#C6A15B" font-family="'Playfair Display', serif" font-weight="700" font-size="20" text-anchor="middle">AN</text>
+                <text x="200" y="258" fill="#F8F5EC" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="600" letter-spacing="2" text-anchor="middle">FARMS</text>
+                <text x="200" y="268" fill="#C6A15B" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="500" letter-spacing="1.5" text-anchor="middle">HYDERABAD</text>
+              </g>
+
+              <!-- STAGE 5: UNBOXED GLOW AT THE KITCHEN TABLE -->
+              <g id="kitchenPlatter" class="obj-state obj-kitchen-table">
+                <!-- Calacatta Gold Marble Base -->
+                <ellipse cx="200" cy="335" rx="160" ry="25" fill="#FFFFFF" stroke="#E5DAC5" stroke-width="2" opacity="0.9" />
+                <!-- Fresh Olive Oil Flask / Farm Condiment -->
+                <path d="M300,320 L315,250 Q325,245 325,230 L310,230 L310,215 L300,215 L300,230 L285,230 Q285,245 295,250 Z" fill="#E8C351" opacity="0.85" stroke="#AA843D" stroke-width="2" />
+                <rect x="298" y="208" width="14" height="8" rx="2" fill="#8B6848" />
+              </g>
+
+            </svg>
+          </div>
+        </div>
+
+        <!-- Right Side: Interactive Progress Matrix & Stage Meta -->
+        <div class="story-info-pane">
+          <div class="story-progress-indicator">
+            <div class="progress-step-dot active" data-step="1">
+              <div class="dot-marker"></div>
+              <span class="dot-label">01. Harvest</span>
+            </div>
+            <div class="progress-step-dot" data-step="2">
+              <div class="dot-marker"></div>
+              <span class="dot-label">02. Selection</span>
+            </div>
+            <div class="progress-step-dot" data-step="3">
+              <div class="dot-marker"></div>
+              <span class="dot-label">03. Packaging</span>
+            </div>
+            <div class="progress-step-dot" data-step="4">
+              <div class="dot-marker"></div>
+              <span class="dot-label">04. In Transit</span>
+            </div>
+            <div class="progress-step-dot" data-step="5">
+              <div class="dot-marker"></div>
+              <span class="dot-label">05. Kitchen Table</span>
+            </div>
+          </div>
+
+          <!-- Micro Floating Context Card -->
+          <div class="interactive-stage-card" id="stageMetaCard">
+            <span class="card-label" id="metaLabel">HARVEST TIMING</span>
+            <div class="card-value" id="metaValue">05:30 AM Pluck</div>
+            <p style="font-size: 0.75rem; color: rgba(248, 245, 236, 0.65); margin-top: 0.4rem;" id="metaSub">
+              Cold dewy harvest protects vitamins and crisp botanical textures.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 6: ABOUT AN FARMS (Legacy & Soil of Hyderabad)
+       ========================================================================== */ -->
+  <section class="section-padding about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-stack">
+          <img class="main-about-img" src="https://images.unsplash.com/photo-1592417817098-8f3d6ef23a0e?auto=format&fit=crop&w=1200&q=80" alt="AN Farms Agricultural Estate Near Hyderabad" loading="lazy" />
+          <div class="floating-about-card">
+            <span class="heritage-year">100%</span>
+            <p>Committed to pure, regenerative, honest agricultural practices without chemical compromises.</p>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <span class="eyebrow">Our Agricultural Heritage</span>
+          <h2 class="section-title heading-serif">Nurturing Hyderabad with Honest Purity.</h2>
+          <p>
+            Established in the fertile farming valleys bordering Hyderabad, <strong>AN Farms</strong> was created to bridge the critical gap between true natural farming and urban homes seeking authentic, wholesome nutrition.
+          </p>
+          <p>
+            We believe that real nutrition cannot be mass-manufactured in cold storage depots. By combining time-tested agricultural wisdom with gentle, modern harvest management, our crops remain in the soil until the very morning of your order.
+          </p>
+
+          <div class="about-pillars">
+            <div class="pillar-box">
+              <h4>Native Soil Stewardship</h4>
+              <p>Fortified with natural compost and beneficial microorganisms for rich heirloom flavor.</p>
+            </div>
+            <div class="pillar-box">
+              <h4>Direct Farm Transit</h4>
+              <p>Delivered within hours of cutting, preserving vital phytonutrients and natural aroma.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem;">
+            <button class="btn btn-forest" onclick="openOrderModal('About Section Inquiry')">Schedule a Farm Consultation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: OUR PRODUCTS & HARVEST CATEGORIES
+       ========================================================================== -->
+  <section class="section-padding products-section" id="products">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="eyebrow">Curated Farm Harvest</span>
+        <h2 class="section-title heading-serif">Pure Delights From Our Soil</h2>
+        <p class="section-subtitle">
+          Explore seasonal harvests carefully cultivated for taste, peak vitality, and exceptional nutritional density.
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-tag">Daily Pluck</span>
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Heirloom Farm Greens" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Crisp Field Greens & Herbs</h3>
+            <p class="product-desc">Naturally sweet baby spinach, vibrant amaranth, coriander, and crisp hydroponic lettuces harvested at first light.</p>
+            <div class="product-footer">
+              <span class="product-origin">Chevella Belt</span>
+              <button class="btn-quick-inquire" onclick="openOrderModal('Product: Crisp Field Greens')">Inquire <span>→</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-tag">Slow-Extracted</span>
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80" alt="Wood-Pressed Oils" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Wood-Pressed Pure Oils</h3>
+            <p class="product-desc">Traditional wood-churned (Kachi Ghani) groundnut and sesame oils with rich unadulterated aroma and raw health benefits.</p>
+            <div class="product-footer">
+              <span class="product-origin">Native Seeds</span>
+              <button class="btn-quick-inquire" onclick="openOrderModal('Product: Wood Pressed Oils')">Inquire <span>→</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-tag">Artisanal</span>
+            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Raw Forest Honey" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Raw Wildflower Honey</h3>
+            <p class="product-desc">Single-origin, unfiltered raw honey gathered from apiaries adjacent to floral blooms and forest reserves.</p>
+            <div class="product-footer">
+              <span class="product-origin">Unprocessed</span>
+              <button class="btn-quick-inquire" onclick="openOrderModal('Product: Raw Wildflower Honey')">Inquire <span>→</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-media">
+            <span class="product-tag">Seasonal Crate</span>
+            <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=800&q=80" alt="Curated Harvest Basket" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">The AN Farms Family Hamper</h3>
+            <p class="product-desc">A weekly master basket including seasonal root vegetables, exotic vine-ripened tomatoes, and country-fresh greens.</p>
+            <div class="product-footer">
+              <span class="product-origin">Family Selection</span>
+              <button class="btn-quick-inquire" onclick="openOrderModal('Product: AN Farms Family Hamper')">Inquire <span>→</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: WHY CHOOSE AN FARMS
+       ========================================================================== -->
+  <section class="section-padding pillars-section" id="whyUs">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="eyebrow" style="color: var(--color-muted-gold);">Uncompromising Standards</span>
+        <h2 class="section-title heading-serif" style="color: var(--color-warm-cream);">Why Discerning Hyderabad Chooses AN Farms</h2>
+        <p class="section-subtitle" style="color: rgba(248, 245, 236, 0.75);">
+          We uphold the highest agricultural protocols so you never have to second-guess what graces your family’s dining table.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🌱</div>
+          <h3>Naturally Nurtured</h3>
+          <p>Zero chemical accelerators or synthetic sprays. We rely on biological enrichment and companion planting for vibrant plant health.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">⏰</div>
+          <h3>Dawn Pluck Protocol</h3>
+          <p>Harvested between 5:00 AM and 7:00 AM while botanical hydration is peak, reaching Hyderabad before dinner.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🛡️</div>
+          <h3>Transparent Provenance</h3>
+          <p>You always know exactly where and how your food was cultivated. No broker intermediaries or mystery warehousing.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🏙️</div>
+          <h3>Citywide Doorstep Fleet</h3>
+          <p>Specialized temperature-stabilized transit ensuring leaves remain dewy and root vegetables stay crisp through delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 9: HYDERABAD SERVICE ZONES & DIRECT CONTACT
+       ========================================================================== -->
+  <section class="section-padding contact-section" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        
+        <!-- Left: Direct Details & Service Areas -->
+        <div class="contact-info-pane">
+          <div>
+            <span class="eyebrow" style="color: var(--color-muted-gold);">Direct Farm Connection</span>
+            <h3 class="heading-serif">We Welcome You to Experience Freshness.</h3>
+            <p>
+              Connect directly with our farm coordinators to arrange custom orders, weekly family subscription hampers, or bulk inquiries.
+            </p>
+
+            <ul class="contact-links-list">
+              <li class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-details">
+                  <span>Phone Inquiries</span>
+                  <a href="tel:+919876543210"><strong>+91 [ADD PHONE NUMBER]</strong></a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">💬</div>
+                <div class="contact-details">
+                  <span>WhatsApp Concierge</span>
+                  <a href="https://wa.me/919876543210?text=Hello%20AN%20Farms,%20I%20would%20like%20to%20order%20fresh%20farm%20produce." target="_blank" rel="noopener">
+                    <strong>+91 [ADD WHATSAPP NUMBER]</strong>
+                  </a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-details">
+                  <span>Email</span>
+                  <a href="mailto:care@anfarms.com"><strong>[ADD EMAIL ADDRESS]</strong></a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-details">
+                  <span>Farm Location & City Office</span>
+                  <strong>Hyderabad, Telangana, India</strong>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-muted-gold); display: block; margin-bottom: 0.5rem;">
+              Active Delivery Belts
+            </span>
+            <div class="delivery-zones-badge">
+              <span class="zone-pill">Jubilee Hills</span>
+              <span class="zone-pill">Banjara Hills</span>
+              <span class="zone-pill">Gachibowli</span>
+              <span class="zone-pill">Madhapur</span>
+              <span class="zone-pill">Hitec City</span>
+              <span class="zone-pill">Kokapet</span>
+              <span class="zone-pill">Financial District</span>
+              <span class="zone-pill">Secunderabad</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Order/Inquiry Form -->
+        <div class="contact-form-pane">
+          <h3 class="heading-serif">Request Today's Harvest List</h3>
+          <p>Fill out your details to receive today's freshly available harvest menu directly on WhatsApp.</p>
+
+          <form id="harvestInquiryForm" onsubmit="handleInquirySubmit(event)">
+            <div class="form-group">
+              <label for="userName">Full Name</label>
+              <input type="text" id="userName" class="form-control" placeholder="e.g. Sravan Kumar" required />
+            </div>
+
+            <div class="form-group">
+              <label for="userPhone">WhatsApp / Mobile Number</label>
+              <input type="tel" id="userPhone" class="form-control" placeholder="+91 98765 43210" required />
+            </div>
+
+            <div class="form-group">
+              <label for="userZone">Hyderabad Delivery Area</label>
+              <select id="userZone" class="form-control" required>
+                <option value="" disabled selected>Select Your Locality</option>
+                <option value="Jubilee Hills / Banjara Hills">Jubilee Hills / Banjara Hills</option>
+                <option value="Gachibowli / Financial District">Gachibowli / Financial District</option>
+                <option value="Madhapur / Hitec City">Madhapur / Hitec City</option>
+                <option value="Kondapur / Whitefields">Kondapur / Whitefields</option>
+                <option value="Kokapet / Gandipet">Kokapet / Gandipet</option>
+                <option value="Secunderabad / Sainikpuri">Secunderabad / Sainikpuri</option>
+                <option value="Other Hyderabad Area">Other Hyderabad Area</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="userRequirement">Interested Products</label>
+              <input type="text" id="userRequirement" class="form-control" placeholder="e.g. Weekly Harvest Hamper, Organic Greens" />
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">
+              Send Harvest Request Via WhatsApp
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 10: PROFESSIONAL FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-emblem">AN</div>
+            <div class="logo-text">
+              <span class="logo-title">AN FARMS</span>
+              <span class="logo-tag">HYDERABAD</span>
+            </div>
+          </div>
+          <p>
+            Rooted in nature, grown with care. Delivering fresh, uncompromised, farm-plucked agricultural harvest to households throughout Hyderabad.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--color-muted-gold); font-weight: 600;">
+            “Growing Goodness, Delivering Trust.”
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#storyTrack">The Harvest Journey</a></li>
+            <li><a href="#about">About Our Soil</a></li>
+            <li><a href="#products">Seasonal Harvest</a></li>
+            <li><a href="#whyUs">Quality Commitment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Harvest Categories</h4>
+          <ul class="footer-nav">
+            <li><a href="#products">Hydroponic & Field Greens</a></li>
+            <li><a href="#products">Wood-Pressed Oils</a></li>
+            <li><a href="#products">Raw Forest Honey</a></li>
+            <li><a href="#products">Weekly Family Hampers</a></li>
+            <li><a href="#contact">Custom Corporate Orders</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Get in Touch</h4>
+          <ul class="footer-nav">
+            <li><a href="tel:+919876543210">+91 [ADD PHONE NUMBER]</a></li>
+            <li><a href="mailto:care@anfarms.com">[ADD EMAIL ADDRESS]</a></li>
+            <li><span>Hyderabad, Telangana</span></li>
+            <li style="margin-top: 0.8rem;">
+              <button class="btn btn-outline-cream" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;" onclick="openOrderModal('Footer Direct CTA')">
+                Order via WhatsApp
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> AN Farms, Hyderabad. All Rights Reserved.
+        </div>
+        <div>
+          Designed for Premium Quality, Freshness & Integrity.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL: QUICK HARVEST ORDER MODAL (Pre-fills WhatsApp Message)
+       ========================================================================== -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="order-modal">
+      <div class="modal-close-btn" onclick="closeOrderModal()">&times;</div>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="eyebrow" style="margin-bottom: 0.3rem;">Farm-Direct Dispatch</span>
+        <h3 class="heading-serif" style="font-size: 1.8rem; color: var(--color-deep-forest);">Order from AN Farms</h3>
+        <p style="font-size: 0.88rem; color: #537060;">Select your preference below to generate your direct WhatsApp order.</p>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label>Selected Category / Interest</label>
+          <input type="text" id="modalProductInput" class="form-control" value="All-Inclusive Fresh Produce" />
+        </div>
+
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="modalNameInput" class="form-control" placeholder="e.g. Ananya Reddy" required />
+        </div>
+
+        <div class="form-group">
+          <label>Your Hyderabad Location</label>
+          <input type="text" id="modalLocationInput" class="form-control" placeholder="e.g. Jubilee Hills, Road No. 36" required />
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">
+          Continue to WhatsApp Order <span>→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: GSAP SCROLLYTELLING & DYNAMIC LOGIC
+       ========================================================================== -->
+  <script>
+    // 1. Set Copyright Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // 2. Sticky Navbar Scroll Effect
+    const mainHeader = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        mainHeader.classList.add('scrolled');
+      } else {
+        mainHeader.classList.remove('scrolled');
+      }
+    });
+
+    // 3. Mobile Drawer Controls
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerClose = document.getElementById('drawerClose');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.add('active');
+    });
+
+    drawerClose.addEventListener('click', () => {
+      mobileDrawer.classList.remove('active');
+    });
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove('active');
+    }
+
+    // 4. Modal Functions (WhatsApp Message Generator)
+    const orderModal = document.getElementById('orderModal');
+    const modalProductInput = document.getElementById('modalProductInput');
+
+    function openOrderModal(productName = 'General Farm Harvest') {
+      modalProductInput.value = productName;
+      orderModal.classList.add('active');
+    }
+
+    function closeOrderModal() {
+      orderModal.classList.remove('active');
+    }
+
+    orderModal.addEventListener('click', (e) => {
+      if (e.target === orderModal) closeOrderModal();
+    });
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      const product = encodeURIComponent(modalProductInput.value);
+      const name = encodeURIComponent(document.getElementById('modalNameInput').value);
+      const loc = encodeURIComponent(document.getElementById('modalLocationInput').value);
+
+      // Customizable Phone Number placeholder (replace with real number e.g. 919876543210)
+      const waNumber = "919876543210";
+      const message = `Hello AN Farms Hyderabad! My name is ${name}. I am in ${loc} and would like to order: ${product}. Please share today's harvest list and delivery details.`;
+
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`, '_blank');
+      closeOrderModal();
+    }
+
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('userName').value);
+      const phone = encodeURIComponent(document.getElementById('userPhone').value);
+      const zone = encodeURIComponent(document.getElementById('userZone').value);
+      const req = encodeURIComponent(document.getElementById('userRequirement').value || 'Fresh Harvest');
+
+      const waNumber = "919876543210";
+      const text = `Hello AN Farms Hyderabad! Name: ${name}, Phone: ${phone}, Delivery Zone: ${zone}, Interested in: ${req}. Please send today's available stock!`;
+
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // ==========================================================================
+    // 5. CINEMATIC 5-PART SCROLLYTELLING ANIMATION ENGINE (GSAP + ScrollTrigger)
+    // ==========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      // Check if GSAP is available
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.warn("GSAP CDN not loaded. Graceful fallback active.");
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const travelingObject = document.getElementById('travelingHarvestObject');
+      const objectAura = document.getElementById('objectAura');
+
+      // Elements inside SVG
+      const basketContainer = document.getElementById('basketContainer');
+      const freshProduceLayer = document.getElementById('freshProduceLayer');
+      const selectionBranches = document.getElementById('selectionBranches');
+      const packagingCrate = document.getElementById('packagingCrate');
+      const kitchenPlatter = document.getElementById('kitchenPlatter');
+
+      // Text and Background Elements
+      const textCards = [
+        document.getElementById('stepText1'),
+        document.getElementById('stepText2'),
+        document.getElementById('stepText3'),
+        document.getElementById('stepText4'),
+        document.getElementById('stepText5')
+      ];
+
+      const bgLayers = [
+        document.getElementById('bgStage1'),
+        document.getElementById('bgStage2'),
+        document.getElementById('bgStage3'),
+        document.getElementById('bgStage4'),
+        document.getElementById('bgStage5')
+      ];
+
+      const progressDots = document.querySelectorAll('.progress-step-dot');
+      const metaLabel = document.getElementById('metaLabel');
+      const metaValue = document.getElementById('metaValue');
+      const metaSub = document.getElementById('metaSub');
+
+      const stageMetadata = [
+        {
+          label: "HARVEST TIMING",
+          value: "05:30 AM Pluck",
+          sub: "Cold dewy harvest protects vitamins and crisp botanical textures."
+        },
+        {
+          label: "SELECTION PROTOCOL",
+          value: "Grade A Sorting",
+          sub: "Inspected individually; separating field greens and heirloom roots."
+        },
+        {
+          label: "FRESHNESS SEAL",
+          value: "Craft Packaging",
+          sub: "Sealed in breathable sugarcane-fiber & embossed kraft hampers."
+        },
+        {
+          label: "TRANSIT STATUS",
+          value: "Direct to Hyderabad",
+          sub: "En route to Jubilee Hills, Banjara Hills & Gachibowli residences."
+        },
+        {
+          label: "DOORSTEP ARRIVAL",
+          value: "Kitchen Ready",
+          sub: "Fresh from the soil, ready for your family's wholesome nourishment."
+        }
+      ];
+
+      // Update UI active states according to active stage index (0-4)
+      function updateStageUI(index) {
+        // Text Cards
+        textCards.forEach((card, i) => {
+          if (i === index) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
+
+        // Backgrounds
+        bgLayers.forEach((bg, i) => {
+          if (i === index) {
+            bg.classList.add('active');
+          } else {
+            bg.classList.remove('active');
+          }
+        });
+
+        // Dots
+        progressDots.forEach((dot, i) => {
+          if (i === index) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+
+        // Meta Card
+        metaLabel.textContent = stageMetadata[index].label;
+        metaValue.textContent = stageMetadata[index].value;
+        metaSub.textContent = stageMetadata[index].sub;
+      }
+
+      // Create Master Pinned Timeline
+      const storyTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#storyTrack",
+          start: "top top",
+          end: "+=4000", // Pinned for 4000px of smooth scroll
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const p = self.progress;
+            // Map 0 to 1 progress into 5 stages
+            let stageIndex = 0;
+            if (p >= 0.8) stageIndex = 4;
+            else if (p >= 0.6) stageIndex = 3;
+            else if (p >= 0.4) stageIndex = 2;
+            else if (p >= 0.2) stageIndex = 1;
+            else stageIndex = 0;
+
+            updateStageUI(stageIndex);
+          }
+        }
+      });
+
+      // ------------------------------------------------------------------------
+      // Continuous Object Journey Stages Across the Timeline:
+      //
+      // Stage 1 (0.00 - 0.20): From the Farm (Fresh Basket in nature, gentle float)
+      // Stage 2 (0.20 - 0.40): Selection (Basket lifts & splits into sorting halos)
+      // Stage 3 (0.40 - 0.60): Packing (Packaging crate slides over, gold seal embosses)
+      // Stage 4 (0.60 - 0.80): Transit (Sealed crate cruises toward urban Hyderabad)
+      // Stage 5 (0.80 - 1.00): Kitchen Arrival (Crate settles on marble & opens with golden glow)
+      // ------------------------------------------------------------------------
+
+      // Timeline Keyframes ensuring visual continuity (NEVER jumps or resets)
+      storyTimeline
+        // Stage 1 -> Stage 2: Lift and reveal sorting halos
+        .to(travelingObject, {
+          y: -20,
+          scale: 1.05,
+          rotation: 3,
+          duration: 1.5,
+          ease: "power1.inOut"
+        }, 0)
+        .to(selectionBranches, {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.5)"
+        }, 0.5)
+
+        // Stage 2 -> Stage 3: Packaging slides into place
+        .to(selectionBranches, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.8,
+          ease: "power1.in"
+        }, 1.8)
+        .to(packagingCrate, {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power2.out"
+        }, 2.0)
+        .to(travelingObject, {
+          scale: 1.1,
+          rotation: -2,
+          duration: 1.5,
+          ease: "power1.inOut"
+        }, 2.0)
+
+        // Stage 3 -> Stage 4: Cruising in transit to Hyderabad
+        .to(travelingObject, {
+          x: 25,
+          y: 10,
+          rotation: 4,
+          scale: 1.02,
+          duration: 2,
+          ease: "sine.inOut"
+        }, 3.5)
+        .to(objectAura, {
+          scale: 1.25,
+          background: "radial-gradient(circle, rgba(198, 161, 91, 0.4) 0%, rgba(93, 140, 69, 0.15) 50%, transparent 70%)",
+          duration: 2
+        }, 3.5)
+
+        // Stage 4 -> Stage 5: Arrival on Calacatta Marble Countertop
+        .to(travelingObject, {
+          x: 0,
+          y: 20,
+          rotation: 0,
+          scale: 1.08,
+          duration: 2,
+          ease: "power2.out"
+        }, 5.5)
+        .to(kitchenPlatter, {
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: "back.out(1.2)"
+        }, 5.8)
+        // Reveal Produce in the open box for dining
+        .to(packagingCrate, {
+          opacity: 0.25,
+          duration: 1
+        }, 6.2);
+
+      // Allow clicking progress dots to scrub to that stage
+      progressDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const step = parseInt(dot.getAttribute('data-step'), 10);
+          const scrollTarget = ScrollTrigger.getById(storyTimeline.scrollTrigger.id);
+          if (scrollTarget) {
+            const progressSteps = [0.05, 0.25, 0.48, 0.70, 0.92];
+            const targetP = progressSteps[step - 1];
+            const totalScroll = scrollTarget.end - scrollTarget.start;
+            window.scrollTo({
+              top: scrollTarget.start + (totalScroll * targetP),
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

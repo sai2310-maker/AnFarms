@@ -1,0 +1,3551 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>AN Farms Hyderabad | Kadaknath Eggs, Nattukodi Eggs & Country Chicken</title>
+  <meta name="title" content="AN Farms Hyderabad | Kadaknath Eggs, Nattukodi Eggs & Country Chicken" />
+  <meta name="description" content="Discover authentic Kadaknath eggs, Nattukodi eggs and traditional native country chicken at AN Farms, Hyderabad. Operated by Venkat Yanamala. Order directly via WhatsApp." />
+  <meta name="keywords" content="Kadaknath eggs Hyderabad, Nattukodi eggs, Country chicken Hyderabad, native poultry Telangana, Venkat Yanamala AN Farms, pure country chicken delivery" />
+  <meta name="author" content="AN Farms - Venkat Yanamala" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anfarms.in/" />
+  <meta property="og:title" content="AN Farms Hyderabad | Authentic Native Country Poultry" />
+  <meta property="og:description" content="Naturally Raised. Honestly Delivered. Kadaknath Eggs, Nattukodi Eggs, and Country Chicken delivered to homes across Hyderabad." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* -------------------------------------------------------------
+       1. DESIGN SYSTEM & CSS VARIABLES
+       ------------------------------------------------------------- */
+    :root {
+      --color-forest: #173D2B;
+      --color-forest-deep: #0D2419;
+      --color-olive: #667C43;
+      --color-olive-soft: #859C5D;
+      --color-cream: #F8F5EC;
+      --color-cream-light: #FDFBF7;
+      --color-cream-dark: #ECE7D9;
+      --color-earth: #79563C;
+      --color-earth-dark: #503825;
+      --color-white: #FFFFFF;
+      --color-gold: #C6A15B;
+      --color-gold-hover: #D8B775;
+      --color-gold-muted: rgba(198, 161, 91, 0.25);
+      --color-charcoal: #1F2421;
+      --color-muted: #5E6660;
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --transition-base: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-sm: 0 4px 12px rgba(23, 61, 43, 0.05);
+      --shadow-md: 0 12px 30px rgba(23, 61, 43, 0.09);
+      --shadow-lg: 0 24px 50px rgba(13, 36, 25, 0.14);
+      --shadow-gold: 0 10px 30px rgba(198, 161, 91, 0.2);
+    }
+
+    /* -------------------------------------------------------------
+       2. RESET & BASE STYLES
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--color-cream);
+      color: var(--color-charcoal);
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--color-charcoal);
+      background-color: var(--color-cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      border: none;
+      outline: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--color-forest);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(1.25rem, 4vw, 3rem);
+      padding-right: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    .editorial-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .editorial-eyebrow::before,
+    .editorial-eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+
+    .editorial-eyebrow.no-after::after {
+      display: none;
+    }
+
+    /* -------------------------------------------------------------
+       3. BUTTONS & UI MICRO-COMPONENTS
+       ------------------------------------------------------------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.95rem 1.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--color-gold);
+      color: var(--color-forest-deep);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--color-gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(198, 161, 91, 0.32);
+    }
+
+    .btn-forest {
+      background: var(--color-forest);
+      color: var(--color-cream);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-forest:hover {
+      background: var(--color-forest-deep);
+      color: var(--color-gold);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline-cream {
+      background: transparent;
+      color: var(--color-cream);
+      border: 1px solid rgba(248, 245, 236, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline-cream:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+      background: rgba(248, 245, 236, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-forest {
+      background: transparent;
+      color: var(--color-forest);
+      border: 1px solid rgba(23, 61, 43, 0.3);
+    }
+
+    .btn-outline-forest:hover {
+      border-color: var(--color-forest);
+      background: var(--color-forest);
+      color: var(--color-cream);
+      transform: translateY(-2px);
+    }
+
+    .badge-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .badge-gold {
+      background: var(--color-gold);
+      color: var(--color-forest-deep);
+    }
+
+    .badge-forest {
+      background: var(--color-forest);
+      color: var(--color-cream);
+    }
+
+    .badge-warning {
+      background: rgba(121, 86, 60, 0.12);
+      color: var(--color-earth-dark);
+      border: 1px solid rgba(121, 86, 60, 0.25);
+    }
+
+    /* -------------------------------------------------------------
+       4. TOP NOTIFICATION BAR & HEADER NAVIGATION
+       ------------------------------------------------------------- */
+    .top-bar {
+      background: var(--color-forest-deep);
+      color: var(--color-cream);
+      padding: 0.45rem 0;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-bar-location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--color-cream-dark);
+    }
+
+    .top-bar-location svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-gold);
+    }
+
+    .top-bar-tagline {
+      font-weight: 500;
+      color: var(--color-gold);
+    }
+
+    .top-bar-social {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .top-bar-social a {
+      color: var(--color-cream-dark);
+      font-size: 0.72rem;
+    }
+
+    .top-bar-social a:hover {
+      color: var(--color-gold);
+    }
+
+    /* Sticky Navigation */
+    .header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+      background: rgba(23, 61, 43, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(198, 161, 91, 0.15);
+      padding: 0.85rem 0;
+    }
+
+    .header.scrolled {
+      background: rgba(13, 36, 25, 0.98);
+      padding: 0.65rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Brand Logo */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-crest {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--color-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(198, 161, 91, 0.2) 0%, rgba(23, 61, 43, 0.8) 100%);
+      color: var(--color-gold);
+      transition: transform var(--transition-base);
+    }
+
+    .brand-logo:hover .brand-crest {
+      transform: rotate(10deg) scale(1.05);
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-cream);
+      line-height: 1;
+    }
+
+    .brand-title span {
+      color: var(--color-gold);
+    }
+
+    .brand-subtitle {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--color-cream);
+      position: relative;
+      padding: 0.35rem 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--color-gold);
+      transition: width var(--transition-base);
+    }
+
+    .nav-link:hover {
+      color: var(--color-gold);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .nav-phone-link {
+      color: var(--color-cream);
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all var(--transition-base);
+    }
+
+    .nav-phone-link:hover {
+      background: rgba(198, 161, 91, 0.15);
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    .nav-phone-link svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-gold);
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-gold);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 380px;
+      height: 100vh;
+      height: 100dvh;
+      background: var(--color-forest-deep);
+      border-left: 1px solid rgba(198, 161, 91, 0.3);
+      padding: 2.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10000;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+    }
+
+    .drawer-close {
+      background: transparent;
+      color: var(--color-gold);
+      font-size: 1.75rem;
+      cursor: pointer;
+    }
+
+    .drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .drawer-link {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: var(--color-cream);
+      display: block;
+      transition: color var(--transition-base);
+    }
+
+    .drawer-link:hover {
+      color: var(--color-gold);
+      padding-left: 0.5rem;
+    }
+
+    /* -------------------------------------------------------------
+       5. CINEMATIC HERO SECTION
+       ------------------------------------------------------------- */
+    .hero-section {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      background-color: var(--color-forest-deep);
+      overflow: hidden;
+      padding: clamp(4rem, 10vw, 8rem) 0;
+    }
+
+    .hero-bg-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      filter: brightness(0.65) contrast(1.1);
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 60% 40%, rgba(23, 61, 43, 0.35) 0%, rgba(13, 36, 25, 0.92) 85%);
+      z-index: 2;
+    }
+
+    .hero-grain-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(198, 161, 91, 0.08) 1px, transparent 0);
+      background-size: 24px 24px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 860px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      background: rgba(198, 161, 91, 0.15);
+      border: 1px solid rgba(198, 161, 91, 0.4);
+      border-radius: 50px;
+      color: var(--color-gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--color-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--color-gold);
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-headline {
+      font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--color-cream);
+      margin-bottom: 1.25rem;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--color-gold);
+      font-family: var(--font-heading);
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 400;
+      color: var(--color-cream-dark);
+      letter-spacing: 0.02em;
+      margin-bottom: 1.25rem;
+      border-left: 2px solid var(--color-gold);
+      padding-left: 1rem;
+    }
+
+    .hero-description {
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      color: rgba(248, 245, 236, 0.85);
+      max-width: 680px;
+      margin-bottom: 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-footer-bar {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(248, 245, 236, 0.15);
+      flex-wrap: wrap;
+    }
+
+    .hero-tagline-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+    }
+
+    .hero-highlights {
+      display: flex;
+      gap: 1.75rem;
+      font-size: 0.8rem;
+      color: var(--color-cream-dark);
+      flex-wrap: wrap;
+    }
+
+    .hero-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-highlight-item svg {
+      width: 15px;
+      height: 15px;
+      color: var(--color-gold);
+    }
+
+    /* Scroll Indicator */
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      right: clamp(1.25rem, 4vw, 3rem);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .scroll-mouse {
+      width: 22px;
+      height: 36px;
+      border: 2px solid var(--color-gold);
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .scroll-wheel {
+      width: 4px;
+      height: 6px;
+      background: var(--color-gold);
+      border-radius: 2px;
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: wheelBounce 2s infinite;
+    }
+
+    @keyframes wheelBounce {
+      0%, 100% { transform: translate(-50%, 0); opacity: 1; }
+      50% { transform: translate(-50%, 12px); opacity: 0; }
+    }
+
+    /* -------------------------------------------------------------
+       6. CINEMATIC 5-STAGE SCROLL STORYTELLING SYSTEM
+       (FIXED FOR DESKTOP & MOBILE WITH REAL EGG TRAY PHOTOGRAPHY)
+       ------------------------------------------------------------- */
+    .story-viewport-wrapper {
+      position: relative;
+      background-color: var(--color-forest-deep);
+      color: var(--color-cream);
+      overflow: hidden;
+    }
+
+    /* Pinned Stage Container */
+    .story-pin-stage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding-top: 68px; /* Clear sticky header */
+    }
+
+    /* Background Stages (Cross-fading layers) */
+    .story-bg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+      z-index: 1;
+    }
+
+    .story-bg-layer.active {
+      opacity: 1;
+    }
+
+    .story-bg-layer::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13, 36, 25, 0.94) 0%, rgba(23, 61, 43, 0.82) 50%, rgba(13, 36, 25, 0.92) 100%);
+    }
+
+    /* Visual Background Customizations per Stage */
+    .bg-stage-1 {
+      background-image: url('https://www.freedomrangerhatchery.com/wp-content/uploads/2022/09/AdobeStock_53890815-1024x683.jpeg');
+    }
+    .bg-stage-2 {
+      background-image: url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1800&q=80');
+    }
+    .bg-stage-3 {
+      background-image: url('https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=1800&q=80');
+    }
+    .bg-stage-4 {
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80');
+    }
+    .bg-stage-5 {
+      background-image: url('https://tiimg.tistatic.com/fp/1/006/122/kadaknath-chicken-eggs-238.jpg');
+    }
+
+    /* Responsive 2-Zone Stage Layout so Text and Egg Tray Never Collide */
+    .story-stage-layout {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: clamp(1.5rem, 3vw, 3.5rem);
+    }
+
+    .story-card-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      z-index: 12;
+    }
+
+    .story-slide-item {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-46%);
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
+      background: rgba(13, 36, 25, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(198, 161, 91, 0.32);
+      border-radius: 10px;
+      padding: clamp(1.35rem, 3vw, 2.5rem);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .story-slide-item.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(-50%);
+    }
+
+    .story-stage-index {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .story-stage-index::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 2px;
+      background: var(--color-gold);
+    }
+
+    .story-slide-title {
+      font-size: clamp(1.45rem, 2.4vw, 2.25rem);
+      line-height: 1.15;
+      color: var(--color-cream);
+      margin-bottom: 0.85rem;
+    }
+
+    .story-slide-desc {
+      font-size: clamp(0.86rem, 1.05vw, 1rem);
+      color: rgba(248, 245, 236, 0.86);
+      line-height: 1.65;
+      margin-bottom: 1.15rem;
+    }
+
+    .story-products-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .story-product-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-cream-light);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.42rem 0.75rem;
+      border-radius: 4px;
+      border-left: 2px solid var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       CENTRAL TRAVELING OBJECT: ORIGINAL PHOTOGRAPHIC EGG TRAY CRATE
+       ------------------------------------------------------------- */
+    .traveling-object-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .crate-anchor {
+      position: relative;
+      width: clamp(270px, 31vw, 430px);
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    /* Realistic Handcrafted Wooden/Pulp Egg Tray Frame */
+    .real-egg-tray-box {
+      position: relative;
+      background: linear-gradient(145deg, #6B472A 0%, #462C18 55%, #311E0F 100%);
+      border-radius: 14px;
+      padding: 12px;
+      border: 2px solid #8C6440;
+      box-shadow:
+        0 28px 55px rgba(0, 0, 0, 0.65),
+        inset 0 2px 4px rgba(255, 255, 255, 0.18),
+        inset 0 -6px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Brass Corner Accents on Original Tray Carrier */
+    .tray-corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: var(--color-gold);
+      border-style: solid;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .tray-corner.tl { top: 5px; left: 5px; border-width: 2.5px 0 0 2.5px; border-top-left-radius: 6px; }
+    .tray-corner.tr { top: 5px; right: 5px; border-width: 2.5px 2.5px 0 0; border-top-right-radius: 6px; }
+    .tray-corner.bl { bottom: 5px; left: 5px; border-width: 0 0 2.5px 2.5px; border-bottom-left-radius: 6px; }
+    .tray-corner.br { bottom: 5px; right: 5px; border-width: 0 2.5px 2.5px 0; border-bottom-right-radius: 6px; }
+
+    /* Original Egg Tray Photograph Window */
+    .real-tray-photo-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #23170D;
+      border: 1.5px solid rgba(198, 161, 91, 0.45);
+      box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .real-tray-photo-frame img.main-tray-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.03);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    /* Live Stage Status Pill at Top of Tray */
+    .tray-live-pill {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      background: rgba(13, 36, 25, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(198, 161, 91, 0.45);
+      padding: 0.38rem 0.75rem;
+      border-radius: 6px;
+      z-index: 4;
+    }
+
+    .tray-live-pill-left {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-cream);
+    }
+
+    .tray-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      box-shadow: 0 0 8px var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    .tray-live-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Secondary Floating Product Preview Badges (Nattukodi Eggs & Chicken) */
+    .tray-floating-subcard {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(13, 36, 25, 0.92);
+      border: 1px solid var(--color-gold);
+      border-radius: 6px;
+      padding: 0.35rem 0.55rem;
+      z-index: 4;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .tray-floating-subcard img {
+      width: 34px;
+      height: 34px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 1px solid rgba(198, 161, 91, 0.5);
+    }
+
+    .tray-floating-subcard-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .tray-floating-subcard-text strong {
+      font-size: 0.68rem;
+      color: var(--color-cream);
+    }
+
+    .tray-floating-subcard-text span {
+      font-size: 0.62rem;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    /* AN FARMS Branded Brass & Forest Green Nameplate on Front of Crate */
+    .tray-brand-plaque {
+      margin-top: 10px;
+      background: linear-gradient(90deg, #102B1E 0%, #173D2B 50%, #102B1E 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 7px;
+      padding: 0.55rem 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .tray-plaque-brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tray-plaque-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--color-cream);
+      line-height: 1.1;
+    }
+
+    .tray-plaque-sub {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .tray-plaque-seal {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--color-forest-deep);
+      background: var(--color-gold);
+      padding: 0.28rem 0.6rem;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Progress Tracker for Story */
+    .story-progress-indicator {
+      position: absolute;
+      right: clamp(1rem, 2.5vw, 2.5rem);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      align-items: center;
+    }
+
+    .progress-step-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      cursor: pointer;
+    }
+
+    .step-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(248, 245, 236, 0.45);
+      transition: color var(--transition-base);
+    }
+
+    .step-pip {
+      width: 8px;
+      height: 8px;
+      border: 1px solid rgba(198, 161, 91, 0.45);
+      border-radius: 50%;
+      background: transparent;
+      transition: all var(--transition-base);
+    }
+
+    .progress-step-item.active .step-number {
+      color: var(--color-gold);
+    }
+
+    .progress-step-item.active .step-pip {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      transform: scale(1.45);
+      box-shadow: 0 0 10px var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       7. SIGNATURE PRODUCT COLLECTION
+       ------------------------------------------------------------- */
+    .products-section {
+      padding: clamp(5rem, 8vw, 9rem) 0;
+      background-color: var(--color-cream);
+      position: relative;
+    }
+
+    .section-header-centered {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto clamp(3rem, 5vw, 5rem);
+    }
+
+    .section-headline {
+      font-size: clamp(2rem, 3.4vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--color-forest);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtext {
+      font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 2.5vw, 2.5rem);
+    }
+
+    .product-card {
+      background: var(--color-white);
+      border: 1px solid rgba(23, 61, 43, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-slow);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(198, 161, 91, 0.45);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 75%; /* 4:3 Aspect Ratio */
+      overflow: hidden;
+      background-color: var(--color-cream-dark);
+    }
+
+    .product-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.07);
+    }
+
+    .product-badge-overlay {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 2;
+    }
+
+    .product-content {
+      padding: clamp(1.5rem, 2vw, 2rem);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .product-title {
+      font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+      color: var(--color-forest);
+      margin-bottom: 0.75rem;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .product-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(23, 61, 43, 0.08);
+      margin-bottom: 1.25rem;
+    }
+
+    .product-pricing-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-price-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+    }
+
+    .product-price-value {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      line-height: 1;
+      margin-top: 0.2rem;
+    }
+
+    .product-unit-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-earth);
+      background: rgba(121, 86, 60, 0.08);
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .product-card .btn {
+      width: 100%;
+    }
+
+    /* Product Schedule Note */
+    .schedule-notice {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      color: var(--color-earth-dark);
+      background: rgba(121, 86, 60, 0.08);
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      margin-top: 0.75rem;
+    }
+
+    .schedule-notice svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: var(--color-earth);
+    }
+
+    /* -------------------------------------------------------------
+       8. WHY CHOOSE AN FARMS
+       ------------------------------------------------------------- */
+    .why-section {
+      padding: clamp(5rem, 8vw, 8rem) 0;
+      background-color: var(--color-forest-deep);
+      color: var(--color-cream);
+      position: relative;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.25rem, 2vw, 2rem);
+      margin-top: clamp(2.5rem, 4vw, 4rem);
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(198, 161, 91, 0.2);
+      border-radius: 6px;
+      padding: clamp(1.75rem, 2.2vw, 2.25rem);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--color-gold);
+      transform: translateY(-6px);
+    }
+
+    .why-number {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      opacity: 0.85;
+    }
+
+    .why-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .why-card-text {
+      font-size: 0.88rem;
+      color: rgba(248, 245, 236, 0.78);
+      line-height: 1.65;
+    }
+
+    /* -------------------------------------------------------------
+       9. ABOUT AN FARMS & VENKAT YANAMALA
+       ------------------------------------------------------------- */
+    .about-section {
+      padding: clamp(5rem, 8vw, 9rem) 0;
+      background-color: var(--color-cream-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .about-visual-column {
+      position: relative;
+    }
+
+    .about-main-image-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(23, 61, 43, 0.1);
+      position: relative;
+    }
+
+    .about-main-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .about-badge-card {
+      position: absolute;
+      bottom: -1.75rem;
+      right: -1.75rem;
+      background: var(--color-forest);
+      color: var(--color-cream);
+      padding: 1.5rem 1.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--color-gold);
+      box-shadow: var(--shadow-md);
+      max-width: 240px;
+    }
+
+    .about-badge-card .gold-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .about-badge-card .bold-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .about-content-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-quote {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--color-forest);
+      line-height: 1.4;
+      margin: 1.25rem 0 1.5rem;
+      border-left: 2px solid var(--color-gold);
+      padding-left: 1.25rem;
+    }
+
+    .about-p {
+      font-size: 0.96rem;
+      color: var(--color-muted);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .founder-signature-box {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(23, 61, 43, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .founder-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-forest);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: 1px solid var(--color-gold);
+    }
+
+    .founder-details h4 {
+      font-size: 1.15rem;
+      color: var(--color-forest);
+      margin-bottom: 0.15rem;
+    }
+
+    .founder-details p {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       10. WHATSAPP ORDERING EXPERIENCE & CUSTOM FORM
+       ------------------------------------------------------------- */
+    .order-section {
+      padding: clamp(5rem, 8vw, 8rem) 0;
+      background-color: var(--color-cream-dark);
+      position: relative;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      background: var(--color-white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(23, 61, 43, 0.08);
+    }
+
+    .order-sidebar {
+      background: var(--color-forest);
+      color: var(--color-cream);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .order-sidebar-title {
+      font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+      color: var(--color-cream);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .order-sidebar-desc {
+      font-size: 0.92rem;
+      color: rgba(248, 245, 236, 0.82);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .order-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .order-perk-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      font-size: 0.88rem;
+    }
+
+    .order-perk-icon {
+      width: 22px;
+      height: 22px;
+      color: var(--color-gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .order-form-pane {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-group-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-forest);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      background: var(--color-cream-light);
+      border: 1px solid rgba(23, 61, 43, 0.18);
+      border-radius: 4px;
+      color: var(--color-charcoal);
+      transition: all var(--transition-base);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-forest);
+      background: var(--color-white);
+      box-shadow: 0 0 0 3px rgba(23, 61, 43, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .order-button-wrapper {
+      margin-top: 1rem;
+    }
+
+    .order-disclaimer {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      margin-top: 0.85rem;
+      text-align: center;
+    }
+
+    /* -------------------------------------------------------------
+       11. SOCIAL MEDIA & HYDERABAD TRUST
+       ------------------------------------------------------------- */
+    .social-section {
+      padding: clamp(4.5rem, 6vw, 7rem) 0;
+      background-color: var(--color-forest);
+      color: var(--color-cream);
+      text-align: center;
+    }
+
+    .social-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 820px;
+      margin: 3rem auto 0;
+    }
+
+    .social-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(198, 161, 91, 0.25);
+      border-radius: 8px;
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all var(--transition-base);
+      text-decoration: none;
+      color: var(--color-cream);
+    }
+
+    .social-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--color-gold);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(198, 161, 91, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(198, 161, 91, 0.3);
+    }
+
+    .social-icon-box svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+      color: var(--color-cream);
+    }
+
+    .social-handle {
+      font-size: 0.85rem;
+      color: var(--color-gold);
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+
+    .social-subtext {
+      font-size: 0.82rem;
+      color: rgba(248, 245, 236, 0.75);
+    }
+
+    /* -------------------------------------------------------------
+       12. CONTACT & HYDERABAD DELIVERY COVERAGE
+       ------------------------------------------------------------- */
+    .contact-section {
+      padding: clamp(5rem, 8vw, 8rem) 0;
+      background-color: var(--color-cream);
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .contact-card-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      background: var(--color-forest);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--color-gold);
+    }
+
+    .contact-card-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-detail-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-detail-val {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-forest);
+    }
+
+    .contact-detail-val a:hover {
+      color: var(--color-gold);
+    }
+
+    .coverage-card {
+      background: var(--color-white);
+      border-radius: 8px;
+      padding: 2.25rem;
+      border: 1px solid rgba(23, 61, 43, 0.1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .coverage-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-forest);
+    }
+
+    .coverage-card p {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .coverage-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .coverage-tag {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--color-cream-dark);
+      border-radius: 3px;
+      color: var(--color-forest);
+      font-weight: 500;
+    }
+
+    /* -------------------------------------------------------------
+       13. FOOTER
+       ------------------------------------------------------------- */
+    .footer {
+      background-color: var(--color-forest-deep);
+      color: var(--color-cream);
+      padding: clamp(4rem, 6vw, 6rem) 0 2rem;
+      border-top: 1px solid rgba(198, 161, 91, 0.2);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr 1fr;
+      gap: clamp(2rem, 3.5vw, 3.5rem);
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+
+    .footer-brand-col p {
+      font-size: 0.88rem;
+      color: rgba(248, 245, 236, 0.75);
+      line-height: 1.7;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links-list a {
+      font-size: 0.85rem;
+      color: rgba(248, 245, 236, 0.75);
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-gold);
+      padding-left: 0.25rem;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(248, 245, 236, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: rgba(248, 245, 236, 0.6);
+    }
+
+    .footer-bottom-copy span {
+      color: var(--color-gold);
+    }
+
+    /* -------------------------------------------------------------
+       14. FLOATING ACTION BUTTONS (WHATSAPP & CALL)
+       ------------------------------------------------------------- */
+    .floating-actions {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      z-index: 999;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      transition: all var(--transition-base);
+      position: relative;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .float-whatsapp {
+      background-color: #25D366;
+      color: #FFFFFF;
+    }
+
+    .float-whatsapp svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .float-call {
+      background-color: var(--color-forest);
+      color: var(--color-gold);
+      border: 1px solid var(--color-gold);
+    }
+
+    .float-call svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .float-tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      background: var(--color-forest-deep);
+      color: var(--color-cream);
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      border: 1px solid rgba(198, 161, 91, 0.3);
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateX(6px);
+    }
+
+    .float-btn:hover .float-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* -------------------------------------------------------------
+       15. RESPONSIVE MEDIA QUERIES (MOBILE STORY FIX & TABLET)
+       ------------------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-main-image {
+        height: 380px;
+      }
+      .about-badge-card {
+        right: 1rem;
+        bottom: 1rem;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile & Tablet Split-Zone Fix for the 5-Stage Story */
+    @media (max-width: 900px) {
+      .story-pin-stage {
+        padding-top: 62px;
+        padding-bottom: 42px;
+        align-items: stretch;
+      }
+
+      /* Stack Egg Tray on Top, Editorial Story Card on Bottom with Zero Overlap */
+      .story-stage-layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.5rem;
+        height: 100%;
+        padding-top: 0.35rem;
+        padding-bottom: 0.35rem;
+      }
+
+      .traveling-object-container {
+        order: 1;
+        flex: 0 0 auto;
+        height: 37%;
+        max-height: 230px;
+        width: 100%;
+      }
+
+      .crate-anchor {
+        width: min(260px, 74vw);
+      }
+
+      .real-egg-tray-box {
+        padding: 8px;
+        border-radius: 10px;
+      }
+
+      .real-tray-photo-frame {
+        aspect-ratio: 16 / 9.5;
+      }
+
+      .tray-brand-plaque {
+        margin-top: 6px;
+        padding: 0.38rem 0.65rem;
+      }
+
+      .tray-plaque-title {
+        font-size: 0.78rem;
+      }
+
+      .tray-plaque-sub {
+        font-size: 0.52rem;
+      }
+
+      .tray-plaque-seal {
+        font-size: 0.58rem;
+        padding: 0.2rem 0.45rem;
+      }
+
+      .tray-floating-subcard {
+        bottom: 6px;
+        right: 6px;
+        padding: 0.25rem 0.45rem;
+      }
+
+      .tray-floating-subcard img {
+        width: 26px;
+        height: 26px;
+      }
+
+      .story-card-track {
+        order: 2;
+        flex: 1 1 auto;
+        width: 100%;
+        height: 60%;
+        display: flex;
+        align-items: center;
+      }
+
+      .story-slide-item {
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 1.05rem 1.15rem;
+        max-height: 100%;
+        overflow-y: auto;
+      }
+
+      .story-slide-item.active {
+        transform: translateY(-50%);
+      }
+
+      .story-stage-index {
+        font-size: 0.66rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .story-slide-title {
+        font-size: clamp(1.18rem, 4.6vw, 1.5rem);
+        margin-bottom: 0.45rem;
+      }
+
+      .story-slide-desc {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-bottom: 0.65rem;
+      }
+
+      .story-products-chips {
+        gap: 0.32rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .story-product-chip {
+        font-size: 0.73rem;
+        padding: 0.32rem 0.6rem;
+      }
+
+      .story-slide-item .btn {
+        padding: 0.68rem 1.1rem;
+        font-size: 0.74rem;
+      }
+
+      /* Horizontal Progress Indicator at Bottom Center on Mobile */
+      .story-progress-indicator {
+        top: auto;
+        bottom: 0.65rem;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 1rem;
+        background: rgba(13, 36, 25, 0.88);
+        padding: 0.38rem 0.95rem;
+        border-radius: 50px;
+        border: 1px solid rgba(198, 161, 91, 0.35);
+      }
+
+      .progress-step-item {
+        gap: 0.35rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        display: none;
+      }
+      .nav-menu, .nav-actions .nav-phone-link {
+        display: none;
+      }
+      .nav-actions .btn-gold {
+        padding: 0.65rem 1rem;
+        font-size: 0.72rem;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .order-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .social-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-badge-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 1rem;
+        max-width: 100%;
+      }
+      .floating-actions {
+        bottom: 1.1rem;
+        right: 1.1rem;
+      }
+      .hero-footer-bar {
+        gap: 1.25rem;
+      }
+      .hero-scroll-indicator {
+        display: none;
+      }
+    }
+
+    /* Extra compact height phones (e.g. iPhone SE / landscape) */
+    @media (max-width: 900px) and (max-height: 680px) {
+      .traveling-object-container {
+        height: 32%;
+      }
+      .crate-anchor {
+        width: 210px;
+      }
+      .tray-brand-plaque {
+        display: none;
+      }
+      .story-slide-desc {
+        font-size: 0.78rem;
+        margin-bottom: 0.45rem;
+      }
+    }
+
+    /* Accessibility / Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       TOP ANNOUNCEMENT BAR
+       ========================================== -->
+  <aside class="top-bar" aria-label="Business Announcements">
+    <div class="container top-bar-inner">
+      <div class="top-bar-location">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>Hyderabad, Telangana • Native Poultry & Country Chicken</span>
+      </div>
+      <div class="top-bar-tagline">
+        Naturally Raised. Honestly Delivered.
+      </div>
+      <div class="top-bar-social">
+        <a href="https://www.instagram.com/anfarms_7675/" target="_blank" rel="noopener" aria-label="Instagram">Instagram: @anfarms_7675</a>
+        <a href="https://www.facebook.com/an.farms.193708/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       STICKY HEADER NAVIGATION
+       ========================================== -->
+  <header class="header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="AN Farms Homepage">
+        <div class="brand-crest">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            <path d="M12 6c-3.31 0-6 2.69-6 6 0 2.22 1.21 4.15 3 5.19l1-1.73c-1.19-.69-2-1.99-2-3.46 0-2.21 1.79-4 4-4s4 1.79 4 4c0 1.47-.81 2.77-2 3.46l1 1.73c1.79-1.04 3-2.97 3-5.19 0-3.31-2.69-6-6-6z"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">AN <span>FARMS</span></span>
+          <span class="brand-subtitle">Hyderabad • Native Poultry</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#products" class="nav-link">Our Products</a></li>
+          <li><a href="#why-us" class="nav-link">Why AN Farms</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+919876543210" class="nav-phone-link" aria-label="Call AN Farms">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>Call AN Farms</span>
+        </a>
+
+        <a href="#order-now" class="btn btn-gold" aria-label="Order on WhatsApp">
+          <span>Order on WhatsApp</span>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div>
+      <div class="drawer-header">
+        <div class="brand-text-wrap">
+          <span class="brand-title">AN <span>FARMS</span></span>
+          <span class="brand-subtitle">Hyderabad</span>
+        </div>
+        <button class="drawer-close" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="drawer-links">
+        <li><a href="#hero" class="drawer-link">Home</a></li>
+        <li><a href="#story" class="drawer-link">Our Story</a></li>
+        <li><a href="#products" class="drawer-link">Our Products</a></li>
+        <li><a href="#why-us" class="drawer-link">Why AN Farms</a></li>
+        <li><a href="#about" class="drawer-link">About Us</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="#order-now" class="btn btn-gold" style="width: 100%; margin-bottom: 0.75rem;" onclick="closeDrawer()">Order on WhatsApp</a>
+      <p style="font-size: 0.75rem; color: var(--color-gold); text-align: center;">Operated by Venkat Yanamala</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================
+         HERO SECTION: FIRST IMPRESSION
+         ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-container">
+        <img 
+          src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=2000&q=85" 
+          alt="Majestic native Kadaknath rooster in lush farm surroundings" 
+          class="hero-bg-image" 
+          id="heroBgImage"
+        />
+        <div class="hero-vignette"></div>
+        <div class="hero-grain-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            <span>AN FARMS | HYDERABAD</span>
+          </div>
+
+          <h1 class="hero-headline">
+            THE TRUE GOODNESS OF <em>NATIVE POULTRY.</em>
+          </h1>
+
+          <p class="hero-subheadline">
+            Authentic Kadaknath Eggs. Traditional Nattukodi Eggs. Native Country Chicken.
+          </p>
+
+          <p class="hero-description">
+            Discover the distinctive taste and tradition of native country poultry with AN Farms. Bringing carefully handled farm products closer to homes across Hyderabad.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#products" class="btn btn-gold">
+              <span>EXPLORE OUR PRODUCTS</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+
+            <a href="#order-now" class="btn btn-outline-cream">
+              <span>ORDER ON WHATSAPP</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.18-.553-1.895-.783-3.109-2.73-3.204-2.855-.095-.127-.768-1.021-.768-1.947 0-.925.485-1.38.658-1.57.172-.19.375-.238.5-.238.125 0 .25.002.359.007.116.006.27-.044.423.322.158.377.538 1.31.586 1.405.048.095.08.206.016.332-.064.127-.096.206-.19.317-.096.11-.202.247-.289.332-.095.095-.195.198-.084.388.111.19.493.813 1.057 1.316.726.647 1.338.847 1.529.942.19.095.302.079.413-.048.111-.127.476-.554.603-.744.127-.19.254-.158.428-.095.175.063 1.111.524 1.302.62.19.095.317.143.365.222.048.079.048.46-.096.865z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-footer-bar">
+            <span class="hero-tagline-text">"Naturally Raised. Honestly Delivered."</span>
+            <div class="hero-highlights">
+              <span class="hero-highlight-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Kadaknath Eggs
+              </span>
+              <span class="hero-highlight-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Nattukodi Eggs
+              </span>
+              <span class="hero-highlight-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Country Chicken
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle animated scroll indicator -->
+      <a href="#story" class="hero-scroll-indicator" aria-label="Scroll down">
+        <span>SCROLL</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ==========================================
+         CINEMATIC SCROLL-ANIMATED STORYTELLING
+         5-STAGE PINNED JOURNEY WITH ORIGINAL EGG TRAY
+         ========================================== -->
+    <section class="story-viewport-wrapper" id="story" aria-label="Our Farm-to-Home Story">
+      <div class="story-pin-stage" id="storyPinStage">
+
+        <!-- Stage 1 Background: The Farm -->
+        <div class="story-bg-layer bg-stage-1 active" id="bgStage1"></div>
+        <!-- Stage 2 Background: Signature Products -->
+        <div class="story-bg-layer bg-stage-2" id="bgStage2"></div>
+        <!-- Stage 3 Background: Handling & Packing -->
+        <div class="story-bg-layer bg-stage-3" id="bgStage3"></div>
+        <!-- Stage 4 Background: Journey to Hyderabad Home -->
+        <div class="story-bg-layer bg-stage-4" id="bgStage4"></div>
+        <!-- Stage 5 Background: Order & Table Presentation -->
+        <div class="story-bg-layer bg-stage-5" id="bgStage5"></div>
+
+        <!-- 2-ZONE RESPONSIVE CONTAINER: LEFT EDITORIAL SLIDES + RIGHT ORIGINAL EGG TRAY -->
+        <div class="container story-stage-layout">
+
+          <!-- ZONE 1: STAGE EDITORIAL CONTENT -->
+          <div class="story-card-track">
+            
+            <!-- STAGE 1 SLIDE -->
+            <article class="story-slide-item active" id="slide1">
+              <span class="story-stage-index">STAGE 01 • THE FARM</span>
+              <h2 class="story-slide-title">ROOTED IN TRADITION. INSPIRED BY NATURE.</h2>
+              <p class="story-slide-desc">
+                At AN Farms, our passion begins with native country poultry and an appreciation for traditional farm products. We believe Hyderabad deserves genuine, authentic country poultry raised with patience and respect for heritage.
+              </p>
+              <div class="story-product-chip">
+                <span>Natural green farm environment & traditional country breeds</span>
+              </div>
+            </article>
+
+            <!-- STAGE 2 SLIDE -->
+            <article class="story-slide-item" id="slide2">
+              <span class="story-stage-index">STAGE 02 • THREE SIGNATURE PRODUCTS</span>
+              <h2 class="story-slide-title">THREE SIGNATURE PRODUCTS. ONE COMMITMENT TO QUALITY.</h2>
+              <p class="story-slide-desc">
+                Discover our selection of distinctive native poultry products, carefully presented for customers who appreciate traditional country poultry:
+              </p>
+              <div class="story-products-chips">
+                <div class="story-product-chip">
+                  <strong>01. Kadaknath Eggs:</strong>&nbsp;30-Egg Tray (₹750)
+                </div>
+                <div class="story-product-chip">
+                  <strong>02. Nattukodi Eggs:</strong>&nbsp;30-Egg Tray (₹540)
+                </div>
+                <div class="story-product-chip">
+                  <strong>03. Nattukodi Chicken:</strong>&nbsp;Selected Days (₹600–₹799/kg)
+                </div>
+              </div>
+            </article>
+
+            <!-- STAGE 3 SLIDE -->
+            <article class="story-slide-item" id="slide3">
+              <span class="story-stage-index">STAGE 03 • CAREFUL HANDLING</span>
+              <h2 class="story-slide-title">CAREFULLY HANDLED. PACKED WITH CARE.</h2>
+              <p class="story-slide-desc">
+                Every order is inspected and secured by hand. Our native eggs are placed into original 30-egg protective trays, and Nattukodi chicken is hygienically packed to maintain farm-level freshness on every dispatch.
+              </p>
+              <div class="story-product-chip">
+                <span>Clean, food-grade protective handling before every journey</span>
+              </div>
+            </article>
+
+            <!-- STAGE 4 SLIDE -->
+            <article class="story-slide-item" id="slide4">
+              <span class="story-stage-index">STAGE 04 • DIRECT TO YOUR HOME</span>
+              <h2 class="story-slide-title">FROM AN FARMS TO YOUR HOME.</h2>
+              <p class="story-slide-desc">
+                Enjoy a convenient way to order native country poultry products directly from AN Farms. We bridge the distance between traditional country poultry and modern Hyderabad residences, ensuring seamless doorstep delivery.
+              </p>
+              <div class="story-product-chip">
+                <span>Direct delivery across Jubilee Hills, Banjara Hills, Gachibowli, Kondapur & Hyderabad</span>
+              </div>
+            </article>
+
+            <!-- STAGE 5 SLIDE -->
+            <article class="story-slide-item" id="slide5">
+              <span class="story-stage-index">STAGE 05 • ORDER & EXPERIENCE</span>
+              <h2 class="story-slide-title">BRING HOME THE GOODNESS OF NATIVE POULTRY.</h2>
+              <p class="story-slide-desc">
+                Elevate your home kitchen with the rich, authentic taste of genuine Kadaknath and Nattukodi poultry. Order in seconds directly through WhatsApp.
+              </p>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="#order-now" class="btn btn-gold">
+                  <span>ORDER NOW ON WHATSAPP</span>
+                </a>
+                <a href="tel:+919876543210" class="btn btn-outline-cream">
+                  <span>CALL AN FARMS</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- ZONE 2: CONTINUOUS TRAVELING OBJECT – ORIGINAL EGG TRAY CRATE -->
+          <div class="traveling-object-container" id="crateTravelWrapper">
+            <div class="crate-anchor" id="travelingCrate">
+              <div class="real-egg-tray-box">
+                <!-- Brass Corner Brackets -->
+                <span class="tray-corner tl"></span>
+                <span class="tray-corner tr"></span>
+                <span class="tray-corner bl"></span>
+                <span class="tray-corner br"></span>
+
+                <!-- Original Photographic 30-Egg Tray Display -->
+                <div class="real-tray-photo-frame">
+                  <div class="tray-live-pill">
+                    <div class="tray-live-pill-left">
+                      <span class="tray-live-dot"></span>
+                      <span id="trayStageStatus">Original 30-Egg Farm Tray</span>
+                    </div>
+                    <span class="tray-live-tag" id="trayStageCode">STAGE 01</span>
+                  </div>
+
+                  <!-- Original Photograph of Kadaknath & Native Egg Tray -->
+                  <img
+                    src="https://tiimg.tistatic.com/fp/1/006/122/kadaknath-chicken-eggs-238.jpg"
+                    alt="Original 30-egg tray of authentic Kadaknath and Nattukodi native eggs from AN Farms Hyderabad"
+                    class="main-tray-img"
+                    id="trayMainPhoto"
+                  />
+
+                  <!-- Secondary Authentic Nattukodi Preview Badge -->
+                  <div class="tray-floating-subcard" id="traySubBadge">
+                    <img
+                      src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=240&q=80"
+                      alt="Traditional Nattukodi brown country eggs"
+                      id="traySubThumb"
+                    />
+                    <div class="tray-floating-subcard-text">
+                      <strong id="traySubTitle">Kadaknath & Nattukodi</strong>
+                      <span id="traySubPrice">30-Egg Trays • ₹750 / ₹540</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Branded AN FARMS Hyderabad Plaque -->
+                <div class="tray-brand-plaque">
+                  <div class="tray-plaque-brand">
+                    <span class="tray-plaque-title">AN FARMS • HYDERABAD</span>
+                    <span class="tray-plaque-sub">Naturally Raised. Honestly Delivered.</span>
+                  </div>
+                  <span class="tray-plaque-seal" id="traySealText">30 EGGS TRAY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Progress Tracker Indicators -->
+        <nav class="story-progress-indicator" aria-label="Story Progress">
+          <div class="progress-step-item active" data-step="1">
+            <span class="step-number">01</span>
+            <span class="step-pip"></span>
+          </div>
+          <div class="progress-step-item" data-step="2">
+            <span class="step-number">02</span>
+            <span class="step-pip"></span>
+          </div>
+          <div class="progress-step-item" data-step="3">
+            <span class="step-number">03</span>
+            <span class="step-pip"></span>
+          </div>
+          <div class="progress-step-item" data-step="4">
+            <span class="step-number">04</span>
+            <span class="step-pip"></span>
+          </div>
+          <div class="progress-step-item" data-step="5">
+            <span class="step-number">05</span>
+            <span class="step-pip"></span>
+          </div>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SIGNATURE PRODUCT COLLECTION
+         ========================================== -->
+    <section class="products-section" id="products">
+      <div class="container">
+        
+        <div class="section-header-centered">
+          <div class="editorial-eyebrow">Signature Collection</div>
+          <h2 class="section-headline">PURE NATIVE POULTRY & COUNTRY MEAT</h2>
+          <p class="section-subtext">
+            Carefully curated native country poultry products delivered fresh across Hyderabad. Order directly with transparent pricing and personal WhatsApp support.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          
+          <!-- PRODUCT 01: KADAKNATH EGGS -->
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <span class="badge-tag badge-gold product-badge-overlay">HERITAGE BREED</span>
+              <img 
+                src="https://tiimg.tistatic.com/fp/1/006/122/kadaknath-chicken-eggs-238.jpg" 
+                alt="Distinctive Kadaknath Eggs carefully arranged in original 30-egg tray" 
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-content">
+              <span class="product-category">Product 01 • Native Eggs</span>
+              <h3 class="product-title">Kadaknath Eggs</h3>
+              <p class="product-desc">
+                Discover the distinctive Kadaknath eggs offered by AN Farms. A signature product for customers looking for native poultry eggs.
+              </p>
+
+              <div class="product-meta-row">
+                <div class="product-pricing-box">
+                  <span class="product-price-label">Pack Price</span>
+                  <span class="product-price-value">₹750</span>
+                </div>
+                <span class="product-unit-tag">30 Eggs</span>
+              </div>
+
+              <a 
+                href="https://wa.me/919876543210?text=Hello%20AN%20Farms%2C%20I%20would%20like%20to%20order%2030%20Kadaknath%20Eggs%20for%20%E2%82%B9750.%20Please%20confirm%20availability%20and%20delivery%20details." 
+                class="btn btn-forest"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>ORDER KADAKNATH EGGS</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.18-.553-1.895-.783-3.109-2.73-3.204-2.855-.095-.127-.768-1.021-.768-1.947 0-.925.485-1.38.658-1.57.172-.19.375-.238.5-.238.125 0 .25.002.359.007.116.006.27-.044.423.322.158.377.538 1.31.586 1.405.048.095.08.206.016.332-.064.127-.096.206-.19.317-.096.11-.202.247-.289.332-.095.095-.195.198-.084.388.111.19.493.813 1.057 1.316.726.647 1.338.847 1.529.942.19.095.302.079.413-.048.111-.127.476-.554.603-.744.127-.19.254-.158.428-.095.175.063 1.111.524 1.302.62.19.095.317.143.365.222.048.079.048.46-.096.865z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- PRODUCT 02: NATTUKODI EGGS -->
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <span class="badge-tag badge-forest product-badge-overlay">TRADITIONAL COUNTRY</span>
+              <img 
+                src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=1000&q=80" 
+                alt="Natural brown Nattukodi country eggs resting in protective carton" 
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-content">
+              <span class="product-category">Product 02 • Traditional Country</span>
+              <h3 class="product-title">Nattukodi Eggs</h3>
+              <p class="product-desc">
+                Enjoy traditional Nattukodi eggs from AN Farms, bringing authentic country poultry products closer to your home.
+              </p>
+
+              <div class="product-meta-row">
+                <div class="product-pricing-box">
+                  <span class="product-price-label">Pack Price</span>
+                  <span class="product-price-value">₹540</span>
+                </div>
+                <span class="product-unit-tag">30 Eggs</span>
+              </div>
+
+              <a 
+                href="https://wa.me/919876543210?text=Hello%20AN%20Farms%2C%20I%20would%20like%20to%20order%2030%20Nattukodi%20Eggs%20for%20%E2%82%B9540.%20Please%20confirm%20availability%20and%20delivery%20details." 
+                class="btn btn-forest"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>ORDER NATTUKODI EGGS</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.18-.553-1.895-.783-3.109-2.73-3.204-2.855-.095-.127-.768-1.021-.768-1.947 0-.925.485-1.38.658-1.57.172-.19.375-.238.5-.238.125 0 .25.002.359.007.116.006.27-.044.423.322.158.377.538 1.31.586 1.405.048.095.08.206.016.332-.064.127-.096.206-.19.317-.096.11-.202.247-.289.332-.095.095-.195.198-.084.388.111.19.493.813 1.057 1.316.726.647 1.338.847 1.529.942.19.095.302.079.413-.048.111-.127.476-.554.603-.744.127-.19.254-.158.428-.095.175.063 1.111.524 1.302.62.19.095.317.143.365.222.048.079.048.46-.096.865z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- PRODUCT 03: NATTUKODI CHICKEN -->
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <span class="badge-tag badge-warning product-badge-overlay">SELECTED DAYS ONLY</span>
+              <img 
+                src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=1000&q=80" 
+                alt="Fresh authentic Nattukodi country chicken cuts prepared with hygienic handling" 
+                class="product-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-content">
+              <span class="product-category">Product 03 • Native Meat</span>
+              <h3 class="product-title">Nattukodi Chicken</h3>
+              <p class="product-desc">
+                Experience authentic Nattukodi country chicken from AN Farms. Contact us to confirm the latest availability and price before ordering.
+              </p>
+
+              <div class="product-meta-row">
+                <div class="product-pricing-box">
+                  <span class="product-price-label">Price Range</span>
+                  <span class="product-price-value">₹600–₹799</span>
+                </div>
+                <span class="product-unit-tag">Per KG</span>
+              </div>
+
+              <div class="schedule-notice">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Available selected days (Sun & Wed), subject to confirmation.</span>
+              </div>
+
+              <a 
+                href="https://wa.me/919876543210?text=Hello%20AN%20Farms%2C%20I%20am%20interested%20in%20ordering%20Nattukodi%20Chicken.%20Please%20share%20the%20current%20availability%2C%20price%20per%20kg%2C%20and%20delivery%20details." 
+                class="btn btn-gold"
+                style="margin-top: 1.25rem;"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>ENQUIRE ABOUT NATTUKODI CHICKEN</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         WHY CHOOSE AN FARMS
+         ========================================== -->
+    <section class="why-section" id="why-us">
+      <div class="container">
+        
+        <div class="section-header-centered" style="color: var(--color-cream);">
+          <div class="editorial-eyebrow">Our Pillars of Distinction</div>
+          <h2 class="section-headline" style="color: var(--color-cream);">WHY CHOOSE AN FARMS?</h2>
+          <p class="section-subtext" style="color: rgba(248, 245, 236, 0.8);">
+            We dedicate our efforts to preserving authentic native poultry traditions, offering Hyderabad homes direct and dependable service.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          
+          <!-- Highlight 01 -->
+          <div class="why-card">
+            <span class="why-number">01</span>
+            <h3 class="why-card-title">NATIVE POULTRY SPECIALITY</h3>
+            <p class="why-card-text">
+              Focused on traditional native country poultry products, honoring the heritage of indigenous breeds without shortcuts.
+            </p>
+          </div>
+
+          <!-- Highlight 02 -->
+          <div class="why-card">
+            <span class="why-number">02</span>
+            <h3 class="why-card-title">SIGNATURE PRODUCTS</h3>
+            <p class="why-card-text">
+              Specialized offerings centered strictly around Kadaknath eggs, traditional Nattukodi eggs, and authentic Nattukodi chicken.
+            </p>
+          </div>
+
+          <!-- Highlight 03 -->
+          <div class="why-card">
+            <span class="why-number">03</span>
+            <h3 class="why-card-title">PERSONAL SERVICE</h3>
+            <p class="why-card-text">
+              Direct, transparent communication and personalized ordering through WhatsApp handled with genuine hospitality.
+            </p>
+          </div>
+
+          <!-- Highlight 04 -->
+          <div class="why-card">
+            <span class="why-number">04</span>
+            <h3 class="why-card-title">TRANSPARENT PRICING</h3>
+            <p class="why-card-text">
+              Clearly displayed product prices and honest availability schedules without hidden fees or misleading claims.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT AN FARMS & FOUNDER
+         ========================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          
+          <div class="about-visual-column">
+            <div class="about-main-image-wrap">
+              <img 
+                src="https://images.squarespace-cdn.com/content/v1/67b858c715dfef703e1b97c6/edf7d83b-13bd-4c36-9e53-b89144d3961e/Free-Range-Eggs-Farm-Ireland.jpg" 
+                alt="Venkat Yanamala AN Farms natural poultry surroundings in Hyderabad Telangana" 
+                class="about-main-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-badge-card">
+              <div class="gold-label">FOUNDED WITH INTEGRITY</div>
+              <div class="bold-title">Venkat Yanamala</div>
+              <p style="font-size: 0.75rem; color: var(--color-gold); margin-top: 0.25rem;">Proprietor & Farm Steward</p>
+            </div>
+          </div>
+
+          <div class="about-content-column">
+            <div class="editorial-eyebrow no-after">Heritage & Dedication</div>
+            <h2 class="section-headline">A PASSION FOR NATIVE POULTRY. A COMMITMENT TO TRUST.</h2>
+            
+            <blockquote class="about-quote">
+              "Bringing the Authentic Goodness of Native Country Poultry to Your Home."
+            </blockquote>
+
+            <p class="about-p">
+              AN Farms is a Hyderabad-based native poultry and meat business operated by Venkat Yanamala. With a deep respect for indigenous country breeds, we established our operations to fill a clear void in urban Hyderabad: providing authentic, honestly handled native country poultry products directly to discerning families.
+            </p>
+
+            <p class="about-p">
+              With a focus on Kadaknath eggs, Nattukodi eggs, and Nattukodi chicken, AN Farms aims to bring distinctive native country poultry products closer to customers across Hyderabad.
+            </p>
+
+            <p class="about-p">
+              Our focus is on authentic products, transparent pricing, careful handling, and building lasting relationships with our customers.
+            </p>
+
+            <div class="founder-signature-box">
+              <div class="founder-avatar">VY</div>
+              <div class="founder-details">
+                <h4>Venkat Yanamala</h4>
+                <p>Operator • AN Farms Hyderabad</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         WHATSAPP ORDERING EXPERIENCE & CUSTOM FORM
+         ========================================== -->
+    <section class="order-section" id="order-now">
+      <div class="container">
+        
+        <div class="order-grid">
+          
+          <!-- Left Info Sidebar -->
+          <div class="order-sidebar">
+            <div>
+              <div class="editorial-eyebrow" style="color: var(--color-gold);">Instant Concierge</div>
+              <h2 class="order-sidebar-title">ORDER VIA WHATSAPP IN SECONDS</h2>
+              <p class="order-sidebar-desc">
+                Simply select your desired native poultry products or fill out the enquiry form. We generate a pre-formatted WhatsApp message ready to send directly to Venkat Yanamala at AN Farms.
+              </p>
+
+              <ul class="order-perks">
+                <li class="order-perk-item">
+                  <svg class="order-perk-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span><strong>Zero Fake Payment Gateways:</strong> Confirm details and pay transparently upon confirmation.</span>
+                </li>
+                <li class="order-perk-item">
+                  <svg class="order-perk-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span><strong>Protective Packaging:</strong> Original 30-egg trays with secure cushioning for safe delivery.</span>
+                </li>
+                <li class="order-perk-item">
+                  <svg class="order-perk-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span><strong>Sunday & Wednesday Batches:</strong> Fresh country chicken batches scheduled weekly.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div style="font-size: 0.75rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem;">DIRECT CONTACT</div>
+              <p style="font-size: 1.1rem; font-weight: 700; color: var(--color-cream);">Operated by Venkat Yanamala</p>
+              <p style="font-size: 0.85rem; color: rgba(248,245,236,0.7);">Hyderabad, Telangana, India</p>
+            </div>
+          </div>
+
+          <!-- Right Interactive Form Pane -->
+          <div class="order-form-pane">
+            <h3 style="font-size: 1.6rem; color: var(--color-forest); margin-bottom: 0.5rem;">Custom Order & Enquiry</h3>
+            <p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 1.5rem;">
+              Fill in your details below to generate your direct WhatsApp order.
+            </p>
+
+            <form id="whatsappOrderForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-group-grid">
+                <div class="form-group">
+                  <label for="custName" class="form-label">Full Name *</label>
+                  <input type="text" id="custName" class="form-input" placeholder="e.g. Rahul Sharma" required />
+                </div>
+                <div class="form-group">
+                  <label for="custPhone" class="form-label">Mobile Number *</label>
+                  <input type="tel" id="custPhone" class="form-input" placeholder="e.g. 98765 43210" required />
+                </div>
+              </div>
+
+              <div class="form-group-grid">
+                <div class="form-group">
+                  <label for="custProduct" class="form-label">Select Product *</label>
+                  <select id="custProduct" class="form-select" required onchange="handleProductChange()">
+                    <option value="Kadaknath Eggs (30 Eggs - ₹750)">Kadaknath Eggs (30 Eggs • ₹750)</option>
+                    <option value="Nattukodi Eggs (30 Eggs - ₹540)">Nattukodi Eggs (30 Eggs • ₹540)</option>
+                    <option value="Nattukodi Chicken (₹600–₹799/kg - Wed/Sun)">Nattukodi Chicken (₹600–₹799/kg • Selected Days)</option>
+                    <option value="Combination Order (Eggs & Chicken)">Combination Order (Eggs & Chicken)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="custQty" class="form-label">Quantity / Packs *</label>
+                  <input type="text" id="custQty" class="form-input" placeholder="e.g. 1 Pack (30 Eggs) or 2 KGs" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="custLocality" class="form-label">Hyderabad Delivery Area *</label>
+                <input type="text" id="custLocality" class="form-input" placeholder="e.g. Jubilee Hills / Gachibowli / Kondapur" required />
+              </div>
+
+              <div class="form-group">
+                <label for="custMessage" class="form-label">Additional Message / Date Preference</label>
+                <textarea id="custMessage" class="form-textarea" placeholder="Any specific requirements (e.g. Sunday batch for chicken, preferred morning delivery time)..."></textarea>
+              </div>
+
+              <div class="order-button-wrapper">
+                <button type="submit" class="btn btn-gold" style="width: 100%;">
+                  <span>SUBMIT ORDER VIA WHATSAPP</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.18-.553-1.895-.783-3.109-2.73-3.204-2.855-.095-.127-.768-1.021-.768-1.947 0-.925.485-1.38.658-1.57.172-.19.375-.238.5-.238.125 0 .25.002.359.007.116.006.27-.044.423.322.158.377.538 1.31.586 1.405.048.095.08.206.016.332-.064.127-.096.206-.19.317-.096.11-.202.247-.289.332-.095.095-.195.198-.084.388.111.19.493.813 1.057 1.316.726.647 1.338.847 1.529.942.19.095.302.079.413-.048.111-.127.476-.554.603-.744.127-.19.254-.158.428-.095.175.063 1.111.524 1.302.62.19.095.317.143.365.222.048.079.048.46-.096.865z"/>
+                  </svg>
+                </button>
+              </div>
+
+              <p class="order-disclaimer">
+                Clicking will open WhatsApp with your pre-filled enquiry. Venkat Yanamala will confirm stock availability and delivery schedule directly.
+              </p>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CUSTOMER TRUST & SOCIAL MEDIA
+         ========================================== -->
+    <section class="social-section">
+      <div class="container">
+        
+        <div class="editorial-eyebrow" style="color: var(--color-gold);">Transparent Social Connection</div>
+        <h2 class="section-headline" style="color: var(--color-cream);">STAY CONNECTED WITH AN FARMS</h2>
+        <p class="section-subtext" style="color: rgba(248, 245, 236, 0.8); max-width: 620px; margin: 0 auto;">
+          Follow our authentic journey, farm updates, and live dispatch stories directly on our verified social media channels.
+        </p>
+
+        <div class="social-cards-grid">
+          
+          <!-- Instagram Card -->
+          <a href="https://www.instagram.com/anfarms_7675/" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <h3 class="social-card-title">Follow on Instagram</h3>
+            <span class="social-handle">@anfarms_7675</span>
+            <p class="social-subtext">Visual updates, harvest routines, and farm dispatches straight to your feed.</p>
+          </a>
+
+          <!-- Facebook Card -->
+          <a href="https://www.facebook.com/an.farms.193708/" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </div>
+            <h3 class="social-card-title">Connect on Facebook</h3>
+            <span class="social-handle">an.farms.193708</span>
+            <p class="social-subtext">Community announcements, product notifications, and Hyderabad delivery slots.</p>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT SECTION & HYDERABAD SERVICE
+         ========================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        
+        <div class="contact-grid">
+          
+          <div class="contact-info-panel">
+            <div class="editorial-eyebrow no-after">Direct Concierge</div>
+            <h2 class="section-headline">LET'S CONNECT. LET'S BRING NATIVE GOODNESS HOME.</h2>
+            <p class="section-subtext">
+              Have questions regarding our Kadaknath batches or Sunday country chicken slots? We welcome direct customer inquiries anytime.
+            </p>
+
+            <div class="contact-card-list">
+              
+              <div class="contact-card-item">
+                <div class="contact-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-detail-label">Business Proprietor</div>
+                  <div class="contact-detail-val">Venkat Yanamala</div>
+                  <div style="font-size: 0.8rem; color: var(--color-muted);">AN Farms • Native Country Poultry</div>
+                </div>
+              </div>
+
+              <div class="contact-card-item">
+                <div class="contact-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-detail-label">Direct Phone & WhatsApp</div>
+                  <div class="contact-detail-val">
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--color-gold);">Instant WhatsApp response within hours</div>
+                </div>
+              </div>
+
+              <div class="contact-card-item">
+                <div class="contact-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-detail-label">Operational Hub</div>
+                  <div class="contact-detail-val">Hyderabad, Telangana, India</div>
+                  <div style="font-size: 0.8rem; color: var(--color-muted);">Serving Greater Hyderabad Metropolitan</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Coverage & Hyderabad Delivery Info -->
+          <div class="coverage-card">
+            <h3>HYDERABAD DOORSTEP DELIVERY</h3>
+            <p>
+              We organize specialized, protective deliveries to residences throughout Hyderabad. All egg trays are shock-cushioned and fresh chicken orders are dispatched rapidly upon batch confirmation.
+            </p>
+
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-forest); margin-bottom: 0.75rem;">
+              Key Delivery Areas Served:
+            </div>
+
+            <div class="coverage-tags">
+              <span class="coverage-tag">Jubilee Hills</span>
+              <span class="coverage-tag">Banjara Hills</span>
+              <span class="coverage-tag">Gachibowli</span>
+              <span class="coverage-tag">Madhapur</span>
+              <span class="coverage-tag">Kondapur</span>
+              <span class="coverage-tag">Hitec City</span>
+              <span class="coverage-tag">Kukatpally</span>
+              <span class="coverage-tag">Manikonda</span>
+              <span class="coverage-tag">Secunderabad</span>
+              <span class="coverage-tag">Financial District</span>
+              <span class="coverage-tag">Kokapet</span>
+              <span class="coverage-tag">Tellapur</span>
+            </div>
+
+            <div style="background: var(--color-cream-light); padding: 1.25rem; border-radius: 6px; border: 1px dashed rgba(23,61,43,0.2);">
+              <h4 style="font-size: 0.9rem; color: var(--color-forest); margin-bottom: 0.35rem;">Need Delivery to Another Locality?</h4>
+              <p style="font-size: 0.8rem; color: var(--color-muted); margin-bottom: 0.85rem;">
+                Connect with Venkat Yanamala on WhatsApp to check delivery options for your specific pin code.
+              </p>
+              <a href="https://wa.me/919876543210?text=Hello%20AN%20Farms%2C%20I%20would%20like%20to%20check%20delivery%20availability%20for%20my%20area%20in%20Hyderabad." target="_blank" rel="noopener" class="btn btn-outline-forest" style="padding: 0.6rem 1.2rem; font-size: 0.78rem;">
+                Check My Locality
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Description -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-crest">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+              </svg>
+            </div>
+            <div class="brand-text-wrap">
+              <span class="brand-title">AN <span>FARMS</span></span>
+              <span class="brand-subtitle">Hyderabad • Native Poultry</span>
+            </div>
+          </a>
+          <p>
+            Bringing the authentic goodness of native country poultry to homes across Hyderabad. Operated with trust, transparent pricing, and personal care by Venkat Yanamala.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--color-gold); font-weight: 600;">
+            "Naturally Raised. Honestly Delivered."
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#story">Our 5-Stage Story</a></li>
+            <li><a href="#products">Signature Products</a></li>
+            <li><a href="#why-us">Why AN Farms</a></li>
+            <li><a href="#about">About Venkat Yanamala</a></li>
+            <li><a href="#contact">Contact & Delivery</a></li>
+          </ul>
+        </div>
+
+        <!-- Signature Products -->
+        <div>
+          <div class="footer-col-title">Our Products</div>
+          <ul class="footer-links-list">
+            <li><a href="#products">Kadaknath Eggs (₹750 / 30 Eggs)</a></li>
+            <li><a href="#products">Nattukodi Eggs (₹540 / 30 Eggs)</a></li>
+            <li><a href="#products">Nattukodi Chicken (Selected Days)</a></li>
+            <li><a href="#order-now">Custom WhatsApp Enquiry</a></li>
+          </ul>
+        </div>
+
+        <!-- Social & Contact -->
+        <div>
+          <div class="footer-col-title">Direct Connection</div>
+          <ul class="footer-links-list">
+            <li><a href="tel:+919876543210">Phone: +91 98765 43210</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener">WhatsApp Concierge</a></li>
+            <li><a href="https://www.instagram.com/anfarms_7675/" target="_blank" rel="noopener">Instagram: @anfarms_7675</a></li>
+            <li><a href="https://www.facebook.com/an.farms.193708/" target="_blank" rel="noopener">Facebook: an.farms.193708</a></li>
+            <li><span style="color: rgba(248,245,236,0.6);">Hyderabad, Telangana, India</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+          &copy; <span id="currentYear"></span> <strong>AN FARMS</strong>. Operated by <strong>Venkat Yanamala</strong>. All Rights Reserved.
+        </div>
+        <div>
+          Native Country Poultry & Meat • Hyderabad, Telangana
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FLOATING CONCIERGE BUTTONS
+       ========================================== -->
+  <div class="floating-actions" aria-label="Quick Actions">
+    
+    <!-- WhatsApp Floating Action -->
+    <a 
+      href="https://wa.me/919876543210?text=Hello%20AN%20Farms%2C%20I%20would%20like%20to%20enquire%20about%20ordering%20native%20poultry%20products." 
+      class="float-btn float-whatsapp"
+      target="_blank"
+      rel="noopener"
+      aria-label="Order directly on WhatsApp"
+    >
+      <span class="float-tooltip">Chat on WhatsApp</span>
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.18-.553-1.895-.783-3.109-2.73-3.204-2.855-.095-.127-.768-1.021-.768-1.947 0-.925.485-1.38.658-1.57.172-.19.375-.238.5-.238.125 0 .25.002.359.007.116.006.27-.044.423.322.158.377.538 1.31.586 1.405.048.095.08.206.016.332-.064.127-.096.206-.19.317-.096.11-.202.247-.289.332-.095.095-.195.198-.084.388.111.19.493.813 1.057 1.316.726.647 1.338.847 1.529.942.19.095.302.079.413-.048.111-.127.476-.554.603-.744.127-.19.254-.158.428-.095.175.063 1.111.524 1.302.62.19.095.317.143.365.222.048.079.048.46-.096.865z"/>
+      </svg>
+    </a>
+
+    <!-- Phone Call Floating Action -->
+    <a 
+      href="tel:+919876543210" 
+      class="float-btn float-call"
+      aria-label="Call Venkat Yanamala at AN Farms"
+    >
+      <span class="float-tooltip">Call AN Farms</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- ==========================================
+       CORE JAVASCRIPT & GSAP ANIMATION ENGINE
+       ========================================== -->
+  <script>
+    /* -------------------------------------------------------------
+       CONFIGURABLE BUSINESS PARAMETERS (EDIT IN ONE PLACE)
+       ------------------------------------------------------------- */
+    const AN_CONFIG = {
+      phone: "+919876543210",
+      phoneRaw: "919876543210", // 12-digit international format without '+'
+      operatorName: "Venkat Yanamala",
+      brandName: "AN FARMS",
+      city: "Hyderabad, Telangana"
+    };
+
+    // Update dynamic year in footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    /* -------------------------------------------------------------
+       MOBILE DRAWER NAVIGATION
+       ------------------------------------------------------------- */
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const drawerCloseBtn = document.getElementById("drawerCloseBtn");
+    const mobileDrawer = document.getElementById("mobileDrawer");
+    const drawerOverlay = document.getElementById("drawerOverlay");
+
+    function openDrawer() {
+      mobileDrawer.classList.add("open");
+      drawerOverlay.classList.add("active");
+      mobileDrawer.setAttribute("aria-hidden", "false");
+      mobileBtn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove("open");
+      drawerOverlay.classList.remove("active");
+      mobileDrawer.setAttribute("aria-hidden", "true");
+      mobileBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    mobileBtn.addEventListener("click", openDrawer);
+    drawerCloseBtn.addEventListener("click", closeDrawer);
+    drawerOverlay.addEventListener("click", closeDrawer);
+
+    // Close drawer when link clicked
+    document.querySelectorAll(".drawer-link").forEach(link => {
+      link.addEventListener("click", closeDrawer);
+    });
+
+    /* -------------------------------------------------------------
+       HEADER SCROLL STATE
+       ------------------------------------------------------------- */
+    const siteHeader = document.getElementById("siteHeader");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+    }, { passive: true });
+
+    /* -------------------------------------------------------------
+       FORM SUBMISSION: DIRECT TO WHATSAPP CONCIERGE
+       ------------------------------------------------------------- */
+    function handleProductChange() {
+      const prodSelect = document.getElementById("custProduct");
+      const qtyInput = document.getElementById("custQty");
+      if (prodSelect.value.includes("Kadaknath") || prodSelect.value.includes("Nattukodi Eggs")) {
+        qtyInput.placeholder = "e.g. 1 Pack (30 Eggs) or 2 Packs";
+      } else if (prodSelect.value.includes("Chicken")) {
+        qtyInput.placeholder = "e.g. 1.5 KG or 2 KGs";
+      } else {
+        qtyInput.placeholder = "e.g. 30 Kadaknath Eggs + 2 KGs Chicken";
+      }
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const product = document.getElementById("custProduct").value;
+      const qty = document.getElementById("custQty").value.trim();
+      const locality = document.getElementById("custLocality").value.trim();
+      const message = document.getElementById("custMessage").value.trim();
+
+      let whatsappText = `*NEW ORDER / ENQUIRY - AN FARMS HYDERABAD*\n`;
+      whatsappText += `--------------------------------------\n`;
+      whatsappText += `*Customer Name:* ${name}\n`;
+      whatsappText += `*Mobile:* ${phone}\n`;
+      whatsappText += `*Product:* ${product}\n`;
+      whatsappText += `*Quantity/Requirement:* ${qty}\n`;
+      whatsappText += `*Delivery Locality:* ${locality}\n`;
+      if (message) {
+        whatsappText += `*Note/Date Preference:* ${message}\n`;
+      }
+      whatsappText += `--------------------------------------\n`;
+      whatsappText += `_Sent via AN Farms Official Website Concierge_`;
+
+      const encodedUrl = `https://wa.me/${AN_CONFIG.phoneRaw}?text=${encodeURIComponent(whatsappText)}`;
+      window.open(encodedUrl, "_blank");
+    }
+
+    /* -------------------------------------------------------------
+       CINEMATIC 5-STAGE CONTINUOUS SCROLL ANIMATION (GSAP + SCROLLTRIGGER)
+       ------------------------------------------------------------- */
+    window.addEventListener("DOMContentLoaded", () => {
+      if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+        console.warn("GSAP/ScrollTrigger not loaded. Displaying fallback layouts.");
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const crate = document.getElementById("travelingCrate");
+      const trayStageStatus = document.getElementById("trayStageStatus");
+      const trayStageCode = document.getElementById("trayStageCode");
+      const traySealText = document.getElementById("traySealText");
+      const traySubTitle = document.getElementById("traySubTitle");
+      const traySubPrice = document.getElementById("traySubPrice");
+
+      const bgLayers = [
+        document.getElementById("bgStage1"),
+        document.getElementById("bgStage2"),
+        document.getElementById("bgStage3"),
+        document.getElementById("bgStage4"),
+        document.getElementById("bgStage5")
+      ];
+      const slides = [
+        document.getElementById("slide1"),
+        document.getElementById("slide2"),
+        document.getElementById("slide3"),
+        document.getElementById("slide4"),
+        document.getElementById("slide5")
+      ];
+      const stepPips = document.querySelectorAll(".progress-step-item");
+
+      // Dynamic Stage Metadata for the Original Egg Tray Object
+      const stageTrayMeta = [
+        {
+          code: "STAGE 01",
+          status: "Freshly Gathered at AN Farms",
+          seal: "NATIVE ORIGIN",
+          subTitle: "Kadaknath & Nattukodi",
+          subPrice: "Authentic Native Breeds"
+        },
+        {
+          code: "STAGE 02",
+          status: "3 Signature Farm Products",
+          seal: "30-EGG TRAYS",
+          subTitle: "Kadaknath • Nattukodi",
+          subPrice: "₹750 / ₹540 • Chicken ₹600–799"
+        },
+        {
+          code: "STAGE 03",
+          status: "Cushioned & Packed with Care",
+          seal: "PROTECTIVE PACK",
+          subTitle: "Hand-Inspected Trays",
+          subPrice: "Hygienic Farm Handling"
+        },
+        {
+          code: "STAGE 04",
+          status: "Direct to Hyderabad Homes",
+          seal: "HYDERABAD DELIVERY",
+          subTitle: "Farm-to-Home Dispatch",
+          subPrice: "Across Greater Hyderabad"
+        },
+        {
+          code: "STAGE 05",
+          status: "Ready for Your Kitchen",
+          seal: "ORDER VIA WHATSAPP",
+          subTitle: "Order Now on WhatsApp",
+          subPrice: "Venkat Yanamala • AN Farms"
+        }
+      ];
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) {
+        return;
+      }
+
+      // Responsive motion path inside its dedicated zone (never overlaps text on mobile or desktop)
+      function getResponsiveCoordinates() {
+        const isMobile = window.innerWidth <= 900;
+        return {
+          stage1: {
+            x: isMobile ? -8 : 0,
+            y: isMobile ? 0 : 12,
+            scale: isMobile ? 0.94 : 0.95,
+            rotation: -2
+          },
+          stage2: {
+            x: isMobile ? 8 : -10,
+            y: isMobile ? 2 : -10,
+            scale: isMobile ? 0.98 : 1.05,
+            rotation: 2.5
+          },
+          stage3: {
+            x: isMobile ? 0 : 8,
+            y: isMobile ? -2 : 8,
+            scale: isMobile ? 0.96 : 1.0,
+            rotation: -1
+          },
+          stage4: {
+            x: isMobile ? -6 : -8,
+            y: isMobile ? 2 : -6,
+            scale: isMobile ? 0.97 : 1.04,
+            rotation: 2
+          },
+          stage5: {
+            x: 0,
+            y: 0,
+            scale: isMobile ? 1.0 : 1.08,
+            rotation: 0
+          }
+        };
+      }
+
+      let coords = getResponsiveCoordinates();
+      window.addEventListener("resize", () => {
+        coords = getResponsiveCoordinates();
+      });
+
+      let lastActiveStage = -1;
+
+      // Master Pinned Timeline
+      const storyTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#story",
+          start: "top top",
+          end: () => (window.innerWidth <= 900 ? "+=2600" : "+=3400"),
+          pin: true,
+          scrub: 0.75,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            let currentStage = 0;
+
+            if (progress < 0.20) currentStage = 0;
+            else if (progress < 0.40) currentStage = 1;
+            else if (progress < 0.60) currentStage = 2;
+            else if (progress < 0.80) currentStage = 3;
+            else currentStage = 4;
+
+            if (currentStage !== lastActiveStage) {
+              lastActiveStage = currentStage;
+
+              // Update Background Crossfades
+              bgLayers.forEach((bg, idx) => {
+                bg.classList.toggle("active", idx === currentStage);
+              });
+
+              // Update Slide Overlays
+              slides.forEach((sl, idx) => {
+                sl.classList.toggle("active", idx === currentStage);
+              });
+
+              // Update Progress Nav Pips
+              stepPips.forEach((pip, idx) => {
+                pip.classList.toggle("active", idx === currentStage);
+              });
+
+              // Update Original Egg Tray Live Badges
+              const meta = stageTrayMeta[currentStage];
+              if (meta) {
+                trayStageCode.textContent = meta.code;
+                trayStageStatus.textContent = meta.status;
+                traySealText.textContent = meta.seal;
+                traySubTitle.textContent = meta.subTitle;
+                traySubPrice.textContent = meta.subPrice;
+              }
+            }
+          }
+        }
+      });
+
+      // Initial placement at Stage 1
+      gsap.set(crate, {
+        x: () => coords.stage1.x,
+        y: () => coords.stage1.y,
+        scale: () => coords.stage1.scale,
+        rotation: () => coords.stage1.rotation
+      });
+
+      // Continuous Scroll-Linked Movement of the Original Egg Tray across Stages 1–5
+      storyTL
+        .to(crate, {
+          x: () => coords.stage2.x,
+          y: () => coords.stage2.y,
+          scale: () => coords.stage2.scale,
+          rotation: () => coords.stage2.rotation,
+          ease: "power2.inOut",
+          duration: 2.5
+        })
+        .to(crate, {
+          x: () => coords.stage3.x,
+          y: () => coords.stage3.y,
+          scale: () => coords.stage3.scale,
+          rotation: () => coords.stage3.rotation,
+          ease: "power2.inOut",
+          duration: 2.5
+        })
+        .to(crate, {
+          x: () => coords.stage4.x,
+          y: () => coords.stage4.y,
+          scale: () => coords.stage4.scale,
+          rotation: () => coords.stage4.rotation,
+          ease: "power2.inOut",
+          duration: 2.5
+        })
+        .to(crate, {
+          x: () => coords.stage5.x,
+          y: () => coords.stage5.y,
+          scale: () => coords.stage5.scale,
+          rotation: () => coords.stage5.rotation,
+          ease: "power2.inOut",
+          duration: 2.5
+        });
+
+      // Gentle Hero Parallax on Scroll
+      gsap.to("#heroBgImage", {
+        y: 80,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      // Click on Progress Pips to Jump in Story
+      stepPips.forEach(pip => {
+        pip.addEventListener("click", () => {
+          const stepIndex = parseInt(pip.getAttribute("data-step"), 10) - 1;
+          const st = storyTL.scrollTrigger;
+          const targetScroll = st.start + (st.end - st.start) * (stepIndex * 0.22 + 0.02);
+          window.scrollTo({ top: targetScroll, behavior: "smooth" });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

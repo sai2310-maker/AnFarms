@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN Farms Hyderabad | Nattukodi, Kadaknath Eggs, Chicks & Tamil Nadu Ducks</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Chunky Cartoon & Clean Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --ink-black: #120E0C;
+            --hen-brown: #7B3F1D;
+            --feather-gold: #E59849;
+            --cream: #FFF8EE;
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #C87A3B;
+            color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .cartoon-font {
+            font-family: 'Fredoka', sans-serif;
+            letter-spacing: 0.01em;
+        }
+
+        /* Flat Cartoon Borders & Shadows */
+        .cartoon-card {
+            border: 4px solid var(--ink-black);
+            box-shadow: 0 8px 0 var(--ink-black);
+        }
+
+        .cartoon-pill {
+            border: 3px solid var(--ink-black);
+            box-shadow: 0 5px 0 var(--ink-black);
+        }
+
+        .cartoon-btn {
+            border: 4px solid var(--ink-black);
+            box-shadow: 0 7px 0 var(--ink-black);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .cartoon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 0 var(--ink-black);
+        }
+        .cartoon-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 2px 0 var(--ink-black);
+        }
+
+        .text-outline {
+            text-shadow: 
+                -3px -3px 0 var(--ink-black),
+                 3px -3px 0 var(--ink-black),
+                -3px  3px 0 var(--ink-black),
+                 3px  3px 0 var(--ink-black),
+                 0px  6px 0 var(--ink-black);
+        }
+
+        /* 5 Story Sections - Country Hen Brown & Kadaknath Black Palette */
+        .story-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 680px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5.5rem 1.25rem 2.5rem 1.25rem;
+            overflow: hidden;
+            border-bottom: 5px solid var(--ink-black);
+        }
+
+        /* Section 1: Golden Country Hen Feather Brown */
+        #part-1 { background-color: #C87A3B; }
+        /* Section 2: Deep Nattukodi Chestnut Brown */
+        #part-2 { background-color: #5E2C14; }
+        /* Section 3: Kadaknath Jet Charcoal Black */
+        #part-3 { background-color: #1A1615; }
+        /* Section 4: Roasted Terracotta Hen Brown */
+        #part-4 { background-color: #8C3B19; }
+        /* Section 5: Rich Midnight Black & Warm Roost Brown */
+        #part-5 { background-color: #120E0C; min-height: 760px; }
+
+        /* Subtle Cartoon Polka/Feather Background Pattern */
+        .bg-pattern {
+            background-image: radial-gradient(rgba(18, 14, 12, 0.16) 2.5px, transparent 2.5px);
+            background-size: 28px 28px;
+        }
+
+        /* Fixed Traveling Object Stage (Never jumps or disappears) */
+        #traveling-stage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero-svg {
+            width: min(92vw, 480px);
+            height: min(92vw, 480px);
+            overflow: visible;
+        }
+
+        /* Hide scrollbar during clean screen recordings if desired, but keep functional */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #120E0C; }
+        ::-webkit-scrollbar-thumb { background: #C87A3B; border-radius: 4px; border: 2px solid #120E0C; }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BRAND BAR -->
+    <header class="fixed top-3 left-0 right-0 z-40 px-4 flex justify-between items-center max-w-6xl mx-auto pointer-events-none">
+        <div class="bg-[#120E0C] text-[#FFF8EE] px-4 py-2 rounded-full cartoon-pill flex items-center gap-2.5 pointer-events-auto">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#E59849] inline-block border-2 border-white"></span>
+            <span class="cartoon-font font-bold text-base sm:text-lg tracking-wide text-[#E59849]">AN FARMS</span>
+            <span class="text-[11px] bg-[#7B3F1D] text-white px-2 py-0.5 rounded-full font-bold hidden sm:inline">HYDERABAD</span>
+        </div>
+
+        <a href="#part-5" class="bg-[#E59849] hover:bg-[#f3a85a] text-[#120E0C] cartoon-font font-bold text-xs sm:text-sm px-4 py-2 rounded-full cartoon-pill pointer-events-auto transition">
+            Order Now ↓
+        </a>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- THE SINGLE CONTINUOUS TRAVELING CARTOON OBJECT (FIXED OVERLAY STAGE)  -->
+    <!-- ===================================================================== -->
+    <div id="traveling-stage">
+        <svg id="hero-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            
+            <!-- Master Traveler Group (Moves smoothly from top to bottom as user scrolls) -->
+            <g id="traveler-master" transform="translate(250, 250)">
+                
+                <!-- Ground Shadow under the object -->
+                <ellipse id="ground-shadow" cx="0" cy="115" rx="95" ry="20" fill="#120E0C" opacity="0.35"/>
+
+                <!-- PART 1: COZY STRAW NEST -->
+                <g id="nest-group" transform="translate(0, 55)">
+                    <!-- Back rim of nest -->
+                    <ellipse cx="0" cy="10" rx="95" ry="28" fill="#5E2C14" stroke="#120E0C" stroke-width="5"/>
+                    <!-- Golden straw twigs -->
+                    <path d="M-95,12 Q-50,65 0,60 Q50,65 95,12 Z" fill="#D98A3C" stroke="#120E0C" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M-75,25 Q-30,45 20,28 M-45,42 Q10,55 65,30 M-82,15 L-55,32 M78,18 L48,35" stroke="#7B3F1D" stroke-width="4" stroke-linecap="round" fill="none"/>
+                </g>
+
+                <!-- PART 4: HYDERABAD SUNDAY CURRY POT & BACKYARD SCENE (Behind crate/eggs) -->
+                <g id="use-feast-group" opacity="0" transform="translate(0, -10) scale(0.5)">
+                    <!-- Warm Sunburst Halo -->
+                    <circle cx="0" cy="-25" r="135" fill="#F59E0B" opacity="0.22"/>
+                    
+                    <!-- Steaming Clay Curry Pot (Nattukodi Pulusu - Wed & Sun Special) -->
+                    <g id="curry-pot" transform="translate(0, -55)">
+                        <!-- Steam Puffs -->
+                        <path id="steam-1" d="M-30,-65 Q-40,-85 -25,-100" stroke="#FFF8EE" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        <path id="steam-2" d="M0,-72 Q12,-92 -2,-110" stroke="#FFF8EE" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        <path id="steam-3" d="M30,-65 Q40,-85 25,-100" stroke="#FFF8EE" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        
+                        <!-- Clay Pot Body -->
+                        <ellipse cx="0" cy="0" rx="68" ry="42" fill="#A84219" stroke="#120E0C" stroke-width="5"/>
+                        <!-- Spicy Curry Rim -->
+                        <ellipse cx="0" cy="-22" rx="54" ry="16" fill="#5E2C14" stroke="#120E0C" stroke-width="5"/>
+                        <ellipse cx="0" cy="-20" rx="46" ry="11" fill="#D9381E"/>
+                        <!-- Cartoon Drumstick peeking out -->
+                        <g transform="translate(18, -28) rotate(25)">
+                            <rect x="8" y="-5" width="22" height="9" rx="4" fill="#FFF8EE" stroke="#120E0C" stroke-width="4"/>
+                            <circle cx="32" cy="-5" r="6" fill="#FFF8EE" stroke="#120E0C" stroke-width="4"/>
+                            <circle cx="32" cy="4" r="6" fill="#FFF8EE" stroke="#120E0C" stroke-width="4"/>
+                            <ellipse cx="0" cy="0" rx="16" ry="11" fill="#C85A17" stroke="#120E0C" stroke-width="4"/>
+                        </g>
+                        <!-- Pot Label -->
+                        <rect x="-52" y="-5" width="104" height="24" rx="12" fill="#FFF8EE" stroke="#120E0C" stroke-width="3.5"/>
+                        <text x="0" y="11" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="11.5" fill="#120E0C">WED & SUN CURRY</text>
+                    </g>
+                </g>
+
+                <!-- PART 2 & 4: CUTE TAMIL NADU DUCK & SONALI/ASEEL CHICK BUDDIES -->
+                <g id="chicks-ducks-group" opacity="0" transform="scale(0.6)">
+                    <!-- Left Buddy: Sonali / Aseel Golden-Brown Chick -->
+                    <g id="cartoon-chick" transform="translate(-145, 35)">
+                        <ellipse cx="0" cy="0" rx="34" ry="32" fill="#F59E0B" stroke="#120E0C" stroke-width="4.5"/>
+                        <!-- Little Aseel Red Comb -->
+                        <path d="M-8,-32 Q-4,-45 2,-34 Q8,-44 12,-30" fill="#DC2626" stroke="#120E0C" stroke-width="3.5" stroke-linejoin="round"/>
+                        <!-- Wing -->
+                        <ellipse cx="-12" cy="4" rx="12" ry="16" fill="#B45309" stroke="#120E0C" stroke-width="4"/>
+                        <!-- Eye & Beak -->
+                        <circle cx="12" cy="-6" r="4.5" fill="#120E0C"/>
+                        <circle cx="13.5" cy="-7.5" r="1.5" fill="#FFFFFF"/>
+                        <polygon points="32,-6 46,0 32,6" fill="#EA580C" stroke="#120E0C" stroke-width="3.5" stroke-linejoin="round"/>
+                        <!-- Badge -->
+                        <rect x="-48" y="38" width="96" height="22" rx="11" fill="#FFF8EE" stroke="#120E0C" stroke-width="3"/>
+                        <text x="0" y="53" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="10.5" fill="#120E0C">CHICKS (3 BREEDS)</text>
+                    </g>
+
+                    <!-- Right Buddy: Sourced Tamil Nadu Duck -->
+                    <g id="cartoon-duck" transform="translate(145, 35)">
+                        <ellipse cx="0" cy="4" rx="36" ry="28" fill="#E7D8C5" stroke="#120E0C" stroke-width="4.5"/>
+                        <circle cx="-8" cy="-22" r="22" fill="#5E2C14" stroke="#120E0C" stroke-width="4.5"/>
+                        <!-- White Neck Ring -->
+                        <path d="M-24,-6 Q-8,2 8,-6" stroke="#FFF8EE" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        <!-- Eye & Flat Duck Bill -->
+                        <circle cx="-14" cy="-25" r="4.5" fill="#120E0C"/>
+                        <circle cx="-15.5" cy="-26.5" r="1.5" fill="#FFFFFF"/>
+                        <path d="M-28,-22 Q-48,-24 -46,-14 Q-36,-12 -26,-15 Z" fill="#F59E0B" stroke="#120E0C" stroke-width="3.5"/>
+                        <!-- Badge -->
+                        <rect x="-48" y="38" width="96" height="22" rx="11" fill="#FFF8EE" stroke="#120E0C" stroke-width="3"/>
+                        <text x="0" y="53" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="10.5" fill="#120E0C">TAMIL NADU DUCKS</text>
+                    </g>
+                </g>
+
+                <!-- PART 3: AN FARMS 30-EGG CRATE BACK WALL (Sits behind the eggs when packing) -->
+                <g id="crate-back" opacity="0" transform="translate(0, 20)">
+                    <rect x="-110" y="-55" width="220" height="110" rx="12" fill="#4A2511" stroke="#120E0C" stroke-width="5"/>
+                    <!-- Egg Tray Dividers Inside Box -->
+                    <path d="M-95,-35 L95,-35 M-95,-15 L95,-15" stroke="#7B3F1D" stroke-width="4" stroke-dasharray="12 8"/>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- VARIANT 2: KADAKNATH BLACK EGG (Splits out in Part 2)     -->
+                <!-- ========================================================= -->
+                <g id="egg-kadaknath" opacity="0" transform="translate(0, 0) scale(0.85)">
+                    <!-- Cute Black Rooster Crown Feather on Top -->
+                    <path d="M-6,-74 Q0,-98 14,-82 Q24,-96 22,-72 Q12,-66 -6,-74 Z" fill="#27272A" stroke="#120E0C" stroke-width="4.5" stroke-linejoin="round"/>
+                    
+                    <!-- Jet-Black Charcoal Egg Body (Kadaknath Specialty) -->
+                    <path d="M0,-75 C42,-75 64,-20 64,22 C64,62 36,82 0,82 C-36,82 -64,62 -64,22 C-64,-20 -42,-75 0,-75 Z" 
+                          fill="#27272A" stroke="#120E0C" stroke-width="5.5"/>
+                    
+                    <!-- Glossy Cartoon Highlight -->
+                    <path d="M-36,-35 C-44,-10 -46,15 -40,35" stroke="#52525B" stroke-width="7" stroke-linecap="round" fill="none"/>
+                    
+                    <!-- Friendly Cartoon Face on Kadaknath Egg -->
+                    <g transform="translate(0, 6)">
+                        <!-- Eyes -->
+                        <circle cx="-20" cy="-8" r="8.5" fill="#FFF8EE" stroke="#120E0C" stroke-width="3.5"/>
+                        <circle cx="-18" cy="-8" r="4" fill="#120E0C"/>
+                        <circle cx="-16" cy="-10" r="1.8" fill="#FFFFFF"/>
+
+                        <circle cx="20" cy="-8" r="8.5" fill="#FFF8EE" stroke="#120E0C" stroke-width="3.5"/>
+                        <circle cx="18" cy="-8" r="4" fill="#120E0C"/>
+                        <circle cx="20" cy="-10" r="1.8" fill="#FFFFFF"/>
+
+                        <!-- Golden Cheeks -->
+                        <ellipse cx="-32" cy="4" rx="7" ry="4" fill="#F59E0B" opacity="0.8"/>
+                        <ellipse cx="32" cy="4" rx="7" ry="4" fill="#F59E0B" opacity="0.8"/>
+
+                        <!-- Confident Happy Smile -->
+                        <path d="M-12,4 Q0,18 12,4" stroke="#FFF8EE" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                    </g>
+
+                    <!-- Price Tag Pill on Kadaknath Egg (Visible in Part 2) -->
+                    <g id="badge-kadaknath" transform="translate(0, 102)">
+                        <rect x="-72" y="-18" width="144" height="36" rx="18" fill="#120E0C" stroke="#E59849" stroke-width="3.5"/>
+                        <text x="0" y="-2" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="12" fill="#E59849">KADAKNATH EGGS</text>
+                        <text x="0" y="12" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#FFF8EE">₹750 / 30 Eggs</text>
+                    </g>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- MAIN HERO OBJECT / VARIANT 1: NATTUKODI COUNTRY BROWN EGG -->
+                <!-- ========================================================= -->
+                <g id="egg-nattukodi" transform="translate(0, 0)">
+                    <!-- Cute Country Hen Comb / Feather Tuft on Top -->
+                    <g id="hero-crest">
+                        <path d="M-8,-74 Q-2,-98 10,-80 Q22,-95 20,-71 Z" fill="#B91C1C" stroke="#120E0C" stroke-width="4.5" stroke-linejoin="round"/>
+                    </g>
+
+                    <!-- Warm Country Brown Egg Body -->
+                    <path d="M0,-75 C42,-75 64,-20 64,22 C64,62 36,82 0,82 C-36,82 -64,62 -64,22 C-64,-20 -42,-75 0,-75 Z" 
+                          fill="#D98A3C" stroke="#120E0C" stroke-width="5.5"/>
+
+                    <!-- Warm Shell Shading & Cartoon Shine -->
+                    <path d="M-36,-35 C-44,-10 -46,15 -40,35" stroke="#F6B878" stroke-width="7" stroke-linecap="round" fill="none"/>
+                    <circle cx="-30" cy="-48" r="4" fill="#F6B878"/>
+
+                    <!-- Friendly Expressive Cartoon Face -->
+                    <g id="hero-face" transform="translate(0, 6)">
+                        <!-- Left Eye -->
+                        <g id="eye-left">
+                            <circle cx="-20" cy="-8" r="9" fill="#120E0C"/>
+                            <circle cx="-22" cy="-11" r="3.2" fill="#FFFFFF"/>
+                            <circle cx="-17" cy="-5" r="1.5" fill="#FFFFFF"/>
+                        </g>
+                        <!-- Right Eye -->
+                        <g id="eye-right">
+                            <circle cx="20" cy="-8" r="9" fill="#120E0C"/>
+                            <circle cx="18" cy="-11" r="3.2" fill="#FFFFFF"/>
+                            <circle cx="23" cy="-5" r="1.5" fill="#FFFFFF"/>
+                        </g>
+
+                        <!-- Cute Rosy Blushes -->
+                        <ellipse cx="-33" cy="4" rx="8" ry="4.5" fill="#B83B1A" opacity="0.65"/>
+                        <ellipse cx="33" cy="4" rx="8" ry="4.5" fill="#B83B1A" opacity="0.65"/>
+
+                        <!-- Big Happy Cartoon Mouth -->
+                        <path d="M-13,3 Q0,20 13,3 Z" fill="#120E0C" stroke="#120E0C" stroke-width="3" stroke-linejoin="round"/>
+                        <path d="M-7,10 Q0,15 7,10" fill="#EF4444"/>
+                    </g>
+
+                    <!-- Cute Little Cartoon Wings/Hands -->
+                    <path id="wing-left" d="M-62,12 Q-82,2 -76,24 Q-70,36 -60,28" fill="#B86B23" stroke="#120E0C" stroke-width="4.5" stroke-linecap="round"/>
+                    <path id="wing-right" d="M62,12 Q82,2 76,24 Q70,36 60,28" fill="#B86B23" stroke="#120E0C" stroke-width="4.5" stroke-linecap="round"/>
+
+                    <!-- Price Tag Pill on Nattukodi Egg (Visible in Part 2) -->
+                    <g id="badge-nattukodi" opacity="0" transform="translate(0, 102)">
+                        <rect x="-74" y="-18" width="148" height="36" rx="18" fill="#FFF8EE" stroke="#120E0C" stroke-width="3.5"/>
+                        <text x="0" y="-2" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="12" fill="#7B3F1D">NATTUKODI EGGS</text>
+                        <text x="0" y="12" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="11" fill="#120E0C">₹540 / 30 Eggs</text>
+                    </g>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- PART 3: AN FARMS 30-EGG PACK FRONT & CLOSING FLAPS        -->
+                <!-- ========================================================= -->
+                <g id="crate-front" opacity="0" transform="translate(0, 20)">
+                    <!-- Front Cardboard Box Body -->
+                    <rect x="-110" y="-15" width="220" height="85" rx="10" fill="#B86B23" stroke="#120E0C" stroke-width="5.5"/>
+                    
+                    <!-- Darker Brown Side Stripes -->
+                    <rect x="-110" y="45" width="220" height="25" rx="6" fill="#7B3F1D" stroke="#120E0C" stroke-width="5"/>
+
+                    <!-- Brand Stamp Plate on the Crate -->
+                    <rect x="-82" y="0" width="164" height="50" rx="10" fill="#FFF8EE" stroke="#120E0C" stroke-width="4"/>
+                    <text x="0" y="21" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="16" fill="#120E0C">AN FARMS • 30 TRAY</text>
+                    <text x="0" y="39" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="10.5" fill="#7B3F1D">KADAKNATH & NATTUKODI</text>
+
+                    <!-- Left Top Box Flap (Rotates shut in Part 3, opens in Part 4) -->
+                    <g id="flap-left" transform="translate(-110, -15) rotate(-110)">
+                        <rect x="0" y="-18" width="112" height="20" rx="5" fill="#D98A3C" stroke="#120E0C" stroke-width="5"/>
+                    </g>
+
+                    <!-- Right Top Box Flap (Rotates shut in Part 3, opens in Part 4) -->
+                    <g id="flap-right" transform="translate(110, -15) rotate(110)">
+                        <rect x="-112" y="-18" width="112" height="20" rx="5" fill="#D98A3C" stroke="#120E0C" stroke-width="5"/>
+                    </g>
+
+                    <!-- "100% NATURAL" Gold Seal Badge (Pops on when closed) -->
+                    <g id="pack-seal" transform="translate(0, -15) scale(0)">
+                        <circle cx="0" cy="0" r="24" fill="#F59E0B" stroke="#120E0C" stroke-width="4"/>
+                        <text x="0" y="-2" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="9.5" fill="#120E0C">FARM</text>
+                        <text x="0" y="9" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="9.5" fill="#120E0C">SEALED</text>
+                    </g>
+                </g>
+
+                <!-- PART 1 SPEECH BUBBLE (Auto-plays when page opens) -->
+                <g id="hello-bubble" transform="translate(95, -85) scale(0)">
+                    <rect x="-65" y="-28" width="130" height="44" rx="20" fill="#FFF8EE" stroke="#120E0C" stroke-width="4"/>
+                    <polygon points="-35,15 -50,30 -18,15" fill="#FFF8EE" stroke="#120E0C" stroke-width="4" stroke-linejoin="round"/>
+                    <text x="0" y="-6" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="13" fill="#120E0C">Namaste from</text>
+                    <text x="0" y="9" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="13" fill="#7B3F1D">AN Farms!</text>
+                </g>
+
+            </g>
+        </svg>
+    </div>
+
+
+    <!-- ===================================================================== -->
+    <!-- 5 SCROLL STORY SECTIONS                                               -->
+    <!-- ===================================================================== -->
+    <main>
+
+        <!-- PART 1: START (Plays automatically on page load) -->
+        <section id="part-1" class="story-section bg-pattern">
+            <div class="text-center max-w-2xl mx-auto z-20">
+                <span class="inline-block bg-[#120E0C] text-[#E59849] cartoon-font font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full cartoon-pill mb-3">
+                    PART 1 • HYDERABAD'S COUNTRY POULTRY FARM
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-bold text-[#FFF8EE] text-outline leading-tight">
+                    Fresh From Our Nest at AN Farms!
+                </h1>
+                <p class="text-sm sm:text-base font-bold text-[#120E0C] bg-[#FFF8EE]/90 px-4 py-2 rounded-2xl cartoon-pill inline-block mt-3">
+                    Run by Venkat Yanamala • 100% Free-Range Native Country Poultry
+                </p>
+            </div>
+
+            <!-- Bottom Scroll Prompt -->
+            <div class="text-center z-20">
+                <div class="bg-[#120E0C] text-[#FFF8EE] px-5 py-2.5 rounded-2xl cartoon-pill inline-flex items-center gap-3">
+                    <span class="text-xs sm:text-sm font-bold text-[#E59849]">Scroll down to follow the journey</span>
+                    <span class="animate-bounce text-lg">⬇️</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PART 2: CHOICE (Splits into Variant 1 & Variant 2) -->
+        <section id="part-2" class="story-section bg-pattern">
+            <div class="text-center max-w-3xl mx-auto z-20">
+                <span class="inline-block bg-[#E59849] text-[#120E0C] cartoon-font font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full cartoon-pill mb-3">
+                    PART 2 • TWO MIGHTY COUNTRY VARIANTS
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-[#FFF8EE] text-outline leading-tight">
+                    It Splits Into Brown & Black Power!
+                </h2>
+            </div>
+
+            <!-- Variant Details Bar at Bottom of Part 2 -->
+            <div class="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 z-20">
+                <div class="bg-[#FFF8EE] text-[#120E0C] p-3.5 sm:p-4 rounded-2xl cartoon-card flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#D98A3C] text-[#120E0C]">Variant 1 • Nattukodi</span>
+                        <h3 class="cartoon-font font-bold text-lg sm:text-xl mt-1">Nattukodi Eggs & Chicken</h3>
+                        <p class="text-xs font-bold text-[#7B3F1D]">Chicken: ₹600–₹799/kg (Wed & Sun)</p>
+                    </div>
+                    <div class="text-right bg-[#120E0C] text-[#E59849] px-3 py-2 rounded-xl shrink-0">
+                        <span class="cartoon-font font-bold text-lg block leading-none">₹540</span>
+                        <span class="text-[10px] text-white font-bold">per 30 Eggs</span>
+                    </div>
+                </div>
+
+                <div class="bg-[#27272A] text-[#FFF8EE] p-3.5 sm:p-4 rounded-2xl cartoon-card flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#E59849] text-[#120E0C]">Variant 2 • Kadaknath & Flock</span>
+                        <h3 class="cartoon-font font-bold text-lg sm:text-xl mt-1">Kadaknath Eggs & Chicks</h3>
+                        <p class="text-xs font-bold text-[#E59849]">+ Sonali, Aseel Chicks & TN Ducks</p>
+                    </div>
+                    <div class="text-right bg-[#E59849] text-[#120E0C] px-3 py-2 rounded-xl shrink-0">
+                        <span class="cartoon-font font-bold text-lg block leading-none">₹750</span>
+                        <span class="text-[10px] font-extrabold">per 30 Eggs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PART 3: PACK (Goes into our 30-Egg Pack, which closes) -->
+        <section id="part-3" class="story-section bg-pattern">
+            <div class="text-center max-w-2xl mx-auto z-20">
+                <span class="inline-block bg-[#7B3F1D] text-[#FFF8EE] cartoon-font font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full cartoon-pill mb-3">
+                    PART 3 • FARM-FRESH 30-EGG PACKING
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-[#E59849] text-outline leading-tight">
+                    Snug Inside Our 30-Egg Farm Pack!
+                </h2>
+            </div>
+
+            <div class="w-full max-w-xl mx-auto z-20 text-center">
+                <div class="bg-[#7B3F1D] text-[#FFF8EE] p-4 rounded-2xl cartoon-card flex flex-wrap justify-around items-center gap-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">🥚</span>
+                        <div class="text-left">
+                            <p class="cartoon-font font-bold text-sm leading-none text-[#E59849]">30-Egg Farm Trays</p>
+                            <p class="text-xs">Zero breakage • Safe transit</p>
+                        </div>
+                    </div>
+                    <div class="h-6 w-0.5 bg-[#120E0C] hidden sm:block"></div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">🐓</span>
+                        <div class="text-left">
+                            <p class="cartoon-font font-bold text-sm leading-none text-[#E59849]">Live Chicks & Ducks</p>
+                            <p class="text-xs">Ventilated farm crates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PART 4: USE (The pack arrives where the product is used) -->
+        <section id="part-4" class="story-section bg-pattern">
+            <div class="text-center max-w-3xl mx-auto z-20">
+                <span class="inline-block bg-[#120E0C] text-[#E59849] cartoon-font font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full cartoon-pill mb-3">
+                    PART 4 • ARRIVES AT YOUR KITCHEN & FARM
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-[#FFF8EE] text-outline leading-tight">
+                    Feast on Wed & Sun, or Raise Your Flock!
+                </h2>
+            </div>
+
+            <!-- 4 Product Pillars in Action -->
+            <div class="w-full max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 z-20">
+                <div class="bg-[#120E0C] text-[#FFF8EE] p-3 rounded-2xl cartoon-pill text-center">
+                    <p class="cartoon-font font-bold text-sm sm:text-base text-[#E59849]">Kadaknath Eggs</p>
+                    <p class="text-xs font-bold mt-0.5">₹750 / 30 Eggs</p>
+                </div>
+                <div class="bg-[#120E0C] text-[#FFF8EE] p-3 rounded-2xl cartoon-pill text-center">
+                    <p class="cartoon-font font-bold text-sm sm:text-base text-[#E59849]">Nattukodi Eggs</p>
+                    <p class="text-xs font-bold mt-0.5">₹540 / 30 Eggs</p>
+                </div>
+                <div class="bg-[#FFF8EE] text-[#120E0C] p-3 rounded-2xl cartoon-pill text-center">
+                    <p class="cartoon-font font-bold text-sm sm:text-base text-[#7B3F1D]">Nattukodi Meat</p>
+                    <p class="text-xs font-extrabold mt-0.5">₹600–₹799/kg (Sun & Wed)</p>
+                </div>
+                <div class="bg-[#120E0C] text-[#FFF8EE] p-3 rounded-2xl cartoon-pill text-center">
+                    <p class="cartoon-font font-bold text-sm sm:text-base text-[#E59849]">Chicks & TN Ducks</p>
+                    <p class="text-xs font-bold mt-0.5">Sonali • Kadaknath • Aseel</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PART 5: ORDER (Final CTA Button + Contact Phone / Email) -->
+        <section id="part-5" class="story-section bg-pattern justify-between">
+            <div class="text-center max-w-2xl mx-auto z-20">
+                <span class="inline-block bg-[#E59849] text-[#120E0C] cartoon-font font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full cartoon-pill mb-2">
+                    PART 5 • DIRECT FROM VENKAT YANAMALA
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-[#FFF8EE] text-outline leading-tight">
+                    Ready to Order From AN Farms?
+                </h2>
+            </div>
+
+            <!-- Spacer in middle where our smiling cartoon mascot lands -->
+            <div class="h-32 sm:h-40"></div>
+
+            <!-- Order Card at Bottom -->
+            <div class="w-full max-w-2xl mx-auto bg-[#FFF8EE] text-[#120E0C] p-5 sm:p-7 rounded-3xl cartoon-card z-40 pointer-events-auto text-center">
+                
+                <!-- Quick Product Selector Pills -->
+                <p class="text-xs font-extrabold uppercase tracking-wider text-[#7B3F1D] mb-2.5">Tap to select what you want to order:</p>
+                <div class="grid grid-cols-2 gap-2 mb-5 text-left text-xs font-bold">
+                    <label class="flex items-center gap-2 bg-[#F4E6D4] p-2.5 rounded-xl border-2 border-[#120E0C] cursor-pointer">
+                        <input type="checkbox" value="Kadaknath Eggs (₹750 / 30 Eggs)" checked class="order-check w-4 h-4 accent-[#7B3F1D]">
+                        <span>Kadaknath Eggs (₹750/30)</span>
+                    </label>
+                    <label class="flex items-center gap-2 bg-[#F4E6D4] p-2.5 rounded-xl border-2 border-[#120E0C] cursor-pointer">
+                        <input type="checkbox" value="Nattukodi Eggs (₹540 / 30 Eggs)" checked class="order-check w-4 h-4 accent-[#7B3F1D]">
+                        <span>Nattukodi Eggs (₹540/30)</span>
+                    </label>
+                    <label class="flex items-center gap-2 bg-[#F4E6D4] p-2.5 rounded-xl border-2 border-[#120E0C] cursor-pointer">
+                        <input type="checkbox" value="Nattukodi Chicken (₹600–₹799/kg - Sun/Wed)" class="order-check w-4 h-4 accent-[#7B3F1D]">
+                        <span>Nattukodi Meat (Sun & Wed)</span>
+                    </label>
+                    <label class="flex items-center gap-2 bg-[#F4E6D4] p-2.5 rounded-xl border-2 border-[#120E0C] cursor-pointer">
+                        <input type="checkbox" value="Sonali/Kadaknath/Aseel Chicks & Tamil Nadu Ducks" class="order-check w-4 h-4 accent-[#7B3F1D]">
+                        <span>Chicks & TN Ducks</span>
+                    </label>
+                </div>
+
+                <!-- Main Order Button -->
+                <button onclick="sendWhatsAppOrder()" class="w-full bg-[#E59849] hover:bg-[#f0a556] text-[#120E0C] cartoon-font font-bold text-xl sm:text-2xl py-4 px-6 rounded-2xl cartoon-btn mb-4 flex items-center justify-center gap-3 cursor-pointer">
+                    <span>🐣 Order Fresh From AN Farms</span>
+                </button>
+
+                <!-- Direct Contact Details (Phone & Email) -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-xs sm:text-sm font-extrabold text-[#120E0C] pt-2 border-t-2 border-[#120E0C]/15">
+                    <span>👤 Venkat Yanamala (Hyderabad)</span>
+                    <a href="tel:+919876543210" class="text-[#7B3F1D] hover:underline">📞 +91 98765 43210</a>
+                    <a href="mailto:venkat@anfarmshyderabad.com" class="text-[#7B3F1D] hover:underline">✉️ venkat@anfarmshyderabad.com</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===================================================================== -->
+    <!-- BOTTOM-LEFT "▶ Play" BUTTON (Hides & Auto-scrolls in 25 seconds)      -->
+    <!-- ===================================================================== -->
+    <button id="play-record-btn" onclick="start25SecAutoScroll()" class="fixed bottom-4 left-4 z-50 bg-[#E59849] text-[#120E0C] cartoon-font font-bold text-sm px-4 py-2.5 rounded-full cartoon-btn flex items-center gap-2 cursor-pointer">
+        <span>▶ Play</span>
+    </button>
+
+
+    <!-- ===================================================================== -->
+    <!-- ANIMATION & INTERACTION SCRIPT                                        -->
+    <!-- ===================================================================== -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ---------------------------------------------------------------------
+        // 1. PART 1 AUTO-PLAY ANIMATION (Plays by itself when page opens)
+        // ---------------------------------------------------------------------
+        window.addEventListener('load', () => {
+            const introTl = gsap.timeline();
+
+            // Egg pops happily out of the straw nest
+            introTl.from("#traveler-master", {
+                scale: 0.3,
+                y: 80,
+                duration: 0.8,
+                ease: "back.out(1.8)"
+            })
+            // Speech bubble pops open
+            .to("#hello-bubble", {
+                scale: 1,
+                duration: 0.5,
+                ease: "back.out(2)"
+            }, "-=0.2");
+
+            // Continuous friendly idle animations (blinking & waving wings) so the character feels alive
+            gsap.to(["#eye-left", "#eye-right"], {
+                scaleY: 0.1,
+                transformOrigin: "center center",
+                duration: 0.12,
+                repeat: -1,
+                yoyo: true,
+                repeatDelay: 3.2
+            });
+
+            gsap.to("#wing-right", {
+                rotation: -20,
+                transformOrigin: "left center",
+                duration: 0.6,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            gsap.to("#wing-left", {
+                rotation: 20,
+                transformOrigin: "right center",
+                duration: 0.6,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            // Steam rising animation for Part 4 curry pot
+            gsap.to(["#steam-1", "#steam-2", "#steam-3"], {
+                y: -12,
+                opacity: 0.3,
+                duration: 1.1,
+                stagger: 0.25,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        });
+
+
+        // ---------------------------------------------------------------------
+        // 2. MASTER SCROLL TIMELINE (Parts 2 to 5 play on scroll & rewind up)
+        // ---------------------------------------------------------------------
+        const scrollTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "main",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.6 // Smoothly tied to scrollbar & rewinds on scroll up
+            }
+        });
+
+        // --- TRANSITION 1 -> 2: CHOICE (Splits into Variant 1 Nattukodi & Variant 2 Kadaknath + Chicks/Ducks) ---
+        scrollTl
+            .to("#hello-bubble", { scale: 0, opacity: 0, duration: 0.3 }, 0)
+            .to("#nest-group", { y: 140, opacity: 0, scale: 0.7, duration: 0.5 }, 0)
+            // Split Nattukodi Brown Egg to Left & Reveal Kadaknath Black Egg to Right
+            .to("#egg-nattukodi", { x: -82, y: -15, scale: 0.88, duration: 0.9, ease: "power2.inOut" }, 0.1)
+            .to("#badge-nattukodi", { opacity: 1, duration: 0.4 }, 0.4)
+            .to("#egg-kadaknath", { opacity: 1, x: 82, y: -15, scale: 0.88, duration: 0.9, ease: "power2.inOut" }, 0.1)
+            // Pop in Sonali/Aseel Chick & Tamil Nadu Duck buddies
+            .to("#chicks-ducks-group", { opacity: 1, scale: 0.85, y: 15, duration: 0.7, ease: "back.out(1.5)" }, 0.3)
+            .to("#ground-shadow", { rx: 165, duration: 0.8 }, 0.1)
+
+
+        // --- TRANSITION 2 -> 3: PACK (Both variants slide into the 30-Egg Pack, which closes) ---
+            .to(["#badge-nattukodi", "#badge-kadaknath"], { opacity: 0, duration: 0.25 }, 1.05)
+            .to("#chicks-ducks-group", { opacity: 0, scale: 0.4, duration: 0.35 }, 1.05)
+            // Bring Crate Back & Front into view
+            .to(["#crate-back", "#crate-front"], { opacity: 1, duration: 0.35 }, 1.1)
+            // Slide both eggs into the crate side-by-side
+            .to("#egg-nattukodi", { x: -45, y: 8, scale: 0.72, duration: 0.55, ease: "power2.inOut" }, 1.15)
+            .to("#egg-kadaknath", { x: 45, y: 8, scale: 0.72, duration: 0.55, ease: "power2.inOut" }, 1.15)
+            // Fold the Left and Right Box Flaps CLOSED
+            .to("#flap-left", { rotation: 0, duration: 0.45, ease: "power2.inOut" }, 1.55)
+            .to("#flap-right", { rotation: 0, duration: 0.45, ease: "power2.inOut" }, 1.55)
+            // Stamp the "FARM SEALED" golden badge onto the closed pack
+            .to("#pack-seal", { scale: 1, rotation: 360, duration: 0.35, ease: "back.out(2)" }, 1.8)
+            .to("#ground-shadow", { rx: 115, duration: 0.5 }, 1.3)
+
+
+        // --- TRANSITION 3 -> 4: USE (Pack arrives at home/farm, opens up to reveal Curry, Eggs & Flock) ---
+            .to("#pack-seal", { scale: 0, duration: 0.25 }, 2.15)
+            // Flaps pop wide open!
+            .to("#flap-left", { rotation: -125, duration: 0.45, ease: "back.out(1.6)" }, 2.25)
+            .to("#flap-right", { rotation: 125, duration: 0.45, ease: "back.out(1.6)" }, 2.25)
+            // Crate moves slightly down to become the serving base
+            .to(["#crate-back", "#crate-front"], { y: 48, scale: 0.92, duration: 0.5 }, 2.3)
+            // The two Hero Eggs pop up cheerfully on either side
+            .to("#egg-nattukodi", { x: -95, y: 12, scale: 0.76, duration: 0.55, ease: "back.out(1.5)" }, 2.35)
+            .to("#egg-kadaknath", { x: 95, y: 12, scale: 0.76, duration: 0.55, ease: "back.out(1.5)" }, 2.35)
+            // Steaming Sunday & Wednesday Nattukodi Curry Pot rises in the center!
+            .to("#use-feast-group", { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.5)" }, 2.4)
+            // Chicks & Tamil Nadu Ducks celebrate on the sides
+            .to("#chicks-ducks-group", { opacity: 1, scale: 0.85, y: 32, duration: 0.55 }, 2.45)
+            .to("#ground-shadow", { rx: 175, duration: 0.5 }, 2.4)
+
+
+        // --- TRANSITION 4 -> 5: ORDER (Travels cleanly above the final Order Card) ---
+            .to(["#use-feast-group", "#chicks-ducks-group", "#crate-back", "#crate-front"], {
+                opacity: 0,
+                scale: 0.5,
+                duration: 0.4
+            }, 3.15)
+            // Position our two friendly Hero Mascots (Nattukodi & Kadaknath) right above the Order Box
+            .to("#traveler-master", { y: -65, duration: 0.7, ease: "power2.out" }, 3.2)
+            .to("#egg-nattukodi", { x: -48, y: 0, scale: 0.78, rotation: -6, duration: 0.65 }, 3.25)
+            .to("#egg-kadaknath", { x: 48, y: 0, scale: 0.78, rotation: 6, duration: 0.65 }, 3.25)
+            .to("#ground-shadow", { rx: 105, cy: 78, duration: 0.6 }, 3.25);
+
+
+        // ---------------------------------------------------------------------
+        // 3. "▶ Play" 25-SECOND AUTO-SCROLL FOR SCREEN RECORDING
+        // ---------------------------------------------------------------------
+        let isAutoScrolling = false;
+        let autoScrollFrame = null;
+
+        function start25SecAutoScroll() {
+            const playBtn = document.getElementById('play-record-btn');
+            // Immediately hide the Play button so the screen recording is 100% clean
+            playBtn.style.display = 'none';
+
+            // Jump to very top first so the 25-second recording captures Part 1 to Part 5
+            window.scrollTo(0, 0);
+
+            const totalDurationMs = 25000; // 25 seconds
+            const startTime = performance.now();
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            isAutoScrolling = true;
+
+            function step(now) {
+                if (!isAutoScrolling) return;
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / totalDurationMs, 1);
+
+                window.scrollTo(0, maxScroll * progress);
+
+                if (progress < 1) {
+                    autoScrollFrame = requestAnimationFrame(step);
+                } else {
+                    isAutoScrolling = false;
+                    // Bring back button 3 seconds after recording finishes
+                    setTimeout(() => {
+                        playBtn.style.display = 'flex';
+                    }, 3000);
+                }
+            }
+
+            // Short 400ms pause at top so Part 1 intro is visible before scrolling starts
+            setTimeout(() => {
+                autoScrollFrame = requestAnimationFrame(step);
+            }, 400);
+        }
+
+        // Stop auto-scroll if user manually touches/wheels during recording
+        window.addEventListener('wheel', () => {
+            if (isAutoScrolling) {
+                isAutoScrolling = false;
+                cancelAnimationFrame(autoScrollFrame);
+                document.getElementById('play-record-btn').style.display = 'flex';
+            }
+        }, { passive: true });
+
+
+        // ---------------------------------------------------------------------
+        // 4. ORDER BUTTON ACTION (WhatsApp Order with Selected AN Farms Items)
+        // ---------------------------------------------------------------------
+        function sendWhatsAppOrder() {
+            const checked = Array.from(document.querySelectorAll('.order-check:checked')).map(el => el.value);
+            const itemsList = checked.length > 0 
+                ? checked.map(i => `• ${i}`).join('%0A') 
+                : `• Kadaknath Eggs (₹750 / 30 Eggs)%0A• Nattukodi Eggs (₹540 / 30 Eggs)`;
+
+            const msg = `Namaste Venkat Yanamala garu (*AN Farms, Hyderabad*)!%0A%0AI would like to order:%0A${itemsList}%0A%0APlease share availability and delivery details.`;
+            window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>

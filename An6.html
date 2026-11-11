@@ -1,0 +1,1281 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN Farms Hyderabad | Native Country Poultry (Natu Kodi) & Pure Dairy by Venkat Yanamala</title>
+    <meta name="description" content="AN Farms is a Hyderabad-based poultry and dairy farm run by Venkat Yanamala, specializing in 100% free-range native country poultry (Natu Kodi), fertile country eggs, A2 milk, Bilona ghee, and natural farm products.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        farm: {
+                            green: '#143321',
+                            moss: '#1f4d33',
+                            sage: '#e8f0eb',
+                            cream: '#faf7f0',
+                            sand: '#f2ece1',
+                            amber: '#d97706',
+                            terracotta: '#b84a1c',
+                            gold: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #faf7f0;
+            color: #18261e;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Fraunces', serif;
+        }
+        /* Subtle 3D Perspective Card Hover */
+        .card-3d {
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+            transform-style: preserve-3d;
+        }
+        .card-3d:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 45px -12px rgba(20, 51, 33, 0.14);
+        }
+        /* Subtle Grain Texture Overlay */
+        .bg-grain {
+            background-image: radial-gradient(rgba(20, 51, 33, 0.06) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf7f0; }
+        ::-webkit-scrollbar-thumb { background: #143321; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d97706; }
+    </style>
+</head>
+<body class="antialiased selection:bg-farm-green selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-farm-green text-farm-cream text-xs py-2.5 px-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span><strong>Fresh Morning Harvest:</strong> Raw A2 Milk & Country Eggs delivered between 5:30 AM – 7:30 AM across Hyderabad.</span>
+            </div>
+            <div class="flex items-center gap-4 font-medium text-amber-300">
+                <button onclick="openAreaModal()" class="hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-location-dot"></i> Check Hyderabad Delivery
+                </button>
+                <span class="hidden md:inline text-white/30">|</span>
+                <a href="tel:+919876543210" class="hidden md:inline hover:underline"><i class="fa-solid fa-phone mr-1"></i> +91 98765 43210</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 bg-farm-cream/95 backdrop-blur-md border-b border-farm-green/10 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-12 h-12 rounded-2xl bg-farm-green text-amber-400 flex items-center justify-center text-2xl shadow-md group-hover:bg-farm-moss transition">
+                    <i class="fa-solid fa-wheat-awn"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-bold font-serif tracking-tight text-farm-green block leading-none">AN FARMS</span>
+                    <span class="text-[11px] font-semibold uppercase tracking-widest text-farm-terracotta block mt-1">Hyderabad • By Venkat Yanamala</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-farm-green/85">
+                <a href="#shop" class="hover:text-farm-terracotta transition">Shop Farm Products</a>
+                <a href="#poultry" class="hover:text-farm-terracotta transition">Native Poultry (Natu Kodi)</a>
+                <a href="#dairy" class="hover:text-farm-terracotta transition">Pure A2 Dairy</a>
+                <a href="#subscription" class="hover:text-farm-terracotta transition">Milk Subscription</a>
+                <a href="#founder" class="hover:text-farm-terracotta transition">Venkat's Story</a>
+                <a href="#visit" class="hover:text-farm-terracotta transition">Visit the Farm</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="openAreaModal()" class="hidden sm:flex items-center gap-2 bg-farm-sand hover:bg-amber-100/70 text-farm-green px-3.5 py-2 rounded-xl text-xs font-bold border border-farm-green/15 transition">
+                    <i class="fa-solid fa-map-pin text-farm-terracotta"></i>
+                    <span id="selected-area-label">Hyderabad (Select Area)</span>
+                </button>
+
+                <button onclick="toggleCart()" class="relative bg-farm-green hover:bg-farm-moss text-white px-4 py-2.5 rounded-xl flex items-center gap-2.5 text-sm font-semibold transition shadow-sm">
+                    <i class="fa-solid fa-basket-shopping text-amber-400"></i>
+                    <span class="hidden sm:inline">Basket</span>
+                    <span id="cart-count" class="bg-amber-400 text-farm-green text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl border border-farm-green/20 text-farm-green">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-farm-cream border-t border-farm-green/10 px-6 py-5 space-y-3 text-sm font-semibold">
+            <a href="#shop" onclick="toggleMobileMenu()" class="block py-2 text-farm-green hover:text-farm-terracotta">Shop Farm Products</a>
+            <a href="#poultry" onclick="toggleMobileMenu()" class="block py-2 text-farm-green hover:text-farm-terracotta">Native Poultry (Natu Kodi)</a>
+            <a href="#dairy" onclick="toggleMobileMenu()" class="block py-2 text-farm-green hover:text-farm-terracotta">Pure A2 Dairy</a>
+            <a href="#subscription" onclick="toggleMobileMenu()" class="block py-2 text-farm-green hover:text-farm-terracotta">Milk & Egg Subscription</a>
+            <a href="#founder" onclick="toggleMobileMenu()" class="block py-2 text-farm-green hover:text-farm-terracotta">About Venkat Yanamala</a>
+            <a href="#visit" onclick="toggleMobileMenu()" class="block py-2 text-farm-green hover:text-farm-terracotta">Book a Farm Visit</a>
+            <button onclick="openAreaModal(); toggleMobileMenu();" class="w-full text-left py-2 text-farm-terracotta font-bold">
+                <i class="fa-solid fa-location-dot mr-1"></i> Check Hyderabad Delivery Area
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden bg-grain pt-8 pb-16 lg:py-20 border-b border-farm-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2.5 bg-farm-sage border border-farm-green/20 text-farm-green px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+                        <i class="fa-solid fa-leaf text-farm-terracotta"></i>
+                        <span>Direct From Our Pastures in Hyderabad</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-farm-green leading-[1.12]">
+                        Authentic Free-Range <span class="text-farm-terracotta italic font-normal">Natu Kodi</span> & Unadulterated Farm Dairy.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl">
+                        At <strong>AN Farms, Hyderabad</strong>, founder <strong>Venkat Yanamala</strong> raises indigenous country poultry and native dairy cattle on open green pastures—free from antibiotics, growth hormones, or commercial shortcuts. Experience the honest taste of traditional village farming delivered fresh to your doorstep.
+                    </p>
+
+                    <!-- Action CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#shop" class="bg-farm-green hover:bg-farm-moss text-white font-bold px-8 py-4 rounded-2xl text-sm sm:text-base transition flex items-center gap-3 shadow-lg shadow-farm-green/20">
+                            <i class="fa-solid fa-basket-shopping text-amber-400"></i>
+                            <span>Order Fresh Today</span>
+                        </a>
+                        <a href="#subscription" class="bg-white hover:bg-farm-sand text-farm-green font-bold px-7 py-4 rounded-2xl text-sm sm:text-base transition border border-farm-green/20 flex items-center gap-2.5">
+                            <i class="fa-solid fa-calendar-check text-farm-terracotta"></i>
+                            <span>Start Milk Subscription</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Pillars -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-farm-green/10">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-farm-terracotta flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-feather-pointed"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-farm-green">100% Free-Range</h4>
+                                <p class="text-xs text-gray-600">Natural foraging under orchard trees</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-farm-green flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-shield-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-farm-green">Zero Antibiotics</h4>
+                                <p class="text-xs text-gray-600">Herbal immunity with neem & turmeric</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-farm-terracotta flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-farm-green">Same-Day Fresh</h4>
+                                <p class="text-xs text-gray-600">Farm to kitchen across Hyderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Showcase Grid -->
+                <div class="lg:col-span-5 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white card-3d relative group h-64">
+                                <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80" alt="Free Range Country Chicken at AN Farms" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-4">
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-wider bg-amber-500 text-black font-bold px-2 py-0.5 rounded">Pasture Raised</span>
+                                        <p class="text-white font-serif font-bold text-base mt-1">Desi Natu Kodi & Aseel</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white card-3d relative group h-48">
+                                <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=800&q=80" alt="Fertile Country Chicken Eggs" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-4">
+                                    <div>
+                                        <p class="text-white font-serif font-bold text-base">Fertile Country Eggs</p>
+                                        <p class="text-amber-300 text-xs">Rich Omega-3 Orange Yolks</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 pt-6">
+                            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white card-3d relative group h-48">
+                                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" alt="Farm Fresh Raw Milk in Glass Bottles" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-4">
+                                    <div>
+                                        <p class="text-white font-serif font-bold text-base">Farm Raw A2 Milk</p>
+                                        <p class="text-emerald-300 text-xs">Glass Bottle Morning Delivery</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white card-3d relative group h-64">
+                                <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=800&q=80" alt="Grass-Fed Dairy Cattle at AN Farms" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-4">
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-wider bg-emerald-500 text-black font-bold px-2 py-0.5 rounded">Ethical Dairy</span>
+                                        <p class="text-white font-serif font-bold text-base mt-1">Grass-Fed Cows & Buffaloes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Farmer Guarantee Badge -->
+                    <div class="bg-white rounded-2xl p-4 shadow-xl border border-farm-green/10 max-w-xs mx-auto mt-4 lg:mt-0 lg:absolute lg:-bottom-5 lg:-left-6 flex items-center gap-3.5">
+                        <div class="w-11 h-11 rounded-full bg-farm-green text-amber-400 flex items-center justify-center font-serif font-bold text-sm shrink-0">
+                            VY
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-farm-green">"100% Purity Guaranteed"</p>
+                            <p class="text-[11px] text-gray-600">— Venkat Yanamala, Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HYDERABAD QUICK DELIVERY CHECKER BANNER -->
+    <section class="bg-farm-sand py-6 border-b border-farm-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-farm-green text-amber-400 flex items-center justify-center text-lg shrink-0">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-sm sm:text-base text-farm-green">Delivering Fresh Across Greater Hyderabad</h3>
+                    <p class="text-xs text-gray-600">Gachibowli • Jubilee Hills • Banjara Hills • Kondapur • Madhapur • Manikonda • Kokapet • Kukatpally • Secunderabad</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 w-full md:w-auto">
+                <select id="quick-area-select" onchange="updateDeliveryStatus(this.value)" class="bg-white border border-farm-green/20 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold text-farm-green focus:outline-none focus:border-farm-terracotta w-full md:w-64">
+                    <option value="">Select Your Hyderabad Locality...</option>
+                    <option value="Gachibowli / Financial District">Gachibowli / Financial District</option>
+                    <option value="Jubilee Hills / Banjara Hills">Jubilee Hills / Banjara Hills</option>
+                    <option value="Kondapur / Madhapur / Hitech City">Kondapur / Madhapur / Hitech City</option>
+                    <option value="Kokapet / Narsingi / Manikonda">Kokapet / Narsingi / Manikonda</option>
+                    <option value="Kukatpally / Miyapur / Nizampet">Kukatpally / Miyapur / Nizampet</option>
+                    <option value="Secunderabad / Sainikpuri / Kompally">Secunderabad / Sainikpuri / Kompally</option>
+                    <option value="LB Nagar / Uppal / Dilsukhnagar">LB Nagar / Uppal / Dilsukhnagar</option>
+                </select>
+                <span id="quick-area-badge" class="hidden text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-2 rounded-xl whitespace-nowrap">
+                    <i class="fa-solid fa-circle-check mr-1"></i> Next Slot: Tomorrow 6:30 AM
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FARM STORE SECTION -->
+    <section id="shop" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-farm-terracotta block mb-2">Farm-to-Home Harvest</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-farm-green">Order Natural Farm Products</h2>
+                <p class="text-sm text-gray-600 mt-2 max-w-xl">
+                    Every poultry order is dressed fresh on the morning of delivery. Customize your cut style (including traditional Telugu turmeric-roasted skin-on cut) directly below.
+                </p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap gap-2 bg-farm-sand p-1.5 rounded-2xl border border-farm-green/10">
+                <button onclick="filterStore('all')" id="filter-all" class="store-tab bg-farm-green text-white font-bold px-4 py-2.5 rounded-xl text-xs transition">All Harvest (9)</button>
+                <button onclick="filterStore('poultry')" id="filter-poultry" class="store-tab text-farm-green hover:bg-white/60 font-semibold px-4 py-2.5 rounded-xl text-xs transition">Native Poultry & Eggs</button>
+                <button onclick="filterStore('dairy')" id="filter-dairy" class="store-tab text-farm-green hover:bg-white/60 font-semibold px-4 py-2.5 rounded-xl text-xs transition">Pure A2 Dairy</button>
+                <button onclick="filterStore('natural')" id="filter-natural" class="store-tab text-farm-green hover:bg-white/60 font-semibold px-4 py-2.5 rounded-xl text-xs transition">Honey & Farm Goods</button>
+            </div>
+        </div>
+
+        <!-- Dynamic Product Cards Grid -->
+        <div id="store-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- DEEP DIVE 1: NATIVE COUNTRY POULTRY (NATU KODI) -->
+    <section id="poultry" class="py-16 lg:py-24 bg-farm-green text-farm-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/40 text-amber-300 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-award"></i> Our Signature Specialty
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-bold leading-tight">
+                        Why AN Farms <span class="text-amber-400 italic font-normal">Natu Kodi</span> Tastes Like Childhood Memories
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        True country chicken cannot be rushed inside cages. At AN Farms, our native breeds—including <strong>Desi Natu Kodi, Pure Aseel, and Black-Meat Kadaknath</strong>—spend their days running across open pastures, scratching the earth for insects, eating fresh Moringa (Munaga) leaves, and basking in natural sunlight.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-white/5 border border-white/10 p-5 rounded-2xl">
+                            <i class="fa-solid fa-fire-burner text-amber-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-base text-white">Turmeric Fire-Singed (Каlchina Kodi)</h4>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed">We offer traditional village-style dressing: coated in organic turmeric and lightly fire-roasted with skin intact for authentic <em>Natu Kodi Pulusu</em>.</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 p-5 rounded-2xl">
+                            <i class="fa-solid fa-seedling text-emerald-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-base text-white">Herbal & Multi-Grain Diet</h4>
+                            <p class="text-xs text-gray-300 mt-1 leading-relaxed">Fed on jowar, bajra, broken rice, flaxseeds, and natural immunity boosters like garlic, neem, and raw turmeric.</p>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Mini Table -->
+                    <div class="bg-black/25 rounded-2xl p-5 border border-white/10 mt-6">
+                        <h4 class="text-xs uppercase tracking-widest text-amber-400 font-bold mb-3">The Honest Difference</h4>
+                        <div class="grid grid-cols-3 text-xs border-b border-white/10 pb-2 font-bold text-gray-300">
+                            <span>Feature</span>
+                            <span class="text-amber-400">AN Farms Natu Kodi</span>
+                            <span class="text-gray-400">Commercial Broiler</span>
+                        </div>
+                        <div class="divide-y divide-white/10 text-xs">
+                            <div class="grid grid-cols-3 py-2.5">
+                                <span class="text-gray-300">Growth Period</span>
+                                <span class="text-emerald-300 font-semibold">6 to 8 Months (Natural)</span>
+                                <span class="text-gray-400">35 to 40 Days (Forced)</span>
+                            </div>
+                            <div class="grid grid-cols-3 py-2.5">
+                                <span class="text-gray-300">Rearing Environment</span>
+                                <span class="text-emerald-300 font-semibold">Open Orchard Pastures</span>
+                                <span class="text-gray-400">Crowded Indoor Sheds</span>
+                            </div>
+                            <div class="grid grid-cols-3 py-2.5">
+                                <span class="text-gray-300">Antibiotics & Hormones</span>
+                                <span class="text-emerald-300 font-semibold">0% (100% Chemical-Free)</span>
+                                <span class="text-gray-400">Routine Growth Promoters</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid sm:grid-cols-2 gap-5">
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-4 border border-white/15">
+                        <img src="https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?auto=format&fit=crop&w=700&q=80" alt="Free Range Rooster" class="w-full h-56 object-cover rounded-2xl mb-4">
+                        <span class="text-[11px] uppercase tracking-widest text-amber-400 font-bold">Slow-Grown Heritage</span>
+                        <h3 class="text-xl font-bold mt-1">Desi Country Roosters & Hens</h3>
+                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">Firm, lean muscle texture with deep bone-broth flavor that holds up beautifully in traditional pressure-cooked curries.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-4 border border-white/15 sm:mt-8">
+                        <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=700&q=80" alt="Flock of Free Range Hens" class="w-full h-56 object-cover rounded-2xl mb-4">
+                        <span class="text-[11px] uppercase tracking-widest text-emerald-400 font-bold">High Immunity Nutrition</span>
+                        <h3 class="text-xl font-bold mt-1">Kadaknath & Country Eggs</h3>
+                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">Recommended for children, elders, and fitness enthusiasts seeking natural iron, B-vitamins, and clean bio-available protein.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DEEP DIVE 2: PURE A2 DAIRY & MONTHLY SUBSCRIPTION CALCULATOR -->
+    <section id="dairy" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left: Dairy Philosophy -->
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-farm-terracotta block">Unprocessed • Single-Farm Origin</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-farm-green leading-tight">
+                    Pure Farm Dairy & Traditional <span class="italic font-normal text-farm-terracotta">Vedic Bilona Ghee</span>
+                </h2>
+                <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    Commercial packet milk goes through homogenization, heavy pasteurization, and days of cold-storage transit. At <strong>AN Farms</strong>, our native cows and Murrah buffaloes graze on organic green fodder grown on our own land.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white p-4 rounded-2xl border border-farm-green/10 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-farm-terracotta flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-cow"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-farm-green">Calf-First Ethical Milking</h4>
+                            <p class="text-xs text-gray-600 mt-0.5">The calf always drinks its full share first. Happy, stress-free mothers produce naturally sweet, nutrient-rich milk.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white p-4 rounded-2xl border border-farm-green/10 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-100 text-farm-green flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-wine-bottle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-farm-green">Eco-Friendly Glass Bottles Within 3 Hours</h4>
+                            <p class="text-xs text-gray-600 mt-0.5">Milked at 4:00 AM, chilled immediately to 4°C to prevent bacterial growth naturally, and delivered in sanitized glass bottles.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white p-4 rounded-2xl border border-farm-green/10 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-farm-terracotta flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-jar"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-farm-green">Hand-Churned Clay Pot Bilona Ghee</h4>
+                            <p class="text-xs text-gray-600 mt-0.5">We boil whole milk on a slow firewood stove, set curd in earthen pots, churn makkhan at dawn, and simmer into granular golden ghee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Interactive Monthly Milk & Egg Subscription Estimator -->
+            <div id="subscription" class="lg:col-span-6">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-farm-green/15 relative">
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-widest text-farm-terracotta">Hyderabad Morning Delivery</span>
+                            <h3 class="text-2xl font-bold text-farm-green">Subscription Planner</h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-farm-sage text-farm-green flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Milk Type -->
+                        <div>
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-2">1. Choose Your Milk Type</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" onclick="setSubMilkType('cow', 110)" id="sub-type-cow" class="sub-type-btn border-2 border-farm-green bg-farm-sage/60 text-farm-green p-3.5 rounded-2xl text-left transition">
+                                    <span class="font-bold text-sm block">Native A2 Cow Milk</span>
+                                    <span class="text-xs text-gray-600">₹110 / Litre • Easy Digest</span>
+                                </button>
+                                <button type="button" onclick="setSubMilkType('buffalo', 120)" id="sub-type-buffalo" class="sub-type-btn border border-gray-200 hover:border-farm-green/50 p-3.5 rounded-2xl text-left transition">
+                                    <span class="font-bold text-sm block">Rich Buffalo Milk</span>
+                                    <span class="text-xs text-gray-600">₹120 / Litre • Thick Cream</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Daily Litres Slider -->
+                        <div>
+                            <div class="flex justify-between text-sm font-bold mb-2">
+                                <label class="text-gray-700">2. Daily Milk Quantity</label>
+                                <span id="sub-litres-label" class="text-farm-terracotta">1.5 Litres / Day</span>
+                            </div>
+                            <input id="sub-litres" type="range" min="0.5" max="5" step="0.5" value="1.5" oninput="calculateSubscription()" class="w-full accent-farm-green cursor-pointer">
+                            <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                                <span>0.5 L</span>
+                                <span>1 L</span>
+                                <span>2 L</span>
+                                <span>3 L</span>
+                                <span>5 L</span>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Country Eggs Add-on -->
+                        <div>
+                            <div class="flex justify-between text-sm font-bold mb-2">
+                                <label class="text-gray-700">3. Weekly Country Eggs (Natu Gudlu)</label>
+                                <span id="sub-eggs-label" class="text-farm-terracotta">12 Eggs / Week</span>
+                            </div>
+                            <input id="sub-eggs" type="range" min="0" max="36" step="6" value="12" oninput="calculateSubscription()" class="w-full accent-farm-green cursor-pointer">
+                            <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                                <span>None</span>
+                                <span>6 Eggs</span>
+                                <span>12 Eggs</span>
+                                <span>24 Eggs</span>
+                                <span>36 Eggs</span>
+                            </div>
+                        </div>
+
+                        <!-- Summary Box -->
+                        <div class="bg-farm-sand p-5 rounded-2xl border border-farm-green/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-gray-600 block">Estimated Monthly Plan (30 Days)</span>
+                                <span id="sub-total-price" class="text-3xl font-bold font-serif text-farm-green">₹5,910</span>
+                                <span class="text-[11px] text-emerald-700 font-semibold block mt-0.5"><i class="fa-solid fa-check mr-1"></i> Pause or modify anytime via WhatsApp</span>
+                            </div>
+                            <button onclick="subscribeViaWhatsApp()" class="w-full sm:w-auto bg-farm-green hover:bg-farm-moss text-white font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-md">
+                                <i class="fa-brands fa-whatsapp text-amber-400 text-lg"></i>
+                                <span>Start 3-Day Trial</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOUNDER STORY: VENKAT YANAMALA -->
+    <section id="founder" class="py-16 lg:py-24 bg-farm-sand border-y border-farm-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=900&q=80" alt="AN Farms Lush Pastures in Hyderabad" class="w-full h-[420px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-farm-green/95 via-farm-green/30 to-transparent flex flex-col justify-end p-6 text-white">
+                            <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Founder & Managing Farmer</span>
+                            <h3 class="text-2xl font-bold font-serif mt-1">Venkat Yanamala</h3>
+                            <p class="text-xs text-gray-200 mt-1">Committed to reviving native livestock breeds & chemical-free nutrition in Hyderabad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-farm-terracotta block">The Heart Behind AN Farms</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-farm-green leading-tight">
+                        "We Don't Run a Factory. We Nurture a Living Ecosystem."
+                    </h2>
+                    <blockquote class="border-l-4 border-farm-terracotta pl-5 italic text-gray-700 text-base sm:text-lg leading-relaxed">
+                        "When I started AN Farms in Hyderabad, I saw how families were forced to choose between adulterated packet milk and commercial broiler chicken pumped with antibiotics. Our goal was to return to the roots—where cattle graze under open skies, country chickens forage naturally in orchards, and food acts as natural medicine."
+                    </blockquote>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        Under <strong>Venkat Yanamala’s</strong> hands-on supervision, AN Farms practices <strong>zero-waste circular farming</strong>. Organic cow dung from our dairy barn is converted into rich vermicompost, which nourishes our pesticide-free green fodder plots and fruit trees—creating a clean, natural habitat for our native poultry flocks.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+                        <div class="bg-white p-4 rounded-2xl border border-farm-green/10 text-center">
+                            <span class="text-2xl font-bold font-serif text-farm-green">100%</span>
+                            <span class="text-[11px] text-gray-500 block mt-1 uppercase font-semibold">Traceable Origin</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-farm-green/10 text-center">
+                            <span class="text-2xl font-bold font-serif text-farm-terracotta">Zero</span>
+                            <span class="text-[11px] text-gray-500 block mt-1 uppercase font-semibold">Middlemen</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-farm-green/10 text-center">
+                            <span class="text-2xl font-bold font-serif text-farm-green">2,500+</span>
+                            <span class="text-[11px] text-gray-500 block mt-1 uppercase font-semibold">Hyderabad Families</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-farm-green/10 text-center">
+                            <span class="text-2xl font-bold font-serif text-farm-terracotta">Open</span>
+                            <span class="text-[11px] text-gray-500 block mt-1 uppercase font-semibold">Farm Visits</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HYDERABAD CUSTOMER REVIEWS -->
+    <section class="py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-farm-terracotta">Trusted Across Hyderabad</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-farm-green mt-1">What Families Say About AN Farms</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-3xl border border-farm-green/10 shadow-sm card-3d flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed italic">
+                        "Finding genuine Natu Kodi in Hyderabad that is actually free-range and fire-roasted with turmeric (Kalchina Kodi) was impossible until we ordered from Venkat garu at AN Farms. The aroma and taste took us straight back to our native village!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-100">
+                    <div class="w-9 h-9 rounded-full bg-farm-sage text-farm-green font-bold text-xs flex items-center justify-center">SR</div>
+                    <div>
+                        <h4 class="text-xs font-bold text-farm-green">Srinivas Reddy</h4>
+                        <p class="text-[11px] text-gray-500">Jubilee Hills, Hyderabad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-farm-green/10 shadow-sm card-3d flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed italic">
+                        "We switched our kids from packet milk to AN Farms' morning glass-bottle A2 cow milk and fertile country eggs 6 months ago. The thick malai layer on top and the deep orange egg yolks speak for their purity."
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-100">
+                    <div class="w-9 h-9 rounded-full bg-farm-sage text-farm-green font-bold text-xs flex items-center justify-center">AP</div>
+                    <div>
+                        <h4 class="text-xs font-bold text-farm-green">Anusha Padmanabhan</h4>
+                        <p class="text-[11px] text-gray-500">Gachibowli, Hyderabad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-farm-green/10 shadow-sm card-3d flex flex-col justify-between">
+                <div>
+                    <div class="flex text-amber-400 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed italic">
+                        "We visited AN Farms last Sunday with our children. Venkat Yanamala personally showed us how the chickens forage under the trees and how Bilona Ghee is churned. Complete transparency!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-100">
+                    <div class="w-9 h-9 rounded-full bg-farm-sage text-farm-green font-bold text-xs flex items-center justify-center">KV</div>
+                    <div>
+                        <h4 class="text-xs font-bold text-farm-green">Dr. Karthik Varma</h4>
+                        <p class="text-[11px] text-gray-500">Kondapur, Hyderabad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOK A FARM VISIT & CONTACT SECTION -->
+    <section id="visit" class="py-16 lg:py-24 bg-farm-green text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Come See How Your Food Is Raised</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold leading-tight">
+                        Visit AN Farms This Weekend or Connect With Us
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        We welcome families, nutrition-conscious buyers, and culinary partners to visit our farm in Hyderabad. Walk through our free-range poultry orchards, meet our dairy cattle, and pick up fresh farm produce directly.
+                    </p>
+
+                    <div class="space-y-4 pt-2 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Farm Address & Hyderabad Hub</h4>
+                                <p class="text-gray-300 text-xs mt-0.5">AN Farms, Outskirts Green Belt, Hyderabad, Telangana • Daily Morning Delivery Vans across Twin Cities</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Direct Farmer Helpline (Venkat Yanamala)</h4>
+                                <p class="text-gray-300 text-xs mt-0.5">+91 98765 43210 (Call / WhatsApp) • 6:00 AM to 8:30 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Farm Visit Hours</h4>
+                                <p class="text-gray-300 text-xs mt-0.5">Saturdays & Sundays: 7:30 AM – 11:30 AM & 4:00 PM – 6:00 PM (Prior appointment appreciated)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <form onsubmit="submitInquiryForm(event)" class="bg-white text-farm-green p-6 sm:p-8 rounded-3xl shadow-2xl space-y-4">
+                        <h3 class="text-2xl font-bold font-serif">Schedule a Farm Visit / Bulk Inquiry</h3>
+                        <p class="text-xs text-gray-500">Fill in your details below and Venkat Yanamala’s team will confirm via WhatsApp/Call.</p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div>
+                                <label class="text-xs font-bold text-gray-700 block mb-1">Full Name *</label>
+                                <input id="visit-name" type="text" required placeholder="e.g. Praveen Rao" class="w-full bg-farm-cream border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-farm-green">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-700 block mb-1">Phone / WhatsApp Number *</label>
+                                <input id="visit-phone" type="tel" required placeholder="+91 98XXX XXXXX" class="w-full bg-farm-cream border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-farm-green">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs font-bold text-gray-700 block mb-1">Purpose</label>
+                                <select id="visit-purpose" class="w-full bg-farm-cream border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-farm-green">
+                                    <option>Weekend Family Farm Visit</option>
+                                    <option>Start Daily A2 Milk Subscription</option>
+                                    <option>Bulk Country Chicken Order (Events)</option>
+                                    <option>Live Breeding Pair / Farm Consultation</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-700 block mb-1">Your Area in Hyderabad</label>
+                                <input id="visit-area" type="text" placeholder="e.g. Madhapur, Jubilee Hills" class="w-full bg-farm-cream border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-farm-green">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-bold text-gray-700 block mb-1">Additional Notes</label>
+                            <textarea id="visit-notes" rows="2" placeholder="Preferred date or specific products you are looking for..." class="w-full bg-farm-cream border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-farm-green"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-farm-terracotta hover:bg-amber-700 text-white font-bold py-4 rounded-xl text-sm uppercase tracking-wider transition shadow-lg">
+                            Confirm Request with AN Farms
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0d2216] text-gray-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 text-xs">
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 pb-8 border-b border-white/10">
+            <div>
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-xl bg-amber-500 text-farm-green flex items-center justify-center font-bold text-base">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <span class="text-lg font-bold font-serif text-white">AN FARMS</span>
+                </div>
+                <p class="leading-relaxed text-gray-400">
+                    Hyderabad-based natural poultry and dairy farm run by <strong>Venkat Yanamala</strong>. Dedicated to 100% free-range native country poultry and pure farm products.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-3">Farm Offerings</h4>
+                <ul class="space-y-2">
+                    <li><a href="#shop" onclick="filterStore('poultry')" class="hover:text-amber-400">Desi Natu Kodi (Country Chicken)</a></li>
+                    <li><a href="#shop" onclick="filterStore('poultry')" class="hover:text-amber-400">Pure Kadaknath & Aseel</a></li>
+                    <li><a href="#shop" onclick="filterStore('poultry')" class="hover:text-amber-400">Fertile Country Eggs (Natu Gudlu)</a></li>
+                    <li><a href="#shop" onclick="filterStore('dairy')" class="hover:text-amber-400">Farm Raw A2 Cow & Buffalo Milk</a></li>
+                    <li><a href="#shop" onclick="filterStore('dairy')" class="hover:text-amber-400">Wood-Fired Vedic Bilona Ghee</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-3">Hyderabad Delivery Zones</h4>
+                <p class="leading-relaxed">
+                    Jubilee Hills, Banjara Hills, Gachibowli, Kondapur, Madhapur, Manikonda, Kokapet, Narsingi, Kukatpally, Miyapur, Secunderabad, Kompally & surrounding areas.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-3">Quick Connect</h4>
+                <p class="mb-2"><i class="fa-solid fa-user mr-2 text-amber-400"></i> Venkat Yanamala</p>
+                <p class="mb-2"><i class="fa-solid fa-phone mr-2 text-amber-400"></i> +91 98765 43210</p>
+                <p class="mb-4"><i class="fa-solid fa-envelope mr-2 text-amber-400"></i> orders@anfarmshyderabad.com</p>
+                <a href="https://wa.me/919876543210" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2 rounded-lg transition">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2025 AN Farms, Hyderabad (Run by Venkat Yanamala). All rights reserved.</p>
+            <p class="text-amber-400">100% Natural • Antibiotic-Free • Direct From Farmer</p>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OVER SHOPPING BASKET DRAWER -->
+    <div id="cart-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-black/50 backdrop-blur-xs z-50 hidden"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-farm-cream z-50 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col justify-between">
+        <!-- Drawer Header -->
+        <div class="p-6 bg-farm-green text-white flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-basket-shopping text-amber-400 text-xl"></i>
+                <div>
+                    <h3 class="text-lg font-bold font-serif leading-none">Your Farm Basket</h3>
+                    <span class="text-[11px] text-amber-300">Fresh Harvest from AN Farms, Hyderabad</span>
+                </div>
+            </div>
+            <button onclick="toggleCart()" class="text-white/70 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Items -->
+        <div id="cart-items-list" class="p-6 overflow-y-auto flex-1 space-y-4">
+            <!-- Populated via JS -->
+        </div>
+
+        <!-- Drawer Checkout Footer -->
+        <div class="p-6 bg-white border-t border-farm-green/10 space-y-4">
+            <div class="flex justify-between items-center text-base font-bold text-farm-green">
+                <span>Total Amount</span>
+                <span id="cart-total-amount" class="text-2xl font-serif text-farm-terracotta">₹0</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+                <input id="order-name" type="text" placeholder="Your Name *" class="bg-farm-cream border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-farm-green">
+                <input id="order-phone" type="tel" placeholder="Mobile Number *" class="bg-farm-cream border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-farm-green">
+            </div>
+            <div class="grid grid-cols-2 gap-2.5">
+                <input id="order-locality" type="text" placeholder="Hyderabad Area (e.g. Kondapur)" class="bg-farm-cream border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-farm-green">
+                <select id="order-slot" class="bg-farm-cream border border-gray-300 rounded-xl px-3 py-2.5 text-xs focus:outline-none focus:border-farm-green">
+                    <option>Morning Slot (6:30 AM - 8:30 AM)</option>
+                    <option>Forenoon Slot (9:30 AM - 12:00 PM)</option>
+                    <option>Evening Slot (4:30 PM - 7:00 PM)</option>
+                </select>
+            </div>
+
+            <button onclick="placeOrderWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 transition shadow-md">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Order via WhatsApp (Instant Confirmation)</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- HYDERABAD AREA CHECKER MODAL -->
+    <div id="area-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-farm-green/10 relative">
+            <button onclick="closeAreaModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="w-12 h-12 rounded-2xl bg-farm-sage text-farm-green flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-truck-Ramp-box"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-serif text-farm-green">Check Hyderabad Delivery</h3>
+            <p class="text-xs text-gray-600 mt-1 mb-5">Select your zone in Hyderabad to view delivery timings from AN Farms.</p>
+
+            <select id="modal-area-select" onchange="selectModalArea(this.value)" class="w-full bg-farm-cream border border-gray-300 rounded-xl px-4 py-3 text-sm font-semibold text-farm-green mb-4">
+                <option value="">Choose your locality...</option>
+                <option value="Gachibowli / Financial District">Gachibowli / Financial District</option>
+                <option value="Jubilee Hills / Banjara Hills">Jubilee Hills / Banjara Hills</option>
+                <option value="Kondapur / Madhapur / Hitech City">Kondapur / Madhapur / Hitech City</option>
+                <option value="Kokapet / Narsingi / Manikonda">Kokapet / Narsingi / Manikonda</option>
+                <option value="Kukatpally / Miyapur / Pragathi Nagar">Kukatpally / Miyapur / Pragathi Nagar</option>
+                <option value="Secunderabad / Kompally / Alwal">Secunderabad / Kompally / Alwal</option>
+                <option value="Himayatnagar / Somajiguda / Begumpet">Himayatnagar / Somajiguda / Begumpet</option>
+            </select>
+
+            <div id="modal-area-result" class="hidden bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-xs text-emerald-900 space-y-1.5 mb-5">
+                <p class="font-bold text-sm text-emerald-800"><i class="fa-solid fa-circle-check mr-1"></i> Yay! We deliver fresh to your area.</p>
+                <p>• <strong>Raw A2 Milk & Eggs:</strong> Daily 5:30 AM – 7:30 AM</p>
+                <p>• <strong>Fresh Dressed Natu Kodi:</strong> Morning 7:30 AM – 11:30 AM</p>
+            </div>
+
+            <button onclick="closeAreaModal()" class="w-full bg-farm-green text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider">Done</button>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-farm-green text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-amber-400/40 flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-amber-400 text-lg"></i>
+        <span id="toast-msg" class="text-xs font-semibold">Added to your farm basket!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. REALISTIC PRODUCT CATALOG FOR AN FARMS
+        const catalog = [
+            {
+                id: 101,
+                name: "Free-Range Desi Natu Kodi (Country Chicken)",
+                category: "poultry",
+                price: 680,
+                unit: "1 Kg (Live Bird ~1.3 Kg / Net Dressed ~900g)",
+                badge: "Signature Bestseller",
+                image: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=700&q=80",
+                desc: "Pasture-raised native country chicken foraged on orchard greens and organic grains. Rich, authentic village flavor.",
+                hasCutOptions: true,
+                options: [
+                    "Turmeric Fire-Roasted with Skin (Kalchina Kodi - Curry Cut)",
+                    "Skinless Traditional Curry Cut (Medium Pieces)",
+                    "Whole Live Bird (Undressed)"
+                ]
+            },
+            {
+                id: 102,
+                name: "Fertile Country Chicken Eggs (Natu Kodi Gudlu)",
+                category: "poultry",
+                price: 240,
+                unit: "Pack of 12 Fresh Eggs",
+                badge: "Daily Harvest",
+                image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=700&q=80",
+                desc: "100% hormone-free fertile country eggs laid by free-roaming hens. Deep orange yolks rich in natural Omega-3.",
+                hasCutOptions: false
+            },
+            {
+                id: 103,
+                name: "Pure Indigenous Kadaknath (Black Meat Chicken)",
+                category: "poultry",
+                price: 890,
+                unit: "1 Kg (Freshly Dressed)",
+                badge: "Medicinal & High Iron",
+                image: "https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?auto=format&fit=crop&w=700&q=80",
+                desc: "Authentic Kadaknath breed prized for high protein, iron, and ultra-low cholesterol. Ideal for immunity & strength.",
+                hasCutOptions: true,
+                options: [
+                    "Traditional Curry Cut with Skin (Turmeric Singed)",
+                    "Skinless Curry Cut"
+                ]
+            },
+            {
+                id: 104,
+                name: "Pure Native Aseel (Punjulu / Country Rooster)",
+                category: "poultry",
+                price: 820,
+                unit: "1 Kg (Live / Dressed)",
+                badge: "Heritage Breed",
+                image: "https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=700&q=80",
+                desc: "Slow-grown athletic heritage breed known for strong bones and unmatched traditional Telangana Natu Kodi Pulusu taste.",
+                hasCutOptions: true,
+                options: [
+                    "Turmeric Fire-Roasted with Skin (Kalchina Kodi)",
+                    "Skinless Curry Cut",
+                    "Whole Live Bird"
+                ]
+            },
+            {
+                id: 201,
+                name: "Farm-Fresh Raw A2 Cow Milk (Glass Bottle)",
+                category: "dairy",
+                price: 110,
+                unit: "1 Litre Sanitized Glass Bottle",
+                badge: "Morning 6 AM Delivery",
+                image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=700&q=80",
+                desc: "Unprocessed, preservative-free A2 milk from grass-fed native Desi cows. Chilled to 4°C immediately after milking.",
+                hasCutOptions: false
+            },
+            {
+                id: 202,
+                name: "Creamy Farm-Fresh Murrah Buffalo Milk",
+                category: "dairy",
+                price: 120,
+                unit: "1 Litre Glass Bottle",
+                badge: "Thick Malai",
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=700&q=80",
+                desc: "High-fat, naturally sweet buffalo milk ideal for making thick homemade curd, butter, and traditional sweets.",
+                hasCutOptions: false
+            },
+            {
+                id: 203,
+                name: "Wood-Fired Vedic Bilona A2 Ghee",
+                category: "dairy",
+                price: 980,
+                unit: "500 ml Artisanal Glass Jar",
+                badge: "Clay-Pot Churned",
+                image: "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&w=700&q=80",
+                desc: "Hand-churned from whole curd using the ancient Bilona method over a slow firewood flame. Rich granular texture.",
+                hasCutOptions: false
+            },
+            {
+                id: 301,
+                name: "Raw Unprocessed Orchard Honey",
+                category: "natural",
+                price: 490,
+                unit: "500g Glass Bottle",
+                badge: "100% Pure Apiary",
+                image: "https://images.unsplash.com/photo-1587049352847-4a222e784d38?auto=format&fit=crop&w=700&q=80",
+                desc: "Unheated, unfiltered multi-flora honey harvested from bee boxes placed across AN Farms' neem and mango groves.",
+                hasCutOptions: false
+            },
+            {
+                id: 302,
+                name: "Organic Cow Manure & Vermicompost",
+                category: "natural",
+                price: 250,
+                unit: "10 Kg Home Garden Bag",
+                badge: "For Terrace Gardens",
+                image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=700&q=80",
+                desc: "Nutrient-rich organic compost aged from our native dairy cattle—perfect for Hyderabad balcony & terrace kitchen gardens.",
+                hasCutOptions: false
+            }
+        ];
+
+        let cart = [];
+
+        function renderStore(category = 'all') {
+            const grid = document.getElementById('store-grid');
+            const items = category === 'all' ? catalog : catalog.filter(item => item.category === category);
+
+            grid.innerHTML = items.map(item => `
+                <div class="bg-white rounded-3xl overflow-hidden border border-farm-green/10 flex flex-col justify-between card-3d">
+                    <div>
+                        <div class="relative h-56 overflow-hidden bg-farm-sand">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            <span class="absolute top-3.5 left-3.5 bg-farm-green/90 backdrop-blur-xs text-amber-300 text-[11px] font-bold px-3 py-1 rounded-full">
+                                ${item.badge}
+                            </span>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <span class="text-xs font-semibold text-farm-terracotta block mb-1">${item.unit}</span>
+                            <h3 class="text-xl font-bold text-farm-green leading-snug mb-2">${item.name}</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">${item.desc}</p>
+                            
+                            ${item.hasCutOptions ? `
+                                <div class="mb-3">
+                                    <label class="text-[11px] font-bold uppercase tracking-wider text-gray-500 block mb-1">Select Preparation Style:</label>
+                                    <select id="cut-option-${item.id}" class="w-full bg-farm-cream border border-farm-green/20 rounded-xl px-3 py-2 text-xs font-semibold text-farm-green focus:outline-none focus:border-farm-terracotta">
+                                        ${item.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                                    </select>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+
+                    <div class="px-6 py-4 bg-farm-sand/60 border-t border-farm-green/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] text-gray-500 block">Farm Direct Price</span>
+                            <span class="text-2xl font-bold font-serif text-farm-green">₹${item.price}</span>
+                        </div>
+                        <button onclick="addToBasket(${item.id})" class="bg-farm-green hover:bg-farm-terracotta text-white font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-plus text-amber-400"></i>
+                            <span>Add to Basket</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update active tab styling
+            document.querySelectorAll('.store-tab').forEach(btn => {
+                btn.className = "store-tab text-farm-green hover:bg-white/60 font-semibold px-4 py-2.5 rounded-xl text-xs transition";
+            });
+            const activeBtn = document.getElementById(`filter-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "store-tab bg-farm-green text-white font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-sm";
+            }
+        }
+
+        function filterStore(category) {
+            renderStore(category);
+        }
+
+        // 2. SHOPPING BASKET & CHECKOUT LOGIC
+        function addToBasket(productId) {
+            const product = catalog.find(p => p.id === productId);
+            const cutSelect = document.getElementById(`cut-option-${productId}`);
+            const selectedCut = cutSelect ? cutSelect.value : "Standard Farm Pack";
+            const cartKey = `${productId}-${selectedCut}`;
+
+            const existing = cart.find(c => c.cartKey === cartKey);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    cartKey,
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    unit: product.unit,
+                    cut: product.hasCutOptions ? selectedCut : null,
+                    qty: 1
+                });
+            }
+
+            updateCartUI();
+            showToast(`Added "${product.name}" to your basket`);
+        }
+
+        function updateQty(cartKey, delta) {
+            const item = cart.find(c => c.cartKey === cartKey);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(c => c.cartKey !== cartKey);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const listEl = document.getElementById('cart-items-list');
+            const totalEl = document.getElementById('cart-total-amount');
+
+            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalAmount = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+            countEl.textContent = totalQty;
+            totalEl.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
+
+            if (cart.length === 0) {
+                listEl.innerHTML = `
+                    <div class="text-center py-16">
+                        <div class="w-16 h-16 rounded-full bg-farm-sand text-farm-green/40 flex items-center justify-center text-2xl mx-auto mb-3">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </div>
+                        <p class="font-bold text-farm-green text-base">Your Farm Basket is Empty</p>
+                        <p class="text-xs text-gray-500 mt-1 max-w-xs mx-auto">Add fresh free-range Natu Kodi, country eggs, A2 milk, or Bilona ghee from the store.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            listEl.innerHTML = cart.map(item => `
+                <div class="bg-white p-4 rounded-2xl border border-farm-green/10 shadow-xs flex items-start justify-between gap-3">
+                    <div>
+                        <h4 class="font-bold text-sm text-farm-green">${item.name}</h4>
+                        ${item.cut ? `<span class="inline-block bg-amber-100 text-farm-terracotta text-[10px] font-bold px-2 py-0.5 rounded mt-1">${item.cut}</span>` : ''}
+                        <p class="text-xs text-gray-500 mt-1">₹${item.price} × ${item.qty} = <strong class="text-farm-green">₹${item.price * item.qty}</strong></p>
+                    </div>
+                    <div class="flex items-center gap-2 bg-farm-sand p-1 rounded-xl border border-farm-green/10 shrink-0">
+                        <button onclick="updateQty('${item.cartKey}', -1)" class="w-7 h-7 rounded-lg bg-white text-farm-green font-bold text-xs hover:bg-gray-100">-</button>
+                        <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+                        <button onclick="updateQty('${item.cartKey}', 1)" class="w-7 h-7 rounded-lg bg-farm-green text-white font-bold text-xs hover:bg-farm-moss">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const backdrop = document.getElementById('cart-backdrop');
+            const isOpen = !drawer.classList.contains('translate-x-full');
+            if (isOpen) {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.add('hidden');
+            } else {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+            }
+        }
+
+        function placeOrderWhatsApp() {
+            if (cart.length === 0) {
+                alert("Your basket is empty! Please add products first.");
+                return;
+            }
+            const name = document.getElementById('order-name').value.trim() || "Customer";
+            const phone = document.getElementById('order-phone').value.trim() || "Not provided";
+            const locality = document.getElementById('order-locality').value.trim() || "Hyderabad";
+            const slot = document.getElementById('order-slot').value;
+            const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+            let message = `Namaste Venkat Yanamala garu (*AN Farms, Hyderabad*)!%0A%0AI would like to place a fresh farm order:%0A%0A`;
+            cart.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}* ${item.cut ? `[${item.cut}]` : ''} — Qty: ${item.qty} (₹${item.price * item.qty})%0A`;
+            });
+            message += `%0A*Total Order Value:* ₹${total}%0A*Customer Name:* ${name}%0A*Phone:* ${phone}%0A*Hyderabad Locality:* ${locality}%0A*Preferred Delivery Slot:* ${slot}`;
+
+            window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+        }
+
+        // 3. INTERACTIVE MILK & EGG SUBSCRIPTION CALCULATOR
+        let subMilkPrice = 110;
+        let subMilkName = "Native A2 Cow Milk";
+
+        function setSubMilkType(type, price) {
+            subMilkPrice = price;
+            subMilkName = type === 'cow' ? "Native A2 Cow Milk" : "Rich Murrah Buffalo Milk";
+
+            const cowBtn = document.getElementById('sub-type-cow');
+            const bufBtn = document.getElementById('sub-type-buffalo');
+
+            if (type === 'cow') {
+                cowBtn.className = "sub-type-btn border-2 border-farm-green bg-farm-sage/60 text-farm-green p-3.5 rounded-2xl text-left transition";
+                bufBtn.className = "sub-type-btn border border-gray-200 hover:border-farm-green/50 p-3.5 rounded-2xl text-left transition";
+            } else {
+                bufBtn.className = "sub-type-btn border-2 border-farm-green bg-farm-sage/60 text-farm-green p-3.5 rounded-2xl text-left transition";
+                cowBtn.className = "sub-type-btn border border-gray-200 hover:border-farm-green/50 p-3.5 rounded-2xl text-left transition";
+            }
+            calculateSubscription();
+        }
+
+        function calculateSubscription() {
+            const litres = parseFloat(document.getElementById('sub-litres').value);
+            const weeklyEggs = parseInt(document.getElementById('sub-eggs').value);
+
+            document.getElementById('sub-litres-label').textContent = `${litres} Litre${litres > 1 ? 's' : ''} / Day`;
+            document.getElementById('sub-eggs-label').textContent = weeklyEggs === 0 ? "No Eggs" : `${weeklyEggs} Eggs / Week`;
+
+            const monthlyMilkCost = litres * subMilkPrice * 30;
+            const monthlyEggCost = (weeklyEggs * 20) * 4; // ₹20 per fertile country egg × 4 weeks
+            const totalMonthly = monthlyMilkCost + monthlyEggCost;
+
+            document.getElementById('sub-total-price').textContent = `₹${totalMonthly.toLocaleString('en-IN')}`;
+        }
+
+        function subscribeViaWhatsApp() {
+            const litres = document.getElementById('sub-litres').value;
+            const weeklyEggs = document.getElementById('sub-eggs').value;
+            const totalText = document.getElementById('sub-total-price').textContent;
+
+            const msg = `Namaste Venkat garu (*AN Farms Hyderabad*),%0A%0AI would like to start a *Morning Farm Subscription / 3-Day Trial*:%0A• *Milk Type:* ${subMilkName}%0A• *Daily Quantity:* ${litres} Litres/day%0A• *Weekly Country Eggs:* ${weeklyEggs} Eggs/week%0A• *Estimated Monthly Plan:* ${totalText}%0A%0APlease share delivery details for my location in Hyderabad.`;
+            window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+        }
+
+        // 4. HYDERABAD DELIVERY CHECKER & UI HELPERS
+        function updateDeliveryStatus(area) {
+            const badge = document.getElementById('quick-area-badge');
+            const headerLabel = document.getElementById('selected-area-label');
+            const orderLocInput = document.getElementById('order-locality');
+
+            if (area) {
+                badge.classList.remove('hidden');
+                headerLabel.textContent = area.split('/')[0].trim();
+                if (orderLocInput) orderLocInput.value = area;
+                showToast(`Delivery verified for ${area}!`);
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function openAreaModal() {
+            const modal = document.getElementById('area-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAreaModal() {
+            const modal = document.getElementById('area-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function selectModalArea(area) {
+            const res = document.getElementById('modal-area-result');
+            if (area) {
+                res.classList.remove('hidden');
+                updateDeliveryStatus(area);
+            } else {
+                res.classList.add('hidden');
+            }
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 2800);
+        }
+
+        function submitInquiryForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('visit-name').value;
+            const phone = document.getElementById('visit-phone').value;
+            const purpose = document.getElementById('visit-purpose').value;
+            const area = document.getElementById('visit-area').value || 'Hyderabad';
+            const notes = document.getElementById('visit-notes').value;
+
+            const msg = `Namaste Venkat Yanamala garu (*AN Farms Hyderabad*),%0A%0A*New Website Inquiry / Farm Visit Request*:%0A• *Name:* ${name}%0A• *Phone:* ${phone}%0A• *Purpose:* ${purpose}%0A• *Locality:* ${area}%0A• *Notes:* ${notes || 'None'}`;
+            window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
+            e.target.reset();
+        }
+
+        // Initialize Store & Calculator on Load
+        renderStore('all');
+        calculateSubscription();
+        updateCartUI();
+    </script>
+</body>
+</html>
